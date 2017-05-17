@@ -1,0 +1,35 @@
+E:\Do an\KTVBT\DAO\bin\Debug\DAO.dll
+E:\Do an\KTVBT\DAO\bin\Debug\DAO.pdb
+E:\Do an\KTVBT\DAO\bin\Debug\DTO.dll
+E:\Do an\KTVBT\DAO\bin\Debug\DTO.pdb
+E:\Do an\KTVBT\DAO\obj\Debug\ResolveAssemblyReference.cache
+E:\Do an\KTVBT\DAO\obj\Debug\DAO.dll
+E:\Do an\KTVBT\DAO\obj\Debug\DAO.pdb
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\DAO\obj\Debug\ResolveAssemblyReference.cache
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.dll
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.pdb
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.dll
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.pdb
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.dll
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.pdb
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.dll
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.pdb
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.dll
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.pdb
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.dll
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.pdb
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.dll
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.pdb
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.dll
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.pdb
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\DAO\obj\Debug\ResolveAssemblyReference.cache
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.dll
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.pdb
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.dll
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.pdb
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.dll
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.pdb
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.dll
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.pdb

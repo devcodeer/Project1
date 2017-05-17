@@ -1,0 +1,45 @@
+E:\Do an\KTVBT\BUS\bin\Debug\BUS.dll
+E:\Do an\KTVBT\BUS\bin\Debug\BUS.pdb
+E:\Do an\KTVBT\BUS\bin\Debug\DAO.dll
+E:\Do an\KTVBT\BUS\bin\Debug\DTO.dll
+E:\Do an\KTVBT\BUS\bin\Debug\DAO.pdb
+E:\Do an\KTVBT\BUS\bin\Debug\DTO.pdb
+E:\Do an\KTVBT\BUS\obj\Debug\ResolveAssemblyReference.cache
+E:\Do an\KTVBT\BUS\obj\Debug\BUS.dll
+E:\Do an\KTVBT\BUS\obj\Debug\BUS.pdb
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.dll
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.pdb
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.dll
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.dll
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.pdb
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.pdb
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\obj\Debug\ResolveAssemblyReference.cache
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.dll
+F:\DO_AN\DO_AN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.pdb
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.dll
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.pdb
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.dll
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.dll
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.pdb
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.pdb
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.dll
+C:\Users\alienware\Desktop\DO_AN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.pdb
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.dll
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.pdb
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.dll
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.dll
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.pdb
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.pdb
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\obj\Debug\ResolveAssemblyReference.cache
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.dll
+E:\a-visual\DO_AN_NV_HOANG\2\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.pdb
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.dll
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.pdb
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.dll
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.dll
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.pdb
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.pdb
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.dll
+C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.pdb
