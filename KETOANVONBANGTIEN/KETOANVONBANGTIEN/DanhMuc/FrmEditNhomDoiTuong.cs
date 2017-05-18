@@ -77,16 +77,16 @@ namespace KETOANVONBANGTIEN.DanhMuc
         {
             string manhom = txtMaNhom.Text;
             string tennhom = txtTenNhom.Text;
-            NhomDt_DTO nhomdt = new NhomDt_DTO(manhom, tennhom);
-            NhomDt_BUS.Them1NhomDoiTuong(nhomdt);
+            NhomDoiTuong_DTO nhomdt = new NhomDoiTuong_DTO(manhom, tennhom);
+            NhomDoiTuong_BUS.insertNhomDoiTuong(nhomdt);
         }
 
         private void Sua()
         {
             string manhom = txtMaNhom.Text;
             string tennhom = txtTenNhom.Text;
-            NhomDt_DTO nhomdt = new NhomDt_DTO(manhom, tennhom);
-            NhomDt_BUS.Sua1NhomDoiTuong(obj.MaNhom, nhomdt);
+            NhomDoiTuong_DTO nhomdt = new NhomDoiTuong_DTO(manhom, tennhom);
+            NhomDoiTuong_BUS.updateNhomDoiTuong(obj.MaNhom, nhomdt);
         }
 
         private void ResetControl()
@@ -96,9 +96,9 @@ namespace KETOANVONBANGTIEN.DanhMuc
         }
 
         public LuaChon_DTO lc = new LuaChon_DTO();
-        public NhomDt_DTO obj = new NhomDt_DTO();
+        public NhomDoiTuong_DTO obj = new NhomDoiTuong_DTO();
 
-        private void TruyenDuLieu(NhomDt_DTO nhomdt)
+        private void TruyenDuLieu(NhomDoiTuong_DTO nhomdt)
         {
             txtMaNhom.Text = nhomdt.MaNhom;
             txtTenNhom.Text = nhomdt.TenNhom;

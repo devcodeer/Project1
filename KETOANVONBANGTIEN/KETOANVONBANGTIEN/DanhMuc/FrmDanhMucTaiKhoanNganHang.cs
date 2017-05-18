@@ -35,7 +35,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void LoadGridVieW()
         {
-            grvDanhMucTKNH.DataSource = TaiKhoanNganHang_BUS.LoadDanhMucTaiKhoanNganHang();        
+            grvDanhMucTKNH.DataSource = TaiKhoanNganHang_BUS.loadDanhMucTaiKhoanNganHang();        
         }
 
         private void btnNap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -48,14 +48,14 @@ namespace KETOANVONBANGTIEN.DanhMuc
             if (MessageBox.Show("Bạn chắc chắn muốn xóa?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 string sotknh = gridViewDanhMucTKNH.GetRowCellValue(gridViewDanhMucTKNH.FocusedRowHandle, colSotk).ToString();
-                DataTable dt = TaiKhoanNganHang_BUS.kiemtra(sotknh);
+                DataTable dt = TaiKhoanNganHang_BUS.kiemTraChungTuCuaTaiKhoanNganHang(sotknh);
                 if (dt.Rows.Count > 0)
                     MessageBox.Show("Không xóa tài khoản đã sử dụng trong kỳ!");
                 else
                 {
                     try
                     {
-                        TaiKhoanNganHang_BUS.Xoa1TaiKhoanNganHang(sotknh);
+                        TaiKhoanNganHang_BUS.deleteBankAccount(sotknh);
                         LoadGridVieW();
                     }
                     catch

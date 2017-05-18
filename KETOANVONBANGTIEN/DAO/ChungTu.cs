@@ -13,7 +13,7 @@ namespace DAO
         // Load danh sach chứng từ
         public static DataTable LoadDSChungTu(int loaict)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_CHUNGTU_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -29,7 +29,7 @@ namespace DAO
         // Lay1 chung tu
         public static DataTable Lay1ChungTu( string soct)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("[sp_CHUNGTU_SelectOne]", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -46,7 +46,7 @@ namespace DAO
         // Thêm mới 1 chứng từ
         public static void Them1ChungTu(ChungTu_DTO ct)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_CHUNGTU_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
        
@@ -88,7 +88,7 @@ namespace DAO
         // Sửa 1 chứng từ
         public static void Sua1ChungTu(string magoc,ChungTu_DTO ct)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_CHUNGTU_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -132,7 +132,7 @@ namespace DAO
         //Xóa
         public static void Xoa1ChungTu(string soct)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_CHUNGTU_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -148,7 +148,7 @@ namespace DAO
         //Update trang thai
         public static void UpdateTrangThai(string soct, bool trangthai)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TRANGTHAI_CHUNGTU_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -163,12 +163,12 @@ namespace DAO
         }
     }
 
-    public class ChiTietCT_DAO
+    public class ChiTietChungTu_DAO
     {
         // Load chi tiết chứng từ
         public static DataTable LoadChiTietCt( string soct)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_ChiTietCT_Select", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -184,7 +184,7 @@ namespace DAO
         // Load chi tiết chứng từ lên giấy báo ngân hàng
         public static DataTable LoadChiTietCtLenGB(string soct)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_ChiTietCT_LenGBNH", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -198,9 +198,9 @@ namespace DAO
         }
 
         // Thêm chi tiết chứng từ
-        public static void ThemChiTietCt(ChiTietCT_DTO ct)
+        public static void ThemChiTietCt(ChiTietChungTu_DTO ct)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_ChiTietCT_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -224,9 +224,9 @@ namespace DAO
         }
 
         // Sửa tiết chứng từ
-        public static void SuaChiTietCt(int magoc,ChiTietCT_DTO ct)
+        public static void SuaChiTietCt(int magoc,ChiTietChungTu_DTO ct)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_ChiTietCT_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -254,7 +254,7 @@ namespace DAO
         // Xoa Chi tiet chung tu
         public static void XoaChiTietCt(int id)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("[sp_ChiTietCT_Delete]", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 

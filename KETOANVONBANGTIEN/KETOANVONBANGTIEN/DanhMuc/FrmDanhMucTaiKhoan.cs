@@ -34,7 +34,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void LoadGridView()
         {
-            grvDanhMucTaiKhoan.DataSource = TaiKhoan_BUS.LoadDanhMucTaiKhoan();
+            grvDanhMucTaiKhoan.DataSource = TaiKhoan_BUS.loadListTaiKhoanKeToan();
         }
 
         private void btnNap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -48,7 +48,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             {
                 try
                 {
-                    TaiKhoan_BUS.Xoa1TaiKhoan(gridViewDMTK.GetRowCellValue(gridViewDMTK.FocusedRowHandle, colMaTk).ToString());
+                    TaiKhoan_BUS.deleteAccount(gridViewDMTK.GetRowCellValue(gridViewDMTK.FocusedRowHandle, colMaTk).ToString());
                     LoadGridView();
                 }
                 catch

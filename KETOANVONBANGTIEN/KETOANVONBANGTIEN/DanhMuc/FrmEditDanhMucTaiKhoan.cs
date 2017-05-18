@@ -96,7 +96,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
                 }
             }
             TaiKhoan_DTO taikhoan = new TaiKhoan_DTO(matk, tentk, loaitk, captk,tkcha,matien,0,0,0,0);
-            TaiKhoan_BUS.ThemMoiTaiKhoan(taikhoan);
+            TaiKhoan_BUS.insertAccount(taikhoan);
         }
 
         private void SuaTaiKhoan()
@@ -121,7 +121,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             
             
             TaiKhoan_DTO tk = new TaiKhoan_DTO(matk, tentk, loaitk, captk,tkcha,matien,0,0,0,0);
-            TaiKhoan_BUS.Sua1TaiKhoan(obj.MaTk, tk);
+            TaiKhoan_BUS.updateAccount(obj.MaTk, tk);
         }
 
         private void ResetControl()
@@ -148,14 +148,14 @@ namespace KETOANVONBANGTIEN.DanhMuc
         }
         private void LoadlookUpEditTkCha()
         {
-            lookUpEditTkCha.Properties.DataSource = TaiKhoan_BUS.LoadDanhMucTaiKhoan();
+            lookUpEditTkCha.Properties.DataSource = TaiKhoan_BUS.loadListTaiKhoanKeToan();
             lookUpEditTkCha.Properties.DisplayMember = "MaTk";
             lookUpEditTkCha.Properties.ValueMember = "MaTk";
         }
 
         private void LoadlookUpEditLoaiTien()
         {
-            lookUpEditLoaiTien.Properties.DataSource = TienTe_BUS.LoadDanhMucTienTe();
+            lookUpEditLoaiTien.Properties.DataSource = TienTe_BUS.loadDanhMucTienTe();
             lookUpEditLoaiTien.Properties.DisplayMember = "MaTien";
             lookUpEditLoaiTien.Properties.ValueMember = "MaTien";
         }

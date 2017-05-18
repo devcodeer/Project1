@@ -19,7 +19,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void FrmPhanTichThuChi_Load(object sender, EventArgs e)
         {
-            chart.DataSource = PhanTich_BUS.PhanTichThuChi();
+            chart.DataSource = PhanTich_BUS.loadPhanTichThuChi();
 
             chart.SeriesDataMember = "TichChat";
             chart.SeriesTemplate.ArgumentDataMember = "Thang";

@@ -23,7 +23,7 @@ namespace KETOANVONBANGTIEN.BaoCao.DanhSachDoiTuong
         }
         private void LoadLookUpEdit()
         {
-            DataTable dt = NhomDt_BUS.LoadDanhSachNhomDt();
+            DataTable dt = NhomDoiTuong_BUS.loadDanhSachNhomDoiTuong();
 
             dt.Rows.Add("All", "Tất cả đối tượng");
             lookUpEditNhomDt.Properties.DataSource = dt;
@@ -50,16 +50,16 @@ namespace KETOANVONBANGTIEN.BaoCao.DanhSachDoiTuong
                 BaoCao.DanhSachDoiTuong.rptDanhSachDoiTuong rpt = new BaoCao.DanhSachDoiTuong.rptDanhSachDoiTuong();
                 if (manhom == "All")
                 {
-                    rpt.DataSource = DoiTuong_BUS.LoadDanhSachDoiTuong();
+                    rpt.DataSource = DoiTuong_BUS.loadListObjects();
                     rpt.luachon.LuaChon = "đối tượng";
                 }
                 else
                 {
-                    rpt.DataSource = DoiTuong_BUS.LoadDsKh_Ncc(manhom);
+                    rpt.DataSource = DoiTuong_BUS.loadListCustomerOrProvider(manhom);
                     rpt.luachon.LuaChon = tennhom;
                 }
                 rpt.BindData();
-                rpt.ShowPreview(); ;
+             //   rpt.ShowPreview(); ;
             }
             catch
             {

@@ -11,7 +11,7 @@ namespace DAO
         // Bao cao so quy
         public static DataTable SoQuy(string matk, DateTime ngaybd, DateTime ngaykt)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_SoQuy", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@matk", SqlDbType.VarChar,7));
@@ -31,7 +31,7 @@ namespace DAO
         // Bao cao so tien gui
         public static DataTable SoTienGui( string matk, DateTime ngaybd, DateTime ngaykt)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_SoTienGui", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@matk", SqlDbType.VarChar, 7));
@@ -52,7 +52,7 @@ namespace DAO
         // BACKUP CSDL
         public static void backup(string duongdan)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_BackUpCSDL", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 

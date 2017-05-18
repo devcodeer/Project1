@@ -82,7 +82,7 @@ namespace KETOANVONBANGTIEN.ChungTu
         }
             private void LoadLookUpEditTienTe()
             {
-                lookUpEditLoaiTien.Properties.DataSource = TienTe_BUS.LoadDanhMucTienTe();
+                lookUpEditLoaiTien.Properties.DataSource = TienTe_BUS.loadDanhMucTienTe();
                 lookUpEditLoaiTien.Properties.DisplayMember = "MaTien";
                 lookUpEditLoaiTien.Properties.ValueMember = "MaTien";
             }
@@ -90,11 +90,11 @@ namespace KETOANVONBANGTIEN.ChungTu
             private void LoadLookUpEditTkNo_Co()
             {
                 
-                repositoryItemLookUpEditTkNo.DataSource = TaiKhoan_BUS.LoadDanhMucTaiKhoan();
+                repositoryItemLookUpEditTkNo.DataSource = TaiKhoan_BUS.loadListTaiKhoanKeToan();
                 repositoryItemLookUpEditTkNo.DisplayMember = "MaTk";
                 repositoryItemLookUpEditTkNo.ValueMember = "MaTk";
 
-                repositoryItemLookUpEditTkCo.DataSource = TaiKhoan_BUS.LoadDanhMucTaiKhoan();
+                repositoryItemLookUpEditTkCo.DataSource = TaiKhoan_BUS.loadListTaiKhoanKeToan();
                 repositoryItemLookUpEditTkCo.DisplayMember = "MaTk";
                 repositoryItemLookUpEditTkCo.ValueMember = "MaTk";
             
@@ -102,7 +102,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
             private void LoadlookUpEditLoaiDoiTuong()
             {
-                DataTable dt = NhomDt_BUS.LoadDanhSachNhomDt();
+                DataTable dt = NhomDoiTuong_BUS.loadDanhSachNhomDoiTuong();
                 
                 dt.Rows.Add("NV", "Nhân Viên");
 
@@ -114,7 +114,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             }
             private void LoadlookupeditDT()
             {
-                lookUpEditDT.Properties.DataSource = DoiTuong_BUS.LoadDsKhachHang_Ncc_NhanVien();
+                lookUpEditDT.Properties.DataSource = DoiTuong_BUS.loadListCustomerProviderEmployee();
                 lookUpEditDT.Properties.DisplayMember = "Ma";
                 lookUpEditDT.Properties.ValueMember = "Ma";
             }
@@ -125,14 +125,14 @@ namespace KETOANVONBANGTIEN.ChungTu
 
                 if (lookUpEditLoaiDt.GetColumnValue("MaNhom").ToString() == "NV")
                 {
-                    lookUpEditDT.Properties.DataSource = NhanVien_BUS.LoadDanhSachNhanVien();
+                    lookUpEditDT.Properties.DataSource = NhanVien_BUS.loadListEmployee();
                     lookUpEditDT.Properties.DisplayMember = "Ma";
                     lookUpEditDT.Properties.ValueMember = "Ma";
                 }
 
                 else
                 {
-                    lookUpEditDT.Properties.DataSource = DoiTuong_BUS.LoadDsKh_Ncc(lookUpEditLoaiDt.GetColumnValue("MaNhom").ToString());
+                    lookUpEditDT.Properties.DataSource = DoiTuong_BUS.loadListCustomerOrProvider(lookUpEditLoaiDt.GetColumnValue("MaNhom").ToString());
                     lookUpEditDT.Properties.DisplayMember = "Ma";
                     lookUpEditDT.Properties.ValueMember = "Ma";
                 }
@@ -254,7 +254,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                         sotien = sotiennt * decimal.Parse(tygia.ToString());
                     }
 
-                    ChiTietCT_DTO ct = new ChiTietCT_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
+                    ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
                     ChiTietCT_BUS.Them1ChiTietCt(ct);
                 }                 
             
@@ -302,7 +302,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                             sotiennt = Decimal.Parse(GridViewChiTiet.GetRowCellDisplayText(i, colSoTienNt).ToString());
                             sotien = sotiennt * decimal.Parse(tygia.ToString());
                         }
-                        ChiTietCT_DTO ct = new ChiTietCT_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
+                        ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
                         ChiTietCT_BUS.SuaChiTietCt(id, ct);
                     } 
                     for (int i = sodonggoc-1; i < (rowcount -1); i++) 
@@ -320,7 +320,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                             sotiennt = Decimal.Parse(GridViewChiTiet.GetRowCellDisplayText(i, colSoTienNt).ToString());
                             sotien = sotiennt * decimal.Parse(tygia.ToString());
                         }
-                        ChiTietCT_DTO ct = new ChiTietCT_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
+                        ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
                         ChiTietCT_BUS.Them1ChiTietCt(ct);                        
                     }
                 }
@@ -483,7 +483,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                     rpt.TkCo.Value = tkco;
                     rpt.TkCo.Visible = false;
 
-                    rpt.ShowPreview();
+                 //   rpt.ShowPreview();
                 }
 
                 else if (tentien == "USD")
@@ -517,7 +517,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                     rpt1.TkNo.Visible = false;
                     rpt1.TkCo.Value = tkco;
                     rpt1.TkCo.Visible = false;
-                    rpt1.ShowPreview();
+                   // rpt1.ShowPreview();
                 }
                                 
             }

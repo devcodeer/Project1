@@ -30,7 +30,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void btnLuuVaDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DataTable dt = NGUOI_DUNG_BUS.KiemTraTk(txtTenTk.Text);
+            DataTable dt = NguoiDung_BUS.checkUsernameIsExist(txtTenTk.Text);
             if (dt.Rows.Count != 0)
             {
                 MessageBox.Show("Tên tài khoản đã tồn tại !");
@@ -75,7 +75,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             int quyen = int.Parse(lookUpEditQuyen.GetColumnValue("Ma").ToString()) ;
             
             NguoiDung_DTO nd= new NguoiDung_DTO(tentk,matkhau,quyen);
-            NGUOI_DUNG_BUS.ThemNguoiDung(nd);
+            NguoiDung_BUS.insertUser(nd);
         }
 
         private void LoadQuyen()

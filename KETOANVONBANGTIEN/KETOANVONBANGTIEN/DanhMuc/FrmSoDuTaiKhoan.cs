@@ -30,7 +30,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
         }
         private void LoadDuLieu()
         {
-            grvDanhMucTaiKhoan.DataSource = TaiKhoan_BUS.LoadDanhMucTaiKhoan();
+            grvDanhMucTaiKhoan.DataSource = TaiKhoan_BUS.loadListTaiKhoanKeToan();
         }
 
         private void grvDanhMucTaiKhoan_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            DataTable dt = TaiKhoan_BUS.KiemTraTk(txtMaTk.Text);
+            DataTable dt = TaiKhoan_BUS.kiemTraLaTaiKhoanTongHop(txtMaTk.Text);
             if (dt.Rows.Count == 0)
             {
 
@@ -63,7 +63,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
                     decimal duco = decimal.Parse(txtDuCo.Text.ToString());
                     decimal dunont = decimal.Parse(txtDuNoNt.Text.ToString());
                     decimal ducont = decimal.Parse(txtDuCoNt.Text.ToString());
-                    TaiKhoan_BUS.UpdateSoDu1TaiKhoan(matk, dunont, ducont, duno, duco);
+                    TaiKhoan_BUS.capNhatSoDuTaiKhoan(matk, dunont, ducont, duno, duco);
                     MessageBox.Show("Cập nhật thành công !");
                     LoadDuLieu();
 

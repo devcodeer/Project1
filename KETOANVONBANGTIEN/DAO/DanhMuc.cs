@@ -7,22 +7,14 @@ using System.Data.SqlClient;
 using DTO;
 namespace DAO
 {
-    public class Ketnoi
-    {
-        public static SqlConnection Hamketnoi()
-        {            
-            SqlConnection cnn = new SqlConnection("Server =ALIENWARE-PC; uid=ailien; pwd=anhhoang; database=KTVBT");
-            return cnn;
-        }
-    }
+   
 
-    public class NGUOI_DUNG_DAO
+    public class NguoiDung_DAO
     {
-        //Dang nhap
-        public static DataTable KiemTraDangNhap(string tentk, string matkhau)
+        public static DataTable doLogin(string tentk, string matkhau)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("sp_NguoiDung_Select", cnn);
+            SqlConnection connection = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("sp_NguoiDung_Select", connection);
             cmd.CommandType = CommandType.StoredProcedure;
 
             // Khai bao bien
@@ -39,10 +31,10 @@ namespace DAO
         }
 
         //Load
-        public static DataTable DanhSachNguoiDung()
+        public static DataTable getListUser()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
-            SqlCommand cmd = new SqlCommand("sp_NguoiDung_SelectAll", cnn);
+            SqlConnection connection = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("sp_NguoiDung_SelectAll", connection);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -51,9 +43,9 @@ namespace DAO
         }
 
         //Kiem tra tài khoản đã tồn tại chưa
-        public static DataTable KiemTraTk(string tentk)
+        public static DataTable checkUsernameIsExist(string tentk)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NguoiDung_KiemTra", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -70,9 +62,9 @@ namespace DAO
 
 
         //Them nguoi dung
-        public static void ThemNguoiDung(NguoiDung_DTO nd)
+        public static void insertUser(NguoiDung_DTO nd)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NguoiDung_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -89,9 +81,9 @@ namespace DAO
         }
 
         //Xoa nguoi dung
-        public static void XoaNguoiDung(string tentk)
+        public static void deleteUser(string tentk)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NguoiDung_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -104,9 +96,9 @@ namespace DAO
         }
 
         //Doi mat khau
-        public static void DoiMatKhau(string tentk, string matkhau)
+        public static void updatePassword(string tentk, string matkhau)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NguoiDung_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -124,10 +116,10 @@ namespace DAO
 
     public class DoiTuong_DAO
     {
-        // Load danh sach tat ca khach hang, nha cung cap
-        public static DataTable LoadDSDoiTuong()
+        // Load danh sach tat ca DOI TUONG: khach hang, nha cung cap
+        public static DataTable loadListObjects()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_DoiTuong_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -137,9 +129,9 @@ namespace DAO
 
         }
         // Load danh sach khách hàng hoặc nhà cung cấp...
-        public static DataTable LoadDsKh_Ncc( string manhom)
+        public static DataTable loadListCustomerOrProvider(string manhom)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_KhachHangOrNcc_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -153,9 +145,9 @@ namespace DAO
         }
 
         // Load danh sach khách hàng , nhà cung câp, nhân viên
-        public static DataTable LoadDSKhachHang_Ncc_NhanVien()
+        public static DataTable loadListCustomerProviderEmployee()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_KhachHangNccNhanVien_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -166,9 +158,9 @@ namespace DAO
         }
 
         // Chon doi tuong theo ma
-        public static DataTable ChonDtTheoMa(string madt)
+        public static DataTable getObjectById(string madt)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_KhachHangNccNhanVien_SelectOneTheoMadt", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -182,9 +174,9 @@ namespace DAO
         }
 
         // kiem tra doi tuong truoc khi xoa
-        public static DataTable kiemtra( string madt)
+        public static DataTable kiemTraChungTuCuaDoiTuong( string madt)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_CHUNGTU_SelectTheoMadt", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@madt", SqlDbType.VarChar, 10));
@@ -197,9 +189,9 @@ namespace DAO
         }
 
         // Thêm mới 1 đối tượng
-        public static void Them1doituong(DoiTuong_DTO doituong)
+        public static void insertObject(DoiTuong_DTO doituong)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_DoiTuong_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -233,9 +225,9 @@ namespace DAO
 
         // Xóa 1 đối tượng
 
-        public static void Xoa1DoiTuong( string madt)
+        public static void deleteObject( string madt)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_DoiTuong_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -248,9 +240,9 @@ namespace DAO
         }
 
         // Update 1 đối tượng
-        public static void Sua1doituong(string magoc,DoiTuong_DTO doituong)
+        public static void updateObject(string magoc,DoiTuong_DTO doituong)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_DoiTuong_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -286,12 +278,12 @@ namespace DAO
       
     }
 
-    public class NhomDt_DAO
+    public class NhomDoiTuong_DAO
     {
         // Load danh sach nhóm đối tượng
-        public static DataTable LoadDSNhomDt()
+        public static DataTable loadDanhSachNhomDoiTuong()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhomDt_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -302,9 +294,9 @@ namespace DAO
         }
     
         // Thêm mới nhóm đối tượng
-        public static void Them1NhomDoiTuong(NhomDt_DTO nhomdt)
+        public static void insertNhomDoiTuong(NhomDoiTuong_DTO nhomdt)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhomDt_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -323,9 +315,9 @@ namespace DAO
         }
 
         // Sửa nhóm đối tượng
-        public static void Sua1NhomDoiTuong(string magoc, NhomDt_DTO nhomdt)
+        public static void updateNhomDoiTuong(string magoc, NhomDoiTuong_DTO nhomdt)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhomDt_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -346,9 +338,9 @@ namespace DAO
         }
 
         // Xóa 
-        public static void Xoa1NhomDoiTuong(string manhom)
+        public static void deleteNhomDoiTuong(string manhom)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhomDt_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -365,22 +357,21 @@ namespace DAO
     public class NhanVien_DAO
     { 
         // Load danh sách nhân viên
-        public static DataTable LoadDSNhanVien()
+        public static DataTable loadListEmployee()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhanVien_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
-
         }
 
         // Load danh sách nhân viên theo phong ban
-        public static DataTable LoadDanhSachNhanVienTheoPb( string mapb)
+        public static DataTable loadEmployeeByDepartmentId( string mapb)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhanVienTheoPb_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@mapb", SqlDbType.VarChar, 10));
@@ -393,9 +384,9 @@ namespace DAO
         }
 
         // kiem tra nhan vien truoc khi xoa
-        public static DataTable kiemtra(string madt)
+        public static DataTable kiemTraChungTuCuaNhanVien(string madt)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_CHUNGTU_SelectTheoMadt", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@madt", SqlDbType.VarChar, 10));
@@ -408,9 +399,9 @@ namespace DAO
         }
 
         // Thêm mới
-        public static void Them1NhanVien(NhanVien_DTO nhanvien)
+        public static void insertEmployee(NhanVien_DTO nhanvien)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhanVien_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -440,9 +431,9 @@ namespace DAO
         }
 
         // Xóa 
-        public static void Xoa1Nhanvien(string manv)
+        public static void deleteEmployee(string manv)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhanVien_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -455,9 +446,9 @@ namespace DAO
         }
 
         // Sửa
-        public static void Sua1NhanVien(string magoc, NhanVien_DTO nhanvien)
+        public static void updateEmployee(string magoc, NhanVien_DTO nhanvien)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NhanVien_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -491,9 +482,9 @@ namespace DAO
     public class NganHang_DAO
     {
         //Load danh sách ngân hàng
-        public static DataTable LoadDSNganHang()
+        public static DataTable loadListBank()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NganHang_SelectAll",cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -503,9 +494,9 @@ namespace DAO
         }
 
         //Thêm mới
-        public static void Them1NganHang(NganHang_DTO nganhang)
+        public static void insertBank(NganHang_DTO nganhang)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NganHang_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -524,9 +515,9 @@ namespace DAO
         }
 
         //Xóa 
-        public static void Xoa1NganHang(string manh)
+        public static void deleteBankById(string manh)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NganHang_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -539,9 +530,9 @@ namespace DAO
         }
 
         //Update
-        public static void Sua1NganHang(string magoc,NganHang_DTO nganhang)
+        public static void updateBank(string magoc,NganHang_DTO nganhang)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_NganHang_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -566,9 +557,9 @@ namespace DAO
     public class PhongBan_DAO
     { 
         //Load danh mục phòng ban
-        public static DataTable LoadDSPhongBan()
+        public static DataTable loadListDepartment()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_PhongBan_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -578,9 +569,9 @@ namespace DAO
         }
 
         // Thêm mới phòng ban
-        public static void Them1PhongBan(PhongBan_DTO phongban)
+        public static void insertDepartment(PhongBan_DTO phongban)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_PhongBan_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -603,9 +594,9 @@ namespace DAO
         }
 
         // Sửa
-        public static void Sua1PhongBan( string magoc,PhongBan_DTO phongban)
+        public static void updateDepartment( string magoc,PhongBan_DTO phongban)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_PhongBan_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -631,9 +622,9 @@ namespace DAO
 
 
         // Xóa 
-        public static void Xoa1PhongBan(string mapb)
+        public static void deleteDepartmentById(string mapb)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_PhongBan_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -649,9 +640,9 @@ namespace DAO
     public class TienTe_DAO
     {
         //Load danh mục 
-        public static DataTable LoadDMTienTe()
+        public static DataTable loadDanhMucTienTe()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TienTe_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -661,9 +652,9 @@ namespace DAO
         }
 
         // Thêm mới 
-        public static void Them1LoaiTien(TienTe_DTO tiente)
+        public static void insertCurrency(TienTe_DTO tiente)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TienTe_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
                         
@@ -679,9 +670,9 @@ namespace DAO
         }
 
         // Sửa
-        public static void Sua1LoaiTien(string magoc ,TienTe_DTO tiente)
+        public static void updateCurrency(string magoc ,TienTe_DTO tiente)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TienTe_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -699,9 +690,9 @@ namespace DAO
         }
 
         // Xóa 
-        public static void Xoa1LoaiTien(string matien)
+        public static void deleteCurrency(string matien)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TienTe_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -717,9 +708,9 @@ namespace DAO
     public class TaiKhoanNganHang_DAO
     {
         //Load danh mục tài khoản ngân hàng
-        public static DataTable LoadDMTaiKhoanNganHang()
+        public static DataTable loadDanhMucTaiKhoanNganHang()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoanNganHang_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -729,9 +720,9 @@ namespace DAO
         }
 
         // kiem tra tai khoan truoc khi xoa
-        public static DataTable kiemtra(string sotknh)
+        public static DataTable kiemTraChungTuCuaTaiKhoanNganHang(string sotknh)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_CHUNGTU_SelectTheoTknh", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@tknh", SqlDbType.VarChar, 20));
@@ -743,9 +734,9 @@ namespace DAO
         }
 
         //Lấy 1 tài khoản
-        public static DataTable Lay1Tk( string sotk)
+        public static DataTable loadBankAccountInfo(string sotk)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoanNganHang_SelectOne", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@sotk", SqlDbType.VarChar, 20));
@@ -757,9 +748,9 @@ namespace DAO
         }
 
         // Thêm mới tài khoản ngân hàng
-        public static void Them1TaiKhoanNganHang( TaiKhoanNganHang_DTO tknh)
+        public static void insertBankAccount( TaiKhoanNganHang_DTO tknh)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoanNganHang_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
                   
@@ -779,9 +770,9 @@ namespace DAO
         }
 
         // Sửa
-        public static void Sua1TaiKhoanNganHang(string sotknhgoc,TaiKhoanNganHang_DTO tknh)
+        public static void updateBankAccount(string sotknhgoc,TaiKhoanNganHang_DTO tknh)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoanNganHang_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -803,9 +794,9 @@ namespace DAO
         }
 
         // Xóa 
-        public static void Xoa1TaiKhoanNganHang(string sotknh)
+        public static void deleteBankAccount(string sotknh)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoanNganHang_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -821,9 +812,9 @@ namespace DAO
     public class TaiKhoan_DAO
     {
         //Load danh mục tài khoản kế toán
-        public static DataTable LoadDMTaiKhoan()
+        public static DataTable loadListTaiKhoanKeToan()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoan_SelectAll", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -833,9 +824,9 @@ namespace DAO
         }
 
         // tk tien mặt
-        public static DataTable LoadTkTienMat()
+        public static DataTable loadListTaiKhoanVaTienMat()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoan_SelectTkTienMat", cnn);
             cmd.CommandType = CommandType.StoredProcedure;           
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -845,9 +836,9 @@ namespace DAO
         }
 
         // tk tien gui
-        public static DataTable LoadTkTienGui()
+        public static DataTable loadTaiKhoanTienGui()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoan_SelectTkTienGui", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -857,9 +848,9 @@ namespace DAO
         } 
 
         // Kiem tra tai khoan la tk tong hop 
-        public static DataTable KiemTraTk(string matk)
+        public static DataTable kiemTraLaTaiKhoanTongHop(string matk)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoanCapCha_Select", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@matk", SqlDbType.VarChar, 7));
@@ -871,9 +862,9 @@ namespace DAO
         } 
 
         // Update so du
-        public static void UpdateSoDu1TaiKhoan(string matk, decimal dunont, decimal ducont, decimal duno, decimal duco)
+        public static void capNhatSoDuTaiKhoan(string matk, decimal dunont, decimal ducont, decimal duno, decimal duco)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_SoDuTaiKhoan_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -897,9 +888,9 @@ namespace DAO
         }
 
         //Thêm mới tài khoản kế toán
-        public static void Them1TaiKhoan(TaiKhoan_DTO taikhoan)
+        public static void insertAccount(TaiKhoan_DTO taikhoan)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoan_Insert", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -925,9 +916,9 @@ namespace DAO
         }
 
         //Xóa 1 tài khoản
-        public static void Xoa1TaiKhoan(String matk)
+        public static void deleteAccount(String matk)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoan_Delete", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -940,9 +931,9 @@ namespace DAO
         }
 
         //Sửa 1 tài khoản
-        public static void Sua1TaiKhoan(string magoc, TaiKhoan_DTO taikhoan)
+        public static void updateAccount(string magoc, TaiKhoan_DTO taikhoan)
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TaiKhoan_Update", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -973,9 +964,9 @@ namespace DAO
 
     public class PhanTich_DAO
     {
-        public static DataTable PhanTichThuChi()
+        public static DataTable loadPhanTichThuChi()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_PhanTich_ThuChi", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -985,7 +976,7 @@ namespace DAO
         }
         public static DataTable TinhTienTon()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_TinhTienTon", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -996,7 +987,7 @@ namespace DAO
 
         public static DataTable ThuChiCacThang()
         {
-            SqlConnection cnn = Ketnoi.Hamketnoi();
+            SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_ThuChiCacThang", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);

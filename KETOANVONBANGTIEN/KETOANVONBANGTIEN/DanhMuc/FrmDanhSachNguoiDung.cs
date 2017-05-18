@@ -32,7 +32,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void LoadGridView()
         {
-            grvDanhMucNguoiDung.DataSource = NGUOI_DUNG_BUS.DanhSachNguoiDung();
+            grvDanhMucNguoiDung.DataSource = NguoiDung_BUS.getListUser();
         }
 
         private void btnNap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -43,7 +43,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string matk = gridViewDanhSachNguoiDung.GetRowCellValue(gridViewDanhSachNguoiDung.FocusedRowHandle,colTenTk).ToString();
-            NGUOI_DUNG_BUS.XoaNguoiDung(matk);
+            NguoiDung_BUS.deleteUser(matk);
             LoadGridView();
         }
     }

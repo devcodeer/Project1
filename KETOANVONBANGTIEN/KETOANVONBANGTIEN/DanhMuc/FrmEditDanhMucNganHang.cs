@@ -78,7 +78,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string manh =  txtMaNh.Text;
             string tennh = txtTenNh.Text;
             NganHang_DTO obj = new NganHang_DTO(manh, tennh);
-            NganHang_BUS.ThemMoi1NganHang(obj);
+            NganHang_BUS.insertBank(obj);
         }
 
         private void EditNganHang()
@@ -86,7 +86,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string manh = txtMaNh.Text;
             string tennh = txtTenNh.Text;
             NganHang_DTO obj1 = new NganHang_DTO(manh, tennh);
-            NganHang_BUS.Sua1NganHang(obj.MaNh, obj1);
+            NganHang_BUS.updateBank(obj.MaNh, obj1);
         }
 
         private void ResetControl()

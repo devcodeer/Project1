@@ -29,7 +29,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void loadlookUpEditNganHang()
         {
-            lookUpEditNganHang.Properties.DataSource = NganHang_BUS.LoadDanhSachNganHang();
+            lookUpEditNganHang.Properties.DataSource = NganHang_BUS.loadListBank();
             lookUpEditNganHang.Properties.DisplayMember = "MaNh";
             lookUpEditNganHang.Properties.ValueMember = "MaNh";
         }
@@ -90,7 +90,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string chinhanh = txtChiNhanh.Text;
             string manh = lookUpEditNganHang.GetColumnValue("MaNh").ToString();
             TaiKhoanNganHang_DTO obj = new TaiKhoanNganHang_DTO(sotknh, tentknh, manh, chinhanh);
-            TaiKhoanNganHang_BUS.Them1TaiKhoanNganHang(obj);
+            TaiKhoanNganHang_BUS.insertBankAccount(obj);
         }
 
         private void Sua()
@@ -100,7 +100,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string chinhanh = txtChiNhanh.Text;
             string manh = lookUpEditNganHang.GetColumnValue("MaNh").ToString();
             TaiKhoanNganHang_DTO tknh = new TaiKhoanNganHang_DTO(sotknh, tentknh, manh, chinhanh);
-            TaiKhoanNganHang_BUS.Sua1TaiKhoanNganHang(obj.SoTknh, tknh);
+            TaiKhoanNganHang_BUS.updateBankAccount(obj.SoTknh, tknh);
         }
 
         private void ResetControl()

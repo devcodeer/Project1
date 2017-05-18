@@ -136,7 +136,7 @@ namespace DTO
 
     }
 
-    public class ChiTietCT_DTO
+    public class ChiTietChungTu_DTO
     {
         private Int32 _id;
         public Int32 Id
@@ -188,10 +188,10 @@ namespace DTO
             set { _soTienNT = value; }
         }
 
-        public ChiTietCT_DTO()
+        public ChiTietChungTu_DTO()
         { }
 
-        public ChiTietCT_DTO(string soct, string tkno, string tkco, string noidung, Decimal sotiennt, decimal sotien)
+        public ChiTietChungTu_DTO(string soct, string tkno, string tkco, string noidung, Decimal sotiennt, decimal sotien)
         {
             SoCt = soct;
             TkNo = tkno;
