@@ -31,7 +31,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
         }
         private void LoadGirdView()
         {
-            grvDanhMucTienTe.DataSource = TienTe_BUS.LoadDanhMucTienTe();
+            grvDanhMucTienTe.DataSource = TienTe_BUS.loadDanhMucTienTe();
         }
 
         private void btnNap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -45,7 +45,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             {
                 try
                 {
-                    TienTe_BUS.Xoa1LoaiTien(gridViewDanhMucTienTe.GetRowCellValue(gridViewDanhMucTienTe.FocusedRowHandle, colMatien).ToString());
+                    TienTe_BUS.deleteCurrency(gridViewDanhMucTienTe.GetRowCellValue(gridViewDanhMucTienTe.FocusedRowHandle, colMatien).ToString());
                     LoadGirdView();                    
                 }
                 catch

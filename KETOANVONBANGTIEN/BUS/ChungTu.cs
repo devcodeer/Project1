@@ -55,33 +55,33 @@ namespace BUS
         //Load
         public static DataTable LoadChiTietCT(string soct)
         {
-            return ChiTietCT_DAO.LoadChiTietCt(soct); ;
+            return ChiTietChungTu_DAO.LoadChiTietCt(soct); ;
 
         }
 
           // Load chi tiết chứng từ lên giấy báo ngân hàng
         public static DataTable LoadChiTietCtLenGB(string soct)
         {
-            return ChiTietCT_DAO.LoadChiTietCtLenGB(soct);
+            return ChiTietChungTu_DAO.LoadChiTietCtLenGB(soct);
         }
 
       
         // Thêm
-        public static void Them1ChiTietCt(ChiTietCT_DTO ct)
+        public static void Them1ChiTietCt(ChiTietChungTu_DTO ct)
         {
-            ChiTietCT_DAO.ThemChiTietCt(ct);
+            ChiTietChungTu_DAO.ThemChiTietCt(ct);
         }
 
         // Sửa
-        public static void SuaChiTietCt(int magoc,ChiTietCT_DTO ct)
+        public static void SuaChiTietCt(int magoc,ChiTietChungTu_DTO ct)
         {
-            ChiTietCT_DAO.SuaChiTietCt(magoc, ct);
+            ChiTietChungTu_DAO.SuaChiTietCt(magoc, ct);
         }
 
         // Xoa Chi tiet chung tu
         public static void XoaChiTietCt(int id)
         {
-            ChiTietCT_DAO.XoaChiTietCt(id);
+            ChiTietChungTu_DAO.XoaChiTietCt(id);
         }
     
     }

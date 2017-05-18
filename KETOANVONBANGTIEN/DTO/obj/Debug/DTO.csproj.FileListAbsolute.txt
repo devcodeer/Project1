@@ -22,3 +22,8 @@ C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DTO\bin\Debug\DTO.
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DTO\bin\Debug\DTO.pdb
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DTO\obj\Debug\DTO.dll
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DTO\obj\Debug\DTO.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DTO\bin\Debug\DTO.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DTO\bin\Debug\DTO.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DTO\obj\Debug\DTO.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DTO\obj\Debug\DTO.pdb

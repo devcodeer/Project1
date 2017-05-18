@@ -19,7 +19,7 @@ namespace KETOANVONBANGTIEN.BaoCao.BaoCaoDanhSachNhanVien
 
         private void FrmThamSoBaoCao_Load(object sender, EventArgs e)
         {
-            DataTable dt = PhongBan_BUS.LoadDanhSachPhongBan();
+            DataTable dt = PhongBan_BUS.loadListDepartment();
             dt.Rows.Add("All", "Tất cả phòng ban");
             lookUpEditPhongBan.Properties.DataSource = dt;
             lookUpEditPhongBan.Properties.DisplayMember = ("TenPb");
@@ -42,16 +42,16 @@ namespace KETOANVONBANGTIEN.BaoCao.BaoCaoDanhSachNhanVien
                 rptDanhSachNhanVien rpt = new rptDanhSachNhanVien();
                 if (mapb == "All")
                 {
-                    rpt.DataSource = NhanVien_BUS.LoadDanhSachNhanVien();
+                    rpt.DataSource = NhanVien_BUS.loadListEmployee();
                     rpt.luachon.LuaChon = "nhân viên ";
                 }
                 else
                 {
-                    rpt.DataSource = NhanVien_BUS.LoadDanhSachNhanVienTheoPb(mapb);
+                    rpt.DataSource = NhanVien_BUS.loadEmployeeByDepartmentId(mapb);
                     rpt.luachon.LuaChon = "nhân viên phòng " + tenpb;
                 }
                 rpt.BindData();
-                rpt.ShowPreview();
+              //  rpt.ShowPreview();
                 
             }
             catch

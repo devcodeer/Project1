@@ -40,7 +40,7 @@ namespace KETOANVONBANGTIEN.BaoCao.SoTienGui
                 rpt.parameterNgayKt.Visible = false;
                 rpt.DataSource = BaoCao_BUS.SoTienGui(matk,ngaybd, ngaykt);
                 rpt.DataMember = "Table";
-                rpt.ShowPreview();
+              //  rpt.ShowPreview();
 
             }
             catch
@@ -51,7 +51,7 @@ namespace KETOANVONBANGTIEN.BaoCao.SoTienGui
 
         private void FrmThamSoBaoCao_Load(object sender, EventArgs e)
         {
-            lookUpEditTk.Properties.DataSource = TaiKhoan_BUS.LoadTkTienGui();
+            lookUpEditTk.Properties.DataSource = TaiKhoan_BUS.loadTaiKhoanTienGui();
             lookUpEditTk.Properties.DisplayMember = "MaTk";
             lookUpEditTk.Properties.ValueMember = "MaTk";
         }

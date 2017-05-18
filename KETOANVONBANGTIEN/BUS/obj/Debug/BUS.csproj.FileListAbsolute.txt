@@ -43,3 +43,12 @@ C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.dll
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\bin\Debug\BUS.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\bin\Debug\DAO.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\bin\Debug\DTO.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\BUS\obj\Debug\BUS.pdb

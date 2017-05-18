@@ -37,7 +37,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             {
                 try
                 {
-                    NGUOI_DUNG_BUS.DoiMatKhau(tentk, txtMatKhauMoi.Text);
+                    NguoiDung_BUS.updatePassword(tentk, txtMatKhauMoi.Text);
                     MessageBox.Show("Đổi mật khẩu thành công!");
                 }
                 catch

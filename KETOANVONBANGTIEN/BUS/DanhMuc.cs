@@ -10,187 +10,187 @@ namespace BUS
     public class DoiTuong_BUS
     {
         //Load danh sach doi tuong
-        public static DataTable LoadDanhSachDoiTuong()
+        public static DataTable loadListObjects()
         {
-            return DoiTuong_DAO.LoadDSDoiTuong();
+            return DoiTuong_DAO.loadListObjects();
         }   
 
         //Load danh sach kh hoặc ncc..
-        public static DataTable LoadDsKh_Ncc(string manhom)
+        public static DataTable loadListCustomerOrProvider(string manhom)
         {
-            return DoiTuong_DAO.LoadDsKh_Ncc(manhom);
+            return DoiTuong_DAO.loadListCustomerOrProvider(manhom);
         }
 
         //Load danh sach khách hàng, nhà cung cấp, nhân viên
-        public static DataTable LoadDsKhachHang_Ncc_NhanVien()
+        public static DataTable loadListCustomerProviderEmployee()
         {
-            return DoiTuong_DAO.LoadDSKhachHang_Ncc_NhanVien();
+            return DoiTuong_DAO.loadListCustomerProviderEmployee();
         }
 
         
         // Chon doi tuong theo ma
-        public static DataTable ChonDtTheoMa(string madt)
+        public static DataTable getObjectById(string madt)
         {
-            return DoiTuong_DAO.ChonDtTheoMa(madt);
+            return DoiTuong_DAO.getObjectById(madt);
         }
 
          // kiem tra doi tuong truoc khi xoa
-        public static DataTable kiemtra(string madt)
+        public static DataTable kiemTraChungTuCuaDoiTuong(string madt)
         {
-            return DoiTuong_DAO.kiemtra(madt);
+            return DoiTuong_DAO.kiemTraChungTuCuaDoiTuong(madt);
         }
 
         //Them 1 doi tuong
-        public static void Them1DoiTuong(DoiTuong_DTO dt)
+        public static void insertObject(DoiTuong_DTO dt)
         {
-            DoiTuong_DAO.Them1doituong(dt);
+            DoiTuong_DAO.insertObject(dt);
         }
 
         //Xóa 1 đối tượng
-        public static void Xoa1DoiTuong(string madt)
+        public static void deleteObject(string madt)
         {
-            DoiTuong_DAO.Xoa1DoiTuong(madt);
+            DoiTuong_DAO.deleteObject(madt);
         }
 
         //Sửa 1 đối tượng
-        public static void Sua1DoiTuong(string magoc,DoiTuong_DTO dt)
+        public static void updateObject(string magoc,DoiTuong_DTO dt)
         {
-            DoiTuong_DAO.Sua1doituong(magoc,dt);
+            DoiTuong_DAO.updateObject(magoc,dt);
         }
     }
 
-    public class NhomDt_BUS
+    public class NhomDoiTuong_BUS
     {
         //Load danh sach nhóm đối tượng
-        public static DataTable LoadDanhSachNhomDt()
+        public static DataTable loadDanhSachNhomDoiTuong()
         {
-            return NhomDt_DAO.LoadDSNhomDt();
+            return NhomDoiTuong_DAO.loadDanhSachNhomDoiTuong();
         }
 
         //Thêm mới
-        public static void Them1NhomDoiTuong(NhomDt_DTO nhomdt)
+        public static void insertNhomDoiTuong(NhomDoiTuong_DTO nhomdt)
         {
-            NhomDt_DAO.Them1NhomDoiTuong(nhomdt);
+            NhomDoiTuong_DAO.insertNhomDoiTuong(nhomdt);
         }
 
          // Sửa nhóm đối tượng
-        public static void Sua1NhomDoiTuong(string magoc, NhomDt_DTO nhomdt)
+        public static void updateNhomDoiTuong(string magoc, NhomDoiTuong_DTO nhomdt)
         {
-            NhomDt_DAO.Sua1NhomDoiTuong(magoc, nhomdt);
+            NhomDoiTuong_DAO.updateNhomDoiTuong(magoc, nhomdt);
         }
 
          // Xóa 
-        public static void Xoa1NhomDoiTuong(string manhom)
+        public static void deleteNhomDoiTuong(string manhom)
         {
-            NhomDt_DAO.Xoa1NhomDoiTuong(manhom);
+            NhomDoiTuong_DAO.deleteNhomDoiTuong(manhom);
         }
     }
 
-    public class NGUOI_DUNG_BUS
+    public class NguoiDung_BUS
     {
         
       //Dang nhap
-        public static DataTable KiemTraDangNhap(string tentk, string matkhau)
+        public static DataTable doLogin(string tentk, string matkhau)
         {
-            return NGUOI_DUNG_DAO.KiemTraDangNhap(tentk, matkhau);
+            return NguoiDung_DAO.doLogin(tentk, matkhau);
         }
 
         //Load
-        public static DataTable DanhSachNguoiDung()
+        public static DataTable getListUser()
         {
-            return NGUOI_DUNG_DAO.DanhSachNguoiDung();
+            return NguoiDung_DAO.getListUser();
         }
 
          //Kiem tra tài khoản đã tồn tại chưa
-        public static DataTable KiemTraTk(string tentk)
+        public static DataTable checkUsernameIsExist(string tentk)
         {
-            return NGUOI_DUNG_DAO.KiemTraTk(tentk);
+            return NguoiDung_DAO.checkUsernameIsExist(tentk);
         }
         //Them nguoi dung
-        public static void ThemNguoiDung(NguoiDung_DTO nd)
+        public static void insertUser(NguoiDung_DTO nd)
         {
-            NGUOI_DUNG_DAO.ThemNguoiDung(nd);
+            NguoiDung_DAO.insertUser(nd);
         }
 
         //Xoa nguoi dung
-        public static void XoaNguoiDung(string tentk)
+        public static void deleteUser(string tentk)
         {
-            NGUOI_DUNG_DAO.XoaNguoiDung(tentk);
+            NguoiDung_DAO.deleteUser(tentk);
         }
          //Doi mat khau
-        public static void DoiMatKhau(string tentk, string matkhau)
+        public static void updatePassword(string tentk, string matkhau)
         {
-            NGUOI_DUNG_DAO.DoiMatKhau(tentk, matkhau);
+            NguoiDung_DAO.updatePassword(tentk, matkhau);
         }
     }
 
     public class NhanVien_BUS
     { 
         //Load danh sách nhân viên
-        public static DataTable LoadDanhSachNhanVien()
+        public static DataTable loadListEmployee()
         {
-            return NhanVien_DAO.LoadDSNhanVien();
+            return NhanVien_DAO.loadListEmployee();
         }
         
         // Load danh sach nhan vien theo phong ban
 
-        public static DataTable LoadDanhSachNhanVienTheoPb(string mapb)
+        public static DataTable loadEmployeeByDepartmentId(string mapb)
         {
 
-            return NhanVien_DAO.LoadDanhSachNhanVienTheoPb(mapb);
+            return NhanVien_DAO.loadEmployeeByDepartmentId(mapb);
 
         }
 
          // kiem tra nhan vien truoc khi xoa
-        public static DataTable kiemtra(string madt)
+        public static DataTable kiemTraChungTuCuaNhanVien(string madt)
         {
-           return NhanVien_DAO.kiemtra(madt); 
+           return NhanVien_DAO.kiemTraChungTuCuaNhanVien(madt); 
         }
 
         //Thêm mới
-        public static void ThemMoiNhanVien(NhanVien_DTO nv)
+        public static void insertEmployee(NhanVien_DTO nv)
         {
-            NhanVien_DAO.Them1NhanVien(nv);
+            NhanVien_DAO.insertEmployee(nv);
         }
 
         //Xóa
-        public static void XoaNhanVien(string manv)
+        public static void deleteEmployee(string manv)
         {
-            NhanVien_DAO.Xoa1Nhanvien(manv);
+            NhanVien_DAO.deleteEmployee(manv);
         }
 
         //Sửa
-        public static void SuaNhanVien(string magoc, NhanVien_DTO nhanvien)
+        public static void updateEmployee(string magoc, NhanVien_DTO nhanvien)
         {
-            NhanVien_DAO.Sua1NhanVien(magoc, nhanvien);
+            NhanVien_DAO.updateEmployee(magoc, nhanvien);
         }
     }
 
     public class NganHang_BUS
     { 
         //Load danh sách ngân hàng
-        public static DataTable LoadDanhSachNganHang()
+        public static DataTable loadListBank()
         {
-            return NganHang_DAO.LoadDSNganHang();
+            return NganHang_DAO.loadListBank();
         }
 
         //Thêm mới 1 ngân hàng
 
-        public static void ThemMoi1NganHang(NganHang_DTO nganhang)
+        public static void insertBank(NganHang_DTO nganhang)
         {
-            NganHang_DAO.Them1NganHang(nganhang);
+            NganHang_DAO.insertBank(nganhang);
         }
 
         //Xóa 
-        public static void Xoa1NganHang(string manh)
+        public static void deleteBankById(string manh)
         {
-            NganHang_DAO.Xoa1NganHang(manh);
+            NganHang_DAO.deleteBankById(manh);
         }
 
         //Sửa
-        public static void Sua1NganHang(string magoc, NganHang_DTO nganhang)
+        public static void updateBank(string magoc, NganHang_DTO nganhang)
         {
-            NganHang_DAO.Sua1NganHang(magoc, nganhang);
+            NganHang_DAO.updateBank(magoc, nganhang);
         }
 
     }
@@ -198,158 +198,158 @@ namespace BUS
     public class PhongBan_BUS
     { 
             //Load danh mục phong ban
-        public static DataTable LoadDanhSachPhongBan()
+        public static DataTable loadListDepartment()
         {
-            return PhongBan_DAO.LoadDSPhongBan();
+            return PhongBan_DAO.loadListDepartment();
         }
 
             // Thêm mới 1 phòng ban
-        public static void ThemMoi1PhongBan(PhongBan_DTO phongban)
+        public static void insertDepartment(PhongBan_DTO phongban)
         {
-            PhongBan_DAO.Them1PhongBan(phongban);        
+            PhongBan_DAO.insertDepartment(phongban);        
         }
 
             // Sửa
-        public static void Sua1PhongBan(string magoc, PhongBan_DTO phongban)
+        public static void updateDepartment(string magoc, PhongBan_DTO phongban)
         {
-            PhongBan_DAO.Sua1PhongBan(magoc, phongban);
+            PhongBan_DAO.updateDepartment(magoc, phongban);
         }
 
             // Xóa
-        public static void Xoa1PhongBan(string mapb)
+        public static void deleteDepartmentById(string mapb)
         {
-            PhongBan_DAO.Xoa1PhongBan(mapb);
+            PhongBan_DAO.deleteDepartmentById(mapb);
         }
     }
 
     public class TienTe_BUS
     {
         //Load danh mục phong ban
-        public static DataTable LoadDanhMucTienTe()
+        public static DataTable loadDanhMucTienTe()
         {
-            return TienTe_DAO.LoadDMTienTe();
+            return TienTe_DAO.loadDanhMucTienTe();
         }
 
         //Thêm mới
-        public static void Them1LoaiTien(TienTe_DTO tiente)
+        public static void insertCurrency(TienTe_DTO tiente)
         {
-            TienTe_DAO.Them1LoaiTien(tiente);
+            TienTe_DAO.insertCurrency(tiente);
         }
 
         // Sửa
-        public static void Sua1LoaiTien( string magoc,TienTe_DTO tiente)
+        public static void updateCurrency( string magoc,TienTe_DTO tiente)
         {
-            TienTe_DAO.Sua1LoaiTien(magoc, tiente);
+            TienTe_DAO.updateCurrency(magoc, tiente);
         }
 
 
         //Xóa
-        public static void Xoa1LoaiTien(string matien)
+        public static void deleteCurrency(string matien)
         {
-            TienTe_DAO.Xoa1LoaiTien(matien);
+            TienTe_DAO.deleteCurrency(matien);
         }
     }
 
     public class TaiKhoanNganHang_BUS
     {
         //Load danh mục tài khoản ngân hàng
-        public static DataTable LoadDanhMucTaiKhoanNganHang()
+        public static DataTable loadDanhMucTaiKhoanNganHang()
         {
-            return TaiKhoanNganHang_DAO.LoadDMTaiKhoanNganHang();
+            return TaiKhoanNganHang_DAO.loadDanhMucTaiKhoanNganHang();
         }
 
         // kiem tra tai khoan truoc khi xoa
-        public static DataTable kiemtra(string sotknh)
+        public static DataTable kiemTraChungTuCuaTaiKhoanNganHang(string sotknh)
         {
-            return TaiKhoanNganHang_DAO.kiemtra(sotknh);
+            return TaiKhoanNganHang_DAO.kiemTraChungTuCuaTaiKhoanNganHang(sotknh);
 
         }
 
         
         //Lấy 1 tài khoản
-        public static DataTable Lay1Tk(string sotk)
+        public static DataTable loadBankAccountInfo(string sotk)
         {
-            return TaiKhoanNganHang_DAO.Lay1Tk(sotk);
+            return TaiKhoanNganHang_DAO.loadBankAccountInfo(sotk);
         }
 
         //Thêm mới
-        public static void Them1TaiKhoanNganHang(TaiKhoanNganHang_DTO tknh)
+        public static void insertBankAccount(TaiKhoanNganHang_DTO tknh)
         {
-            TaiKhoanNganHang_DAO.Them1TaiKhoanNganHang(tknh);
+            TaiKhoanNganHang_DAO.insertBankAccount(tknh);
         }
 
         //Sửa
-        public static void Sua1TaiKhoanNganHang(string sotknhgoc, TaiKhoanNganHang_DTO tknh)
+        public static void updateBankAccount(string sotknhgoc, TaiKhoanNganHang_DTO tknh)
         {
-            TaiKhoanNganHang_DAO.Sua1TaiKhoanNganHang(sotknhgoc, tknh);
+            TaiKhoanNganHang_DAO.updateBankAccount(sotknhgoc, tknh);
         }
 
         //Xóa
-        public static void Xoa1TaiKhoanNganHang(string sotknh)
+        public static void deleteBankAccount(string sotknh)
         {
-            TaiKhoanNganHang_DAO.Xoa1TaiKhoanNganHang(sotknh);
+            TaiKhoanNganHang_DAO.deleteBankAccount(sotknh);
         }
     }
 
     public class TaiKhoan_BUS
     {
         //Load danh mục tài khoản 
-        public static DataTable LoadDanhMucTaiKhoan()
+        public static DataTable loadListTaiKhoanKeToan()
         {
-            return TaiKhoan_DAO.LoadDMTaiKhoan();
+            return TaiKhoan_DAO.loadListTaiKhoanKeToan();
         }
 
         // tk tien mặt
-        public static DataTable LoadTkTienMat()
+        public static DataTable loadListTaiKhoanVaTienMat()
         {
-            return TaiKhoan_DAO.LoadTkTienMat();
+            return TaiKhoan_DAO.loadListTaiKhoanVaTienMat();
         }
 
         // tk tien gui
-        public static DataTable LoadTkTienGui()
+        public static DataTable loadTaiKhoanTienGui()
         {
-            return TaiKhoan_DAO.LoadTkTienGui();
+            return TaiKhoan_DAO.loadTaiKhoanTienGui();
         }
 
 
         // Kiem tra tk la tk cha
-        public static DataTable KiemTraTk(string matk)
+        public static DataTable kiemTraLaTaiKhoanTongHop(string matk)
         {
-            return TaiKhoan_DAO.KiemTraTk(matk);
+            return TaiKhoan_DAO.kiemTraLaTaiKhoanTongHop(matk);
         }
 
          // Update so du
-        public static void UpdateSoDu1TaiKhoan(string matk, decimal dunont, decimal ducont, decimal duno, decimal duco)
+        public static void capNhatSoDuTaiKhoan(string matk, decimal dunont, decimal ducont, decimal duno, decimal duco)
         {
-            TaiKhoan_DAO.UpdateSoDu1TaiKhoan(matk, dunont, ducont, duno, duco);
+            TaiKhoan_DAO.capNhatSoDuTaiKhoan(matk, dunont, ducont, duno, duco);
         }
 
         //Thêm mới tài khoản
-        public static void ThemMoiTaiKhoan(TaiKhoan_DTO tk)
+        public static void insertAccount(TaiKhoan_DTO tk)
         {
-             TaiKhoan_DAO.Them1TaiKhoan(tk);
+             TaiKhoan_DAO.insertAccount(tk);
         }
 
         //Xóa 1 tài khoản
 
-        public static void Xoa1TaiKhoan(String matk)
+        public static void deleteAccount(String matk)
         {
-            TaiKhoan_DAO.Xoa1TaiKhoan(matk);
+            TaiKhoan_DAO.deleteAccount(matk);
         }
 
         //Sửa
 
-        public static void Sua1TaiKhoan(string magoc, TaiKhoan_DTO tk)
+        public static void updateAccount(string magoc, TaiKhoan_DTO tk)
         {
-            TaiKhoan_DAO.Sua1TaiKhoan(magoc, tk);
+            TaiKhoan_DAO.updateAccount(magoc, tk);
         }
     }
 
     public class PhanTich_BUS
     {
-        public static DataTable PhanTichThuChi()
+        public static DataTable loadPhanTichThuChi()
         {
-            return PhanTich_DAO.PhanTichThuChi();
+            return PhanTich_DAO.loadPhanTichThuChi();
         }
         public static DataTable TinhTienTon()
         {

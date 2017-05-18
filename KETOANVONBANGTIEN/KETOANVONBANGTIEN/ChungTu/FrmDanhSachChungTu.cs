@@ -189,7 +189,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             rpt.DataSource = ChungTu_BUS.LoadDanhSachCtTheoLoai(maloaict);
             rpt.DataMember = "Table";
             rpt.loaidanhsach.LuaChon = maloaict.ToString();
-            rpt.ShowPreview();
+           // rpt.ShowPreview();
         }
 
         private void btnGhiSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

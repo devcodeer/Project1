@@ -54,7 +54,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             {
                 try
                 {
-                    PhongBan_BUS.Xoa1PhongBan(gridViewDanhMucPhongBan.GetRowCellValue(gridViewDanhMucPhongBan.FocusedRowHandle, colMapb).ToString());
+                    PhongBan_BUS.deleteDepartmentById(gridViewDanhMucPhongBan.GetRowCellValue(gridViewDanhMucPhongBan.FocusedRowHandle, colMapb).ToString());
                     LoadGridview();
                 }
                 catch
@@ -67,7 +67,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void LoadGridview()
         {
-            grvDanhMucPhongBan.DataSource = PhongBan_BUS.LoadDanhSachPhongBan();
+            grvDanhMucPhongBan.DataSource = PhongBan_BUS.loadListDepartment();
         }
 
         private void btnXuatEx_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

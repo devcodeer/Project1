@@ -139,7 +139,7 @@ namespace DTO
 
 
     }
-    public class NhomDt_DTO
+    public class NhomDoiTuong_DTO
     {
         private String _maNhom;
 
@@ -158,13 +158,13 @@ namespace DTO
             set { _tenNhom = value; }
         }
 
-        public NhomDt_DTO(string manhom, string tennhom)
+        public NhomDoiTuong_DTO(string manhom, string tennhom)
         {
             MaNhom = manhom;
             TenNhom = tennhom;
         }
 
-        public NhomDt_DTO()
+        public NhomDoiTuong_DTO()
         { }
     }
     public class NhanVien_DTO

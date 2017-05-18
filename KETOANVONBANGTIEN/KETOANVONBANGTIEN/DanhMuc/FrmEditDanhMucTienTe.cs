@@ -77,7 +77,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string matien = txtMaTien.Text;
             string tentien = txtTenTien.Text;
             TienTe_DTO tt = new TienTe_DTO(matien, tentien);
-            TienTe_BUS.Them1LoaiTien(tt);
+            TienTe_BUS.insertCurrency(tt);
         }
 
         private void Sua()
@@ -85,7 +85,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string matien = txtMaTien.Text;
             string tentien = txtTenTien.Text;
             TienTe_DTO tiente = new TienTe_DTO(matien, tentien);
-            TienTe_BUS.Sua1LoaiTien(obj.MaTien, tiente);
+            TienTe_BUS.updateCurrency(obj.MaTien, tiente);
         }
 
         private void ResetControl()

@@ -392,8 +392,8 @@ namespace KETOANVONBANGTIEN
                     }
                     catch (Exception ex)
                     {
-
-                    }
+                    MessageBox.Show(ex.Message, "Restore Database");
+                }
 
             }
         }

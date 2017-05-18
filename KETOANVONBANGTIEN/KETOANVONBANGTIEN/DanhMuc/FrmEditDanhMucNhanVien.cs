@@ -77,7 +77,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void LoadlookUpEditPhongBan()
         {
-            lookUpEditPhongBan.Properties.DataSource = PhongBan_BUS.LoadDanhSachPhongBan();
+            lookUpEditPhongBan.Properties.DataSource = PhongBan_BUS.loadListDepartment();
             lookUpEditPhongBan.Properties.DisplayMember="TenPb";
             lookUpEditPhongBan.Properties.ValueMember="MaPb";
         }
@@ -92,7 +92,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string email = txtEmail.Text;
             string dienthoai = txtDienthoai.Text;
             NhanVien_DTO nv = new NhanVien_DTO(manv,tennv,diachi,dienthoai,email,mapb,chucvu);
-            NhanVien_BUS.ThemMoiNhanVien(nv);
+            NhanVien_BUS.insertEmployee(nv);
 
         }
 
@@ -106,7 +106,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string email = txtEmail.Text;
             string dienthoai = txtDienthoai.Text;
             NhanVien_DTO nhanvien = new NhanVien_DTO(manv, tennv, diachi, dienthoai, email, mapb, chucvu);
-            NhanVien_BUS.SuaNhanVien(obj.MaNv, nhanvien);
+            NhanVien_BUS.updateEmployee(obj.MaNv, nhanvien);
 
         }
               

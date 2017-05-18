@@ -29,18 +29,27 @@ namespace KETOANVONBANGTIEN
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            DataTable dt = NGUOI_DUNG_BUS.KiemTraDangNhap(txtTenTk.Text, txtMatKhau.Text);
-            if (dt.Rows.Count > 0)
-            {            
-            MainForm frm = new MainForm();
-            this.Hide();
-            frm.nguoidunghientai = txtTenTk.Text;
-            frm.matkhauhientai = txtMatKhau.Text;
-            frm.quyenhientai =int.Parse(dt.Rows[0]["Quyen"].ToString());
-            frm.ShowDialog();
-            this.Close();
+            if (txtTenTk.Text.Equals("") || txtMatKhau.Text.Equals(""))
+            {
+                MessageBox.Show("Không được để trống username hoặc password!");
             }
-            else MessageBox.Show("Đăng nhập không thành công !");
+            else
+            {
+                DataTable dt = NguoiDung_BUS.doLogin(txtTenTk.Text, txtMatKhau.Text);
+
+                if (dt.Rows.Count > 0)
+                {
+                    MainForm frmMain = new MainForm();
+                    this.Hide();
+                    frmMain.nguoidunghientai = txtTenTk.Text;
+                    frmMain.matkhauhientai = txtMatKhau.Text;
+                    frmMain.quyenhientai = int.Parse(dt.Rows[0]["Quyen"].ToString());
+                    frmMain.ShowDialog();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Sai username hoặc password!");
+            }
         }
 
     

@@ -204,8 +204,7 @@
             series1.Name = "Series 1";
             series1.SynchronizePointOptions = false;
             series1.View = pie3DSeriesView1;
-            this.chart1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
+            this.chart1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {series1};
             pie3DSeriesLabel2.LineVisible = true;
             this.chart1.SeriesTemplate.Label = pie3DSeriesLabel2;
             this.chart1.SeriesTemplate.View = pie3DSeriesView2;

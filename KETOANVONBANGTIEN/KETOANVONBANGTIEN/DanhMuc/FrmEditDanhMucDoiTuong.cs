@@ -82,7 +82,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void LoadlookUpEditNhomDt()
         {
-            lookUpEditNhomDt.Properties.DataSource = NhomDt_BUS.LoadDanhSachNhomDt();
+            lookUpEditNhomDt.Properties.DataSource = NhomDoiTuong_BUS.loadDanhSachNhomDoiTuong();
             lookUpEditNhomDt.Properties.DisplayMember = "TenNhom";
             lookUpEditNhomDt.Properties.ValueMember = "MaNhom";
 
@@ -101,7 +101,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string tennh = txtTenNh.Text;
             string chinhanh = txtChiNhanh.Text;
             DoiTuong_DTO obj = new DoiTuong_DTO(madt, tendt, diachi, email, dienthoai, mst, sotknh, tennh, chinhanh, manhom);
-            DoiTuong_BUS.Them1DoiTuong(obj);
+            DoiTuong_BUS.insertObject(obj);
 
         }
         private void Sua()
@@ -117,7 +117,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string tennh1 = txtTenNh.Text;
             string chinhanh1 = txtChiNhanh.Text;
             DoiTuong_DTO obj1 = new DoiTuong_DTO(madt1, tendt1, diachi1, email1, dienthoai1, mst1, sotknh1, tennh1, chinhanh1, manhom1);
-            DoiTuong_BUS.Sua1DoiTuong(obj.MaDt,obj1);
+            DoiTuong_BUS.updateObject(obj.MaDt,obj1);
 
         }
         private void ResetControl()

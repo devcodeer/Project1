@@ -33,3 +33,10 @@ C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.dll
 C:\Users\Miceli\Downloads\KETOANVONBANGTIEN\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DAO\bin\Debug\DAO.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DAO\bin\Debug\DTO.pdb
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.dll
+F:\Outsourcing\Project1\KETOANVONBANGTIEN\DAO\obj\Debug\DAO.pdb

@@ -80,7 +80,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string fax = txtFax.Text;
 
             PhongBan_DTO phongban = new PhongBan_DTO(maphong, tenphong, dienthoai, fax);
-            PhongBan_BUS.ThemMoi1PhongBan(phongban);
+            PhongBan_BUS.insertDepartment(phongban);
         }
 
         private void Sua()
@@ -90,7 +90,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string dienthoai = txtDienThoai.Text;
             string fax = txtFax.Text;
             PhongBan_DTO phongban = new PhongBan_DTO(maphong, tenphong, dienthoai, fax);
-            PhongBan_BUS.Sua1PhongBan(obj.MaPb, phongban);
+            PhongBan_BUS.updateDepartment(obj.MaPb, phongban);
 
         }
 

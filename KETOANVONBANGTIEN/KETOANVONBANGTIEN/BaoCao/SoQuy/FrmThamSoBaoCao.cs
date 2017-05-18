@@ -19,7 +19,7 @@ namespace KETOANVONBANGTIEN.BaoCao.SoQuy
 
         private void FrmThamSoBaoCao_Load(object sender, EventArgs e)
         {
-            lookUpEditTk.Properties.DataSource = TaiKhoan_BUS.LoadTkTienMat();
+            lookUpEditTk.Properties.DataSource = TaiKhoan_BUS.loadListTaiKhoanVaTienMat();
             lookUpEditTk.Properties.DisplayMember = "MaTk";
             lookUpEditTk.Properties.ValueMember = "MaTk";
         }
@@ -45,7 +45,7 @@ namespace KETOANVONBANGTIEN.BaoCao.SoQuy
                 rpt.parameterNgayKt.Visible = false;
                 rpt.DataSource = BaoCao_BUS.SoQuy(matk,ngaybd, ngaykt);
                 rpt.DataMember = "Table";
-                rpt.ShowPreview();
+            //    rpt.ShowPreview();
 
             }
             catch

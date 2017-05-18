@@ -34,7 +34,7 @@ namespace KETOANVONBANGTIEN.DanhMuc
 
         private void LoadGridView()
         {
-            grvDanhSachNhanVien.DataSource = NhanVien_BUS.LoadDanhSachNhanVien();      
+            grvDanhSachNhanVien.DataSource = NhanVien_BUS.loadListEmployee();      
         }
           
 
@@ -44,14 +44,14 @@ namespace KETOANVONBANGTIEN.DanhMuc
                 if (MessageBox.Show("Bạn chắc chắn muốn xóa ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string manv = gridViewDanhMucNhanVien.GetRowCellValue(gridViewDanhMucNhanVien.FocusedRowHandle, colMaNv).ToString();
-                    DataTable dt = NhanVien_BUS.kiemtra(manv);
+                    DataTable dt = NhanVien_BUS.kiemTraChungTuCuaNhanVien(manv);
                     if (dt.Rows.Count > 0)
                         MessageBox.Show("Không xóa nhân viên đã có nghiệp vụ thu chi trong kỳ!");
                     else
                     {
                         try
                         {
-                            NhanVien_BUS.XoaNhanVien(manv);
+                            NhanVien_BUS.deleteEmployee(manv);
                             LoadGridView();
                         }
                         catch
