@@ -12,18 +12,32 @@ using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Helpers;
 using BUS;
+using DTO;
 using System.Data.SqlClient;
 
 namespace KETOANVONBANGTIEN
 {
     public partial class MainForm : Form
     {
+        public NguoiDung_DTO currentUser;
+
+
         public MainForm()
         {
             InitializeComponent();
             InitSkinGallery();
         }
-        
+
+        public MainForm(NguoiDung_DTO currentUser)
+        {
+            InitializeComponent();
+            InitSkinGallery();
+            this.currentUser = currentUser;
+
+            if (this.currentUser.Quyen != 1)
+                navBarItemNguoiDung.Enabled = false ;
+        }
+
         private void InitSkinGallery()
         {
             SkinHelper.InitSkinGallery(SkinsGallery, true);
@@ -32,7 +46,7 @@ namespace KETOANVONBANGTIEN
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (quyenhientai == 1)
+            if (currentUser.Quyen == 1)
             {
                 barBtnTaoTaiKhoan.Enabled = true;
             }
@@ -414,17 +428,26 @@ namespace KETOANVONBANGTIEN
             this.Close();
         }
 
-        public string nguoidunghientai;
-        public string matkhauhientai;
-        public int quyenhientai;
+
 
         private void barBtnDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
             DanhMuc.FrmDoiMatKhau frm = new DanhMuc.FrmDoiMatKhau();
-            frm.tentk = nguoidunghientai;
-            frm.matkhau = matkhauhientai;
+            frm.tentk = currentUser.TenTk;
+            frm.matkhau = currentUser.MatKhau;
             frm.ShowDialog();
         }
 
+        private void navBarItemNguoiDung_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+            foreach (Form f in MdiChildren)
+            {
+                f.Close();
+            }
+            DanhMuc.FrmDanhSachNguoiDung frm = new DanhMuc.FrmDanhSachNguoiDung();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

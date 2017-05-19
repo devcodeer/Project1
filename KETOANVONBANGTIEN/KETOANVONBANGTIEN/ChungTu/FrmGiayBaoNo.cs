@@ -36,7 +36,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 btnIn.Enabled = false;
                 btnInGiayBao.Enabled = false;
                 btnSua.Enabled = false;
-                txtSoCt.Text = Funciton.Funtion.TaoSoCt(3);
+                txtSoCt.Text = Function.Funtion.randomSoChungTu(3);
                 dateEditNgayCt.DateTime = DateTime.Today;
                 dateEditNgayGhiSo.DateTime = DateTime.Today;
                 lookUpEditLoaiTien.Text = "VND";
@@ -233,7 +233,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             float tygia = float.Parse(txtTyGia.Text);
 
             ChungTu_DTO chungtu = new ChungTu_DTO(soct, 3, ngayct, ngayghiso, madt, "", diachi, lydo, "", matien, tygia, tknhdi,tknhden,false);
-            ChungTu_BUS.Them1ChungTu(chungtu);
+            ChungTu_BUS.insertChungTu(chungtu);
 
             string tkno;
             string tkco;
@@ -260,7 +260,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 }
 
                 ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
-                ChiTietCT_BUS.Them1ChiTietCt(ct);
+                ChiTietCT_BUS.insertChiTietChungTu(ct);
             }
 
         }
@@ -280,7 +280,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             float tygia = float.Parse(txtTyGia.Text);
             bool trangthai = obj.TrangThai;
             ChungTu_DTO chungtu = new ChungTu_DTO(soct, 3, ngayct, ngayghiso, madt, "", diachi, lydo, "", matien, tygia, tknhdi, tknhden, trangthai);
-            ChungTu_BUS.Sua1ChungTu(obj.SoCt, chungtu);
+            ChungTu_BUS.updateChungTu(obj.SoCt, chungtu);
 
             int id;
             string tkno;
@@ -308,7 +308,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                         sotien = sotiennt * decimal.Parse(tygia.ToString());
                     }
                     ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
-                    ChiTietCT_BUS.SuaChiTietCt(id, ct);
+                    ChiTietCT_BUS.updateChiTietChungTu(id, ct);
                 }
                 for (int i = sodonggoc - 1; i < (rowcount - 1); i++)
                 {
@@ -328,7 +328,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                     }
 
                     ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
-                    ChiTietCT_BUS.Them1ChiTietCt(ct);
+                    ChiTietCT_BUS.insertChiTietChungTu(ct);
                 }
             }
             else if(sodonggoc>rowcount)  
@@ -350,7 +350,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                         sotien = sotiennt * decimal.Parse(tygia.ToString());
                     }
                     ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt,sotien);
-                    ChiTietCT_BUS.SuaChiTietCt(id, ct);
+                    ChiTietCT_BUS.updateChiTietChungTu(id, ct);
                 }
             }
 
@@ -384,7 +384,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             {
                 int idDelete = int.Parse(GridViewChiTiet.GetRowCellValue(GridViewChiTiet.FocusedRowHandle, colId).ToString());
                 Sua();
-                ChiTietCT_BUS.XoaChiTietCt(idDelete);
+                ChiTietCT_BUS.deleteChiTietChungTu(idDelete);
                 grvChiTiet.DataSource = ChiTietCT_BUS.LoadChiTietCT(obj.SoCt);
                 sodonggoc = GridViewChiTiet.RowCount;
 
@@ -406,7 +406,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             txtLyDo.Text = "";
             txtTyGia.Text = "";
             txtTkDen.Text = "";
-            txtSoCt.Text = Funciton.Funtion.TaoSoCt(3);
+            txtSoCt.Text = Function.Funtion.randomSoChungTu(3);
             lookUpEditLoaiTien.EditValue = "";
             dateEditNgayCt.DateTime = DateTime.Today;
             dateEditNgayGhiSo.DateTime = DateTime.Today;
@@ -434,7 +434,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
         private void btnInGiayBao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DataTable dt = ChungTu_BUS.Lay1ChungTu(txtSoCt.Text);
+            DataTable dt = ChungTu_BUS.loadChungTuBySoChungTu(txtSoCt.Text);
             string tentien = dt.Rows[0]["MaTien"].ToString();
             decimal sotien=0;
             string tienchu="";
@@ -443,7 +443,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 try
                 {
                     sotien = decimal.Parse(dt.Rows[0]["SoTien"].ToString());
-                    tienchu = Funciton.Funtion.DecimalToString(sotien) + " đồng chẵn";
+                    tienchu = Function.Funtion.DecimalToString(sotien) + " đồng chẵn";
                 }
                 catch { }
             }
@@ -452,7 +452,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 try
                 {
                     sotien = decimal.Parse(dt.Rows[0]["SoTienNt"].ToString());
-                    tienchu = Funciton.Funtion.DecimalToString(sotien) + " đô la Mỹ";
+                    tienchu = Function.Funtion.DecimalToString(sotien) + " đô la Mỹ";
                 }
                 catch { }
             }
@@ -536,7 +536,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
         private void btnInMauACB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DataTable dt = ChungTu_BUS.Lay1ChungTu(txtSoCt.Text);
+            DataTable dt = ChungTu_BUS.loadChungTuBySoChungTu(txtSoCt.Text);
             string tentien = dt.Rows[0]["MaTien"].ToString();
             decimal sotien=0;
             string tienchu="";
@@ -545,7 +545,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 try
                 {
                     sotien = decimal.Parse(dt.Rows[0]["SoTien"].ToString());
-                    tienchu = Funciton.Funtion.DecimalToString(sotien) + " đồng chẵn";
+                    tienchu = Function.Funtion.DecimalToString(sotien) + " đồng chẵn";
                 }
                 catch { }
             }
@@ -554,7 +554,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 try
                 {
                     sotien = decimal.Parse(dt.Rows[0]["SoTienNt"].ToString());
-                    tienchu = Funciton.Funtion.DecimalToString(sotien) + " đô la Mỹ";
+                    tienchu = Function.Funtion.DecimalToString(sotien) + " đô la Mỹ";
                 }
                 catch
                 { }
@@ -597,7 +597,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             rpt.lblChiNhanhDen.Text = lookUpEditDT.GetColumnValue("ChiNhanh").ToString();
             rpt.lblLyDo.Text = txtLyDo.Text;
 
-            DataTable dt = ChungTu_BUS.Lay1ChungTu(txtSoCt.Text);
+            DataTable dt = ChungTu_BUS.loadChungTuBySoChungTu(txtSoCt.Text);
             string tentien = dt.Rows[0]["MaTien"].ToString();
             decimal sotien=0;
             string tienchu="";
@@ -606,7 +606,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 try
                 {
                     sotien = decimal.Parse(dt.Rows[0]["SoTien"].ToString());
-                    tienchu = Funciton.Funtion.DecimalToString(sotien) + " đồng chẵn";
+                    tienchu = Function.Funtion.DecimalToString(sotien) + " đồng chẵn";
                 }
                 catch
                 { }
@@ -616,7 +616,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 try
                 {
                     sotien = decimal.Parse(dt.Rows[0]["SoTienNt"].ToString());
-                    tienchu = Funciton.Funtion.DecimalToString(sotien) + " đô la Mỹ";
+                    tienchu = Function.Funtion.DecimalToString(sotien) + " đô la Mỹ";
                 }
                 catch
                 { }
