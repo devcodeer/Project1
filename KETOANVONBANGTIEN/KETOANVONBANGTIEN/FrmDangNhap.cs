@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BUS;
+using DTO;
 
 namespace KETOANVONBANGTIEN
 {
@@ -24,7 +25,7 @@ namespace KETOANVONBANGTIEN
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -39,13 +40,15 @@ namespace KETOANVONBANGTIEN
 
                 if (dt.Rows.Count > 0)
                 {
-                    MainForm frmMain = new MainForm();
+                    NguoiDung_DTO user = new NguoiDung_DTO();
+
                     this.Hide();
-                    frmMain.nguoidunghientai = txtTenTk.Text;
-                    frmMain.matkhauhientai = txtMatKhau.Text;
-                    frmMain.quyenhientai = int.Parse(dt.Rows[0]["Quyen"].ToString());
+                    user.TenTk = txtTenTk.Text;
+                    user.MatKhau = txtMatKhau.Text;
+                    user.Quyen = int.Parse(dt.Rows[0]["Quyen"].ToString());
+                    MainForm frmMain = new MainForm(user);
                     frmMain.ShowDialog();
-                    this.Close();
+                    this.Show();
                 }
                 else
                     MessageBox.Show("Sai username hoặc password!");

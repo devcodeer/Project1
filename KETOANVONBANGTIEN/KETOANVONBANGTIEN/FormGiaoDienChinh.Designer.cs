@@ -98,6 +98,7 @@
             this.navBarItemSoTienMat = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemSoTienGui = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgDanhMuc = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItemNguoiDung = new DevExpress.XtraNavBar.NavBarItem();
             this.nbgPhatSinh = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbgBaoCao = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
@@ -110,6 +111,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
@@ -118,11 +120,7 @@
             // 
             // ribbonControl1
             // 
-            // 
-            // 
-            // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.ExpandCollapseItem.Name = "";
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.SkinsGallery,
@@ -177,10 +175,10 @@
             this.ribbonHeThong,
             this.ribbonPageNghiepVu,
             this.ribbonPageHelp});
+            this.ribbonControl1.QuickToolbarItemLinks.Add(this.barSubItem5);
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1});
-            this.ribbonControl1.Size = new System.Drawing.Size(953, 142);
-            this.ribbonControl1.Toolbar.ItemLinks.Add(this.barSubItem5);
+            this.ribbonControl1.Size = new System.Drawing.Size(953, 141);
             // 
             // SkinsGallery
             // 
@@ -222,7 +220,7 @@
             // 
             this.barBtnPhieuThu.Caption = "Phiếu thu";
             this.barBtnPhieuThu.Id = 34;
-            this.barBtnPhieuThu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtnPhieuThu.LargeGlyph")));
+            this.barBtnPhieuThu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnPhieuThu.ImageOptions.LargeImage")));
             this.barBtnPhieuThu.LargeWidth = 60;
             this.barBtnPhieuThu.Name = "barBtnPhieuThu";
             this.barBtnPhieuThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPhieuThu_ItemClick);
@@ -231,7 +229,7 @@
             // 
             this.barBtnPhieuChi.Caption = "Phiếu chi";
             this.barBtnPhieuChi.Id = 35;
-            this.barBtnPhieuChi.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtnPhieuChi.LargeGlyph")));
+            this.barBtnPhieuChi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnPhieuChi.ImageOptions.LargeImage")));
             this.barBtnPhieuChi.LargeWidth = 60;
             this.barBtnPhieuChi.Name = "barBtnPhieuChi";
             this.barBtnPhieuChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPhieuChi_ItemClick);
@@ -240,7 +238,7 @@
             // 
             this.barBtnBaoNo.Caption = "Báo nợ";
             this.barBtnBaoNo.Id = 36;
-            this.barBtnBaoNo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtnBaoNo.LargeGlyph")));
+            this.barBtnBaoNo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnBaoNo.ImageOptions.LargeImage")));
             this.barBtnBaoNo.LargeWidth = 50;
             this.barBtnBaoNo.Name = "barBtnBaoNo";
             this.barBtnBaoNo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnBaoNo_ItemClick);
@@ -249,7 +247,7 @@
             // 
             this.barBtnBaoCo.Caption = "Báo có";
             this.barBtnBaoCo.Id = 37;
-            this.barBtnBaoCo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtnBaoCo.LargeGlyph")));
+            this.barBtnBaoCo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnBaoCo.ImageOptions.LargeImage")));
             this.barBtnBaoCo.LargeWidth = 50;
             this.barBtnBaoCo.Name = "barBtnBaoCo";
             this.barBtnBaoCo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnBaoCo_ItemClick);
@@ -258,7 +256,7 @@
             // 
             this.barBtnTinhTyGia.Caption = "Tính tỷ giá ngoại tệ ghi sổ";
             this.barBtnTinhTyGia.Id = 38;
-            this.barBtnTinhTyGia.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtnTinhTyGia.LargeGlyph")));
+            this.barBtnTinhTyGia.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnTinhTyGia.ImageOptions.LargeImage")));
             this.barBtnTinhTyGia.LargeWidth = 100;
             this.barBtnTinhTyGia.Name = "barBtnTinhTyGia";
             this.barBtnTinhTyGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnTinhTyGia_ItemClick);
@@ -267,7 +265,7 @@
             // 
             this.barSubItemBaoCao.Caption = "Sổ sách và báo cáo";
             this.barSubItemBaoCao.Id = 40;
-            this.barSubItemBaoCao.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSubItemBaoCao.LargeGlyph")));
+            this.barSubItemBaoCao.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItemBaoCao.ImageOptions.LargeImage")));
             this.barSubItemBaoCao.LargeWidth = 117;
             this.barSubItemBaoCao.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnSoTienMat),
@@ -291,9 +289,9 @@
             // barSubItem5
             // 
             this.barSubItem5.Caption = "barSubItem5";
-            this.barSubItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barSubItem5.Glyph")));
             this.barSubItem5.Id = 44;
-            this.barSubItem5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSubItem5.LargeGlyph")));
+            this.barSubItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem5.ImageOptions.Image")));
+            this.barSubItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem5.ImageOptions.LargeImage")));
             this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnTaoTaiKhoan),
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnDoiMatKhau),
@@ -365,7 +363,7 @@
             // 
             this.barButtonItemSoDuBanDau.Caption = "Số dư ban đầu";
             this.barButtonItemSoDuBanDau.Id = 57;
-            this.barButtonItemSoDuBanDau.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItemSoDuBanDau.LargeGlyph")));
+            this.barButtonItemSoDuBanDau.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemSoDuBanDau.ImageOptions.LargeImage")));
             this.barButtonItemSoDuBanDau.LargeWidth = 100;
             this.barButtonItemSoDuBanDau.Name = "barButtonItemSoDuBanDau";
             this.barButtonItemSoDuBanDau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemSoDuBanDau_ItemClick);
@@ -419,7 +417,7 @@
             // 
             this.barBtnTaiKhoan.Caption = "Tài khoản";
             this.barBtnTaiKhoan.Id = 68;
-            this.barBtnTaiKhoan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barBtnTaiKhoan.LargeGlyph")));
+            this.barBtnTaiKhoan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnTaiKhoan.ImageOptions.LargeImage")));
             this.barBtnTaiKhoan.Name = "barBtnTaiKhoan";
             this.barBtnTaiKhoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnTaiKhoan_ItemClick);
             // 
@@ -427,7 +425,7 @@
             // 
             this.barSubItemDoiTuong.Caption = "Đối tượng";
             this.barSubItemDoiTuong.Id = 70;
-            this.barSubItemDoiTuong.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSubItemDoiTuong.LargeGlyph")));
+            this.barSubItemDoiTuong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItemDoiTuong.ImageOptions.LargeImage")));
             this.barSubItemDoiTuong.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnKhNcc),
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnNhanVien),
@@ -459,7 +457,7 @@
             // 
             this.barSubItemKhac.Caption = "Khác";
             this.barSubItemKhac.Id = 74;
-            this.barSubItemKhac.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barSubItemKhac.LargeGlyph")));
+            this.barSubItemKhac.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItemKhac.ImageOptions.LargeImage")));
             this.barSubItemKhac.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnPhongBan),
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnTienTe),
@@ -505,7 +503,7 @@
             // 
             this.barButtonItem9.Caption = "Phân tích";
             this.barButtonItem9.Id = 83;
-            this.barButtonItem9.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.LargeGlyph")));
+            this.barButtonItem9.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
@@ -513,7 +511,7 @@
             // 
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 84;
-            this.btnThoat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThoat.LargeGlyph")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
@@ -685,9 +683,17 @@
             this.nbgDanhMuc.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemDoiTuong),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemNhanVien),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemNganHang)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemNganHang),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemNguoiDung)});
             this.nbgDanhMuc.LargeImage = ((System.Drawing.Image)(resources.GetObject("nbgDanhMuc.LargeImage")));
             this.nbgDanhMuc.Name = "nbgDanhMuc";
+            // 
+            // navBarItemNguoiDung
+            // 
+            this.navBarItemNguoiDung.Caption = "Người dùng";
+            this.navBarItemNguoiDung.Name = "navBarItemNguoiDung";
+            this.navBarItemNguoiDung.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItemNguoiDung.SmallImage")));
+            this.navBarItemNguoiDung.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemNguoiDung_LinkClicked);
             // 
             // nbgPhatSinh
             // 
@@ -744,12 +750,13 @@
             this.navBarItemBaoCo,
             this.navBarItemSoTienMat,
             this.navBarItemSoTienGui,
-            this.navBarItemPhanTich});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 142);
+            this.navBarItemPhanTich,
+            this.navBarItemNguoiDung});
+            this.navBarControl1.Location = new System.Drawing.Point(0, 141);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 198;
             this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl1.Size = new System.Drawing.Size(198, 405);
+            this.navBarControl1.Size = new System.Drawing.Size(198, 406);
             this.navBarControl1.StoreDefaultPaintStyleName = true;
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "navBarControl1";
@@ -806,6 +813,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(953, 0);
             // 
             // barDockControlBottom
@@ -813,6 +821,7 @@
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 547);
+            this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(953, 23);
             // 
             // barDockControlLeft
@@ -820,6 +829,7 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 547);
             // 
             // barDockControlRight
@@ -827,7 +837,14 @@
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(953, 0);
+            this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 547);
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Nhân Viên";
+            this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem1.SmallImage")));
             // 
             // MainForm
             // 
@@ -851,6 +868,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -936,7 +954,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupThoat;
         private DevExpress.XtraBars.BarButtonItem btnBackUp;
         private DevExpress.XtraBars.BarButtonItem btnRestore;
-
+        private DevExpress.XtraNavBar.NavBarItem navBarItemNguoiDung;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
     }
 }
 

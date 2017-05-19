@@ -107,8 +107,8 @@
             // btnThem
             // 
             this.btnThem.Caption = "Mới";
-            this.btnThem.Glyph = ((System.Drawing.Image)(resources.GetObject("btnThem.Glyph")));
             this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.Name = "btnThem";
             this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
@@ -116,8 +116,8 @@
             // btnSua
             // 
             this.btnSua.Caption = "Sửa";
-            this.btnSua.Glyph = ((System.Drawing.Image)(resources.GetObject("btnSua.Glyph")));
             this.btnSua.Id = 1;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
             this.btnSua.Name = "btnSua";
             this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
@@ -125,8 +125,8 @@
             // btnXoa
             // 
             this.btnXoa.Caption = "Xóa";
-            this.btnXoa.Glyph = ((System.Drawing.Image)(resources.GetObject("btnXoa.Glyph")));
             this.btnXoa.Id = 2;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
@@ -134,8 +134,8 @@
             // btnNap
             // 
             this.btnNap.Caption = "Nạp";
-            this.btnNap.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNap.Glyph")));
             this.btnNap.Id = 3;
+            this.btnNap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNap.ImageOptions.Image")));
             this.btnNap.Name = "btnNap";
             this.btnNap.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnNap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNap_ItemClick);
@@ -143,8 +143,8 @@
             // btnXuatEx
             // 
             this.btnXuatEx.Caption = "Xuất dữ liệu";
-            this.btnXuatEx.Glyph = ((System.Drawing.Image)(resources.GetObject("btnXuatEx.Glyph")));
             this.btnXuatEx.Id = 4;
+            this.btnXuatEx.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatEx.ImageOptions.Image")));
             this.btnXuatEx.Name = "btnXuatEx";
             this.btnXuatEx.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnXuatEx.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatEx_ItemClick);
@@ -152,8 +152,8 @@
             // btnIn
             // 
             this.btnIn.Caption = "In";
-            this.btnIn.Glyph = ((System.Drawing.Image)(resources.GetObject("btnIn.Glyph")));
             this.btnIn.Id = 9;
+            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.Image")));
             this.btnIn.Name = "btnIn";
             this.btnIn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIn_ItemClick);
@@ -163,27 +163,31 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(768, 32);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(833, 32);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 403);
-            this.barDockControlBottom.Size = new System.Drawing.Size(768, 0);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(833, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 32);
+            this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 371);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(768, 32);
+            this.barDockControlRight.Location = new System.Drawing.Point(833, 32);
+            this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 371);
             // 
             // barStaticItem1
@@ -212,7 +216,7 @@
             this.grvDanhSachDoiTuong.MainView = this.gridViewDanhMucDoiTuong;
             this.grvDanhSachDoiTuong.MenuManager = this.barManager1;
             this.grvDanhSachDoiTuong.Name = "grvDanhSachDoiTuong";
-            this.grvDanhSachDoiTuong.Size = new System.Drawing.Size(768, 371);
+            this.grvDanhSachDoiTuong.Size = new System.Drawing.Size(833, 371);
             this.grvDanhSachDoiTuong.TabIndex = 24;
             this.grvDanhSachDoiTuong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDanhMucDoiTuong});
@@ -324,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 403);
+            this.ClientSize = new System.Drawing.Size(833, 403);
             this.Controls.Add(this.grvDanhSachDoiTuong);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -340,6 +344,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvDanhSachDoiTuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDanhMucDoiTuong)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

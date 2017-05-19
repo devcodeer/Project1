@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace KETOANVONBANGTIEN.DanhMuc
 {
@@ -45,6 +46,11 @@ namespace KETOANVONBANGTIEN.DanhMuc
             string matk = gridViewDanhSachNguoiDung.GetRowCellValue(gridViewDanhSachNguoiDung.FocusedRowHandle,colTenTk).ToString();
             NguoiDung_BUS.deleteUser(matk);
             LoadGridView();
+        }
+
+
+        private void grvDanhMucNguoiDung_Click(object sender, EventArgs e)
+        {
         }
     }
 }

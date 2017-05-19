@@ -18,20 +18,20 @@ namespace BUS
         }
 
         // Lay1 chung tu
-        public static DataTable Lay1ChungTu(string soct)
+        public static DataTable loadChungTuBySoChungTu(string soct)
         {
-            return ChungTu_DAO.Lay1ChungTu(soct);
+            return ChungTu_DAO.loadChungTuBySoChungTu(soct);
         }
 
 
         // Thêm
-        public static void Them1ChungTu(ChungTu_DTO ct)
+        public static void insertChungTu(ChungTu_DTO ct)
         {
             ChungTu_DAO.Them1ChungTu(ct);
         }
 
         // Sửa
-        public static void Sua1ChungTu(string magoc, ChungTu_DTO ct)
+        public static void updateChungTu(string magoc, ChungTu_DTO ct)
         {
             ChungTu_DAO.Sua1ChungTu(magoc, ct);
         }
@@ -67,21 +67,21 @@ namespace BUS
 
       
         // Thêm
-        public static void Them1ChiTietCt(ChiTietChungTu_DTO ct)
+        public static void insertChiTietChungTu(ChiTietChungTu_DTO ct)
         {
-            ChiTietChungTu_DAO.ThemChiTietCt(ct);
+            ChiTietChungTu_DAO.themChiTietChungTu(ct);
         }
 
         // Sửa
-        public static void SuaChiTietCt(int magoc,ChiTietChungTu_DTO ct)
+        public static void updateChiTietChungTu(int magoc,ChiTietChungTu_DTO ct)
         {
-            ChiTietChungTu_DAO.SuaChiTietCt(magoc, ct);
+            ChiTietChungTu_DAO.updateChiTietChungTu(magoc, ct);
         }
 
         // Xoa Chi tiet chung tu
-        public static void XoaChiTietCt(int id)
+        public static void deleteChiTietChungTu(int id)
         {
-            ChiTietChungTu_DAO.XoaChiTietCt(id);
+            ChiTietChungTu_DAO.deleteChiTietChungTu(id);
         }
     
     }

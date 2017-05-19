@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using BUS;
-namespace KETOANVONBANGTIEN.Funciton
+namespace KETOANVONBANGTIEN.Function
 {
     class Funtion
     {
@@ -86,7 +86,7 @@ namespace KETOANVONBANGTIEN.Funciton
             return char.ToUpper(chuoi[0]) + chuoi.Substring(1);
         }
 
-        public static string TaoSoCt(int loaict)
+        public static string randomSoChungTu(int loaict)
         {
             string sophieu = "XX00000";
             DataTable dt = ChungTu_BUS.LoadDanhSachCtTheoLoai(loaict);
