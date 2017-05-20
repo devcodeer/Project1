@@ -296,7 +296,7 @@
             this.lookUpEditLoaiTien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lookUpEditLoaiTien.Size = new System.Drawing.Size(100, 20);
             this.lookUpEditLoaiTien.TabIndex = 11;
-//            this.lookUpEditLoaiTien.EditValueChanged += new System.EventHandler(this.lookUpEditLoaiTien_EditValueChanged);
+            this.lookUpEditLoaiTien.EditValueChanged += new System.EventHandler(this.lookUpEditLoaiTien_EditValueChanged);
             this.lookUpEditLoaiTien.TextChanged += new System.EventHandler(this.lookUpEditLoaiTien_TextChanged);
             // 
             // labelControl7
@@ -540,6 +540,7 @@
             this.grvChiTiet.TabIndex = 0;
             this.grvChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewChiTiet});
+            this.grvChiTiet.TextChanged += new System.EventHandler(this.grvChiTiet_TextChanged);
             // 
             // GridViewChiTiet
             // 
