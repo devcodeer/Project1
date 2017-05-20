@@ -27,7 +27,7 @@ namespace DAO
         }
 
         // Lay1 chung tu
-        public static DataTable Lay1ChungTu( string soct)
+        public static DataTable loadChungTuBySoChungTu( string soct)
         {
             SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("[sp_CHUNGTU_SelectOne]", cnn);
@@ -198,7 +198,7 @@ namespace DAO
         }
 
         // Thêm chi tiết chứng từ
-        public static void ThemChiTietCt(ChiTietChungTu_DTO ct)
+        public static void themChiTietChungTu(ChiTietChungTu_DTO ct)
         {
             SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_ChiTietCT_Insert", cnn);
@@ -224,7 +224,7 @@ namespace DAO
         }
 
         // Sửa tiết chứng từ
-        public static void SuaChiTietCt(int magoc,ChiTietChungTu_DTO ct)
+        public static void updateChiTietChungTu(int magoc,ChiTietChungTu_DTO ct)
         {
             SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("sp_ChiTietCT_Update", cnn);
@@ -252,7 +252,7 @@ namespace DAO
         }
 
         // Xoa Chi tiet chung tu
-        public static void XoaChiTietCt(int id)
+        public static void deleteChiTietChungTu(int id)
         {
             SqlConnection cnn = Connector.getConnection();
             SqlCommand cmd = new SqlCommand("[sp_ChiTietCT_Delete]", cnn);

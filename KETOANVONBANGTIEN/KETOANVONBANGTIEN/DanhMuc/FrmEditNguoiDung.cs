@@ -12,15 +12,21 @@ namespace KETOANVONBANGTIEN.DanhMuc
 {
     public partial class FrmEditNguoiDung : Form
     {
+        private NguoiDung_DTO user;
         public FrmEditNguoiDung()
         {
             InitializeComponent();
         }
 
+        public FrmEditNguoiDung(NguoiDung_DTO userUpdate)
+        {
+            this.user = userUpdate;
+            InitializeComponent();
+        }
+
         private void FrmEditNguoiDung_Load(object sender, EventArgs e)
         {
-            LoadQuyen();
-            
+            LoadQuyen();     
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

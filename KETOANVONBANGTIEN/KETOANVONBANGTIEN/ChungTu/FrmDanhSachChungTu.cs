@@ -81,7 +81,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             if (luachonds.LuaChon == "DanhSachGiayBaoCo")
             {
                 ChungTu.FrmGiayBaoCo frm = new ChungTu.FrmGiayBaoCo();
-                frm.lc.LuaChon = "Add";                
+                frm.luaChon.LuaChon = "Add";                
                 frm.ShowDialog();
                 LoadDanhSach();
             }
@@ -124,8 +124,8 @@ namespace KETOANVONBANGTIEN.ChungTu
             if (luachonds.LuaChon == "DanhSachGiayBaoCo")
             {
                 ChungTu.FrmGiayBaoCo frm = new ChungTu.FrmGiayBaoCo();
-                frm.lc.LuaChon = "Edit";
-                LayDuLieu(frm.obj);
+                frm.luaChon.LuaChon = "Edit";
+                LayDuLieu(frm.chungTu);
                 
                 frm.ShowDialog();
                 LoadDanhSach();
@@ -257,8 +257,8 @@ namespace KETOANVONBANGTIEN.ChungTu
             if (luachonds.LuaChon == "DanhSachGiayBaoCo")
             {
                 ChungTu.FrmGiayBaoCo frm = new ChungTu.FrmGiayBaoCo();
-                frm.lc.LuaChon = "Edit";
-                LayDuLieu(frm.obj);
+                frm.luaChon.LuaChon = "Edit";
+                LayDuLieu(frm.chungTu);
 
                 frm.ShowDialog();
                 LoadDanhSach();
