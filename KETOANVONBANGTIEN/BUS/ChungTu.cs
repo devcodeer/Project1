@@ -10,6 +10,13 @@ namespace BUS
 {
     public class ChungTu_BUS
     {
+        public static int getTyGiaHienTai()
+        {
+            DataTable dtb = ChungTu_DAO.loadTyGiaHienTai();
+            int tyGiaHienTai = (int)dtb.Rows[0][0];
+            return tyGiaHienTai;
+        }
+
         // Load
         public static DataTable LoadDanhSachCtTheoLoai( int maloai)
         {
