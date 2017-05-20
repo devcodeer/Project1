@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KETOANVONBANGTIEN</RootNamespace>
     <AssemblyName>KETOANVONBANGTIEN</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -346,6 +346,7 @@
     </Compile>
     <Compile Include="BaoCao\BaoCaoDanhSachChungTu\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BaoCao\BaoCaoDanhSachChungTu\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>

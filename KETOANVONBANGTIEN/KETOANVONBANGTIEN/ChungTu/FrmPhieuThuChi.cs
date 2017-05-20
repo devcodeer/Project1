@@ -24,6 +24,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
         private void FrmPhieuThu_Load(object sender, EventArgs e)
         {
+            txtTyGia.Enabled = false;
             if (chonloaiphieu.LuaChon == "PhieuThu")
             {
                 this.Text = "Phiếu Thu";
@@ -393,20 +394,20 @@ namespace KETOANVONBANGTIEN.ChungTu
 
             }
 
-            private void lookUpEditLoaiTien_EditValueChanged(object sender, EventArgs e)
-            {
-                if (lookUpEditLoaiTien.Text == "VND")
-                {
-                    txtTyGia.Text = "1";
-                    colSoTienNt.Visible = false;
-                    colSoTien.OptionsColumn.ReadOnly = false;
-                }
-                else
-                {
-                    colSoTienNt.Visible = true;
-                    colSoTien.OptionsColumn.ReadOnly = true;
-                }
-            }
+            //private void lookUpEditLoaiTien_EditValueChanged(object sender, EventArgs e)
+            //{
+            //    if (lookUpEditLoaiTien.Text == "VND")
+            //    {
+            //        txtTyGia.Text = "1";
+            //        colSoTienNt.Visible = false;
+            //        colSoTien.OptionsColumn.ReadOnly = false;
+            //    }
+            //    else
+            //    {
+            //        colSoTienNt.Visible = true;
+            //        colSoTien.OptionsColumn.ReadOnly = true;
+            //    }
+            //}
 
             private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
             {             
@@ -566,6 +567,11 @@ namespace KETOANVONBANGTIEN.ChungTu
                 dateEditNgayGs.Properties.ReadOnly = false;
                 txtTyGia.Properties.ReadOnly = false;
                 GridViewChiTiet.OptionsBehavior.ReadOnly = false;
+            }
+
+            private void lookUpEditLoaiTien_TextChanged(object sender, EventArgs e)
+            {
+
             }
 
 
