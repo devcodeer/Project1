@@ -10,6 +10,18 @@ namespace DAO
 {
     public class ChungTu_DAO
     {
+        public static DataTable loadTyGiaHienTai()
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("TinhTyGia", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
         // Load danh sach chứng từ
         public static DataTable LoadDSChungTu(int loaict)
         {
