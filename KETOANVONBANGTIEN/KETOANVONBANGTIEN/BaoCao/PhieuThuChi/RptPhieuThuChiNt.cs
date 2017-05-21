@@ -11,9 +11,6 @@ namespace KETOANVONBANGTIEN.BaoCao.PhieuThuChi
         public RptPhieuThuChiNt()
         {
             InitializeComponent();
-        }
-
-
-       
+        }       
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using DevExpress.LookAndFeel;
 
 namespace KETOANVONBANGTIEN.ChungTu
 {
@@ -189,7 +190,18 @@ namespace KETOANVONBANGTIEN.ChungTu
             rpt.DataSource = ChungTu_BUS.LoadDanhSachCtTheoLoai(maloaict);
             rpt.DataMember = "Table";
             rpt.loaidanhsach.LuaChon = maloaict.ToString();
-           // rpt.ShowPreview();
+
+            using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt))
+            {
+                // Invoke the Ribbon Print Preview form modally, 
+                // and load the report document into it.
+                printTool.ShowRibbonPreviewDialog();
+
+                // Invoke the Ribbon Print Preview form
+                // with the specified look and feel setting.
+                printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+            }
+            // rpt.ShowPreview();
         }
 
         private void btnGhiSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
