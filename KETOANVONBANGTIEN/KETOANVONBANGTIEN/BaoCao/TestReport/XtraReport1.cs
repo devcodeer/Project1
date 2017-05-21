@@ -4,16 +4,14 @@ using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 
-namespace KETOANVONBANGTIEN.BaoCao.PhieuThuChi
+namespace KETOANVONBANGTIEN.BaoCao.TestReport
 {
-    public partial class RptPhieuThuChiNt : DevExpress.XtraReports.UI.XtraReport
+    public partial class XtraReport1 : DevExpress.XtraReports.UI.XtraReport
     {
-        public RptPhieuThuChiNt()
+        public XtraReport1()
         {
             InitializeComponent();
         }
 
-
-       
     }
 }

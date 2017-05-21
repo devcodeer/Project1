@@ -495,8 +495,8 @@ namespace KETOANVONBANGTIEN.ChungTu
                 rpt.TkNo.Visible = false;
                 rpt.TkCo.Value = tkco;
                 rpt.TkCo.Visible = false;
-
-                //   rpt.ShowPreview();
+                rpt.CreateLayoutViewDocument();
+               // rpt.ShowPreview();
             }
 
             else if (tentien == "USD")
@@ -530,7 +530,8 @@ namespace KETOANVONBANGTIEN.ChungTu
                 rpt1.TkNo.Visible = false;
                 rpt1.TkCo.Value = tkco;
                 rpt1.TkCo.Visible = false;
-                // rpt1.ShowPreview();
+               // rpt1.ShowRibbonPreview();
+                rpt1.CreateLayoutViewDocument();
             }
 
         }
