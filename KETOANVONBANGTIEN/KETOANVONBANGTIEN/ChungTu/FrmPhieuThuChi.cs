@@ -30,12 +30,13 @@ namespace KETOANVONBANGTIEN.ChungTu
 
         private void FrmPhieuThu_Load(object sender, EventArgs e)
         {
-            txtTyGia.Enabled = false;
+            // txtTyGia.Enabled = false;
             if (chonloaiphieu.LuaChon == "PhieuThu")
             {
                 this.Text = "Phiếu Thu";
                 maphieu = 1;
                 lblNguoiGiaoDich.Text = "Người nộp";
+
             }
 
             else if (chonloaiphieu.LuaChon == "PhieuChi")
@@ -71,8 +72,6 @@ namespace KETOANVONBANGTIEN.ChungTu
             }
 
             LoadLookUpEditTkNo_Co();
-
-
         }
 
 
@@ -92,6 +91,8 @@ namespace KETOANVONBANGTIEN.ChungTu
             lookUpEditLoaiTien.Properties.DataSource = TienTe_BUS.loadDanhMucTienTe();
             lookUpEditLoaiTien.Properties.DisplayMember = "MaTien";
             lookUpEditLoaiTien.Properties.ValueMember = "MaTien";
+
+            lookUpEditLoaiTien.EditValue = "VND";
         }
 
         private void LoadLookUpEditTkNo_Co()
@@ -184,9 +185,9 @@ namespace KETOANVONBANGTIEN.ChungTu
                     btnSua.Enabled = true;
 
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Không thêm được,kiểm tra lại dữ liệu !");
+                    MessageBox.Show("Không thêm được, kiểm tra lại dữ liệu! " + ex.Message);
 
                 }
             }
@@ -200,9 +201,9 @@ namespace KETOANVONBANGTIEN.ChungTu
                     btnIn.Enabled = true;
                     btnSua.Enabled = true;
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Không sửa được, kiểm tra lại dữ liệu !");
+                    MessageBox.Show("Không sửa được, kiểm tra lại dữ liệu! " + ex.Message);
 
                 }
             }
@@ -261,11 +262,12 @@ namespace KETOANVONBANGTIEN.ChungTu
                     sotiennt = 0;
                     sotien = Decimal.Parse(GridViewChiTiet.GetRowCellDisplayText(i, colSoTien).ToString());
                 }
-                else if (matien != "VND")
-                {
-                    sotiennt = Decimal.Parse(GridViewChiTiet.GetRowCellDisplayText(i, colSoTienNt).ToString());
-                    sotien = sotiennt * decimal.Parse(tygia.ToString());
-                }
+                else
+                    if (matien == "USD")
+                    {
+                        sotiennt = Decimal.Parse(GridViewChiTiet.GetRowCellDisplayText(i, colSoTienNt).ToString());
+                        sotien = sotiennt * decimal.Parse(tygia.ToString());
+                    }
 
                 ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt, sotien);
                 ChiTietCT_BUS.insertChiTietChungTu(ct);
@@ -495,8 +497,8 @@ namespace KETOANVONBANGTIEN.ChungTu
                 rpt.TkNo.Visible = false;
                 rpt.TkCo.Value = tkco;
                 rpt.TkCo.Visible = false;
-
-                //   rpt.ShowPreview();
+                rpt.CreateLayoutViewDocument();
+               // rpt.ShowPreview();
             }
 
             else if (tentien == "USD")
@@ -530,7 +532,8 @@ namespace KETOANVONBANGTIEN.ChungTu
                 rpt1.TkNo.Visible = false;
                 rpt1.TkCo.Value = tkco;
                 rpt1.TkCo.Visible = false;
-                // rpt1.ShowPreview();
+               // rpt1.ShowRibbonPreview();
+                rpt1.CreateLayoutViewDocument();
             }
 
         }
@@ -588,13 +591,35 @@ namespace KETOANVONBANGTIEN.ChungTu
 
         private void lookUpEditLoaiTien_EditValueChanged(object sender, EventArgs e)
         {
-            txtTyGia.Enabled = false;
-            if (lookUpEditLoaiTien.EditValue.ToString() == "VND")
+            if (chonloaiphieu.LuaChon == "PhieuThu")
             {
-                txtTyGia.Text = "1";
+                if (lookUpEditLoaiTien.EditValue.ToString() == "VND")
+                {
+                    txtTyGia.Text = "1";
+                    GridViewChiTiet.Columns[4].Visible = false;
+                    txtTyGia.Enabled = false;
+                }
+                else
+                {
+                    GridViewChiTiet.Columns[4].Visible = true;
+                    txtTyGia.Enabled = true;
+                    txtTyGia.Text = "";
+                }
             }
             else
-                txtTyGia.Text = ChungTu_BUS.getTyGiaHienTai().ToString();
+            {
+                txtTyGia.Enabled = false;
+                if (lookUpEditLoaiTien.EditValue.ToString() == "VND")
+                {
+                    txtTyGia.Text = "1";
+                    GridViewChiTiet.Columns[4].Visible = false;
+                }
+                else
+                {
+                    txtTyGia.Text = ChungTu_BUS.getTyGiaHienTai().ToString();
+                    GridViewChiTiet.Columns[4].Visible = true;
+                }
+            }
         }
 
         // 20-May-2017 Trong
