@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.SkinsGallery = new DevExpress.XtraBars.RibbonGalleryBarItem();
@@ -105,7 +104,7 @@
             this.nbgCongCu = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemPhanTich = new DevExpress.XtraNavBar.NavBarItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -254,7 +253,7 @@
             // 
             // barBtnTinhTyGia
             // 
-            this.barBtnTinhTyGia.Caption = "Tính tỷ giá ngoại tệ ghi sổ";
+            this.barBtnTinhTyGia.Caption = "Xử lý chênh lệch";
             this.barBtnTinhTyGia.Id = 38;
             this.barBtnTinhTyGia.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnTinhTyGia.ImageOptions.LargeImage")));
             this.barBtnTinhTyGia.LargeWidth = 100;

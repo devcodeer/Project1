@@ -359,6 +359,12 @@
     <Compile Include="DanhMuc\FrmTinhTyGiaXuatNT.Designer.cs">
       <DependentUpon>FrmTinhTyGiaXuatNT.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\FrmTyGiaXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FrmTyGiaXuat.Designer.cs">
+      <DependentUpon>FrmTyGiaXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGiaoDienChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FrmTinhTyGiaXuatNT.resx">
       <DependentUpon>FrmTinhTyGiaXuatNT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FrmTyGiaXuat.resx">
+      <DependentUpon>FrmTyGiaXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGiaoDienChinh.resx">
       <DependentUpon>FormGiaoDienChinh.cs</DependentUpon>
