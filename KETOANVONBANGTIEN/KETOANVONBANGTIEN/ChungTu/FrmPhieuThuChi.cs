@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using DevExpress.LookAndFeel;
 
 namespace KETOANVONBANGTIEN.ChungTu
 {
@@ -425,8 +426,6 @@ namespace KETOANVONBANGTIEN.ChungTu
 
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-
             DataTable dt1 = ChungTu_BUS.loadChungTuBySoChungTu(txtSoCt.Text);
 
             decimal sotien = 0;
@@ -437,7 +436,9 @@ namespace KETOANVONBANGTIEN.ChungTu
                 sotiennt = decimal.Parse(dt1.Rows[0]["SoTienNt"].ToString());
 
             }
-            catch { };
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            };
 
             string nguoigd = dt1.Rows[0]["NguoiGd"].ToString();
             string tendt = dt1.Rows[0]["TenDt"].ToString();
@@ -498,7 +499,19 @@ namespace KETOANVONBANGTIEN.ChungTu
                 rpt.TkCo.Value = tkco;
                 rpt.TkCo.Visible = false;
                 rpt.CreateLayoutViewDocument();
-               // rpt.ShowPreview();
+
+                // //-- Trong: 21-May-2017 ---// //
+                // block code print report //
+                using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt))
+                {
+                    // Invoke the Ribbon Print Preview form modally, 
+                    // and load the report document into it.
+                    printTool.ShowRibbonPreviewDialog();
+
+                    // Invoke the Ribbon Print Preview form
+                    // with the specified look and feel setting.
+                    printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+                }
             }
 
             else if (tentien == "USD")
@@ -532,8 +545,19 @@ namespace KETOANVONBANGTIEN.ChungTu
                 rpt1.TkNo.Visible = false;
                 rpt1.TkCo.Value = tkco;
                 rpt1.TkCo.Visible = false;
-               // rpt1.ShowRibbonPreview();
-                rpt1.CreateLayoutViewDocument();
+
+                using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt1))
+                {
+                    // Invoke the Ribbon Print Preview form modally, 
+                    // and load the report document into it.
+                    printTool.ShowRibbonPreviewDialog();
+
+                    // Invoke the Ribbon Print Preview form
+                    // with the specified look and feel setting.
+                    printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+                }
+                //rpt1.ShowPrintStatusDialog();
+                //rpt1.CreateLayoutViewDocument();
             }
 
         }
