@@ -36,6 +36,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 this.Text = "Phiếu Thu";
                 maphieu = 1;
                 lblNguoiGiaoDich.Text = "Người nộp";
+
             }
 
             else if (chonloaiphieu.LuaChon == "PhieuChi")
@@ -71,8 +72,6 @@ namespace KETOANVONBANGTIEN.ChungTu
             }
 
             LoadLookUpEditTkNo_Co();
-
-
         }
 
 
@@ -92,6 +91,8 @@ namespace KETOANVONBANGTIEN.ChungTu
             lookUpEditLoaiTien.Properties.DataSource = TienTe_BUS.loadDanhMucTienTe();
             lookUpEditLoaiTien.Properties.DisplayMember = "MaTien";
             lookUpEditLoaiTien.Properties.ValueMember = "MaTien";
+
+            lookUpEditLoaiTien.EditValue = "VND";
         }
 
         private void LoadLookUpEditTkNo_Co()
@@ -595,8 +596,14 @@ namespace KETOANVONBANGTIEN.ChungTu
                 {
                     txtTyGia.Text = "1";
                     GridViewChiTiet.Columns[4].Visible = false;
+                    txtTyGia.Enabled = false;
                 }
-                else GridViewChiTiet.Columns[4].Visible = true;
+                else
+                {
+                    GridViewChiTiet.Columns[4].Visible = true;
+                    txtTyGia.Enabled = true;
+                    txtTyGia.Text = "";
+                }
             }
             else
             {
