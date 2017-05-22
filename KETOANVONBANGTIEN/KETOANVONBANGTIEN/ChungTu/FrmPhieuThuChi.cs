@@ -510,7 +510,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
                     // Invoke the Ribbon Print Preview form
                     // with the specified look and feel setting.
-                    printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+                   // printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
                 }
             }
 
@@ -554,7 +554,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
                     // Invoke the Ribbon Print Preview form
                     // with the specified look and feel setting.
-                    printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+                   // printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
                 }
                 //rpt1.ShowPrintStatusDialog();
                 //rpt1.CreateLayoutViewDocument();

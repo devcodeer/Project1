@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using DevExpress.LookAndFeel;
+
 namespace KETOANVONBANGTIEN.ChungTu
 {
     public partial class FrmGiayBaoNo : Form
@@ -416,20 +418,21 @@ namespace KETOANVONBANGTIEN.ChungTu
 
         private void lookUpEditLoaiTien_EditValueChanged(object sender, EventArgs e)
         {
-            
-           
-                if (lookUpEditLoaiTien.Text == "VND")
-                {
-                    colSoTienNt.Visible = false;
-                    txtTyGia.Text = "1";
-                    colSoTien.OptionsColumn.ReadOnly = false;
-                }
-                else
-                {
-                    colSoTienNt.Visible = true;
-                    colSoTien.OptionsColumn.ReadOnly = true;
-                }
-                  
+            txtTyGia.Enabled = false;
+            if (lookUpEditLoaiTien.EditValue.ToString() == "VND")
+            {
+                txtTyGia.Text = "1";
+                GridViewChiTiet.Columns[4].Visible = false;
+                colSoTienNt.Visible = false;
+                colSoTien.OptionsColumn.ReadOnly = false;
+            }
+            else
+            {
+                txtTyGia.Text = ChungTu_BUS.getTyGiaHienTai().ToString();
+                GridViewChiTiet.Columns[4].Visible = true;
+                colSoTienNt.Visible = true;
+                colSoTien.OptionsColumn.ReadOnly = true;
+            }            
         }     
 
         private void btnInGiayBao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -481,7 +484,17 @@ namespace KETOANVONBANGTIEN.ChungTu
             rpt.ptTienChu.Visible = false;
             rpt.ptNgayCt.Visible = false;
             rpt.ptNguoiGd.Visible = false;
-         //   rpt.ShowPreview();
+            using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt))
+            {
+                // Invoke the Ribbon Print Preview form modally, 
+                // and load the report document into it.
+                printTool.ShowRibbonPreviewDialog();
+
+                // Invoke the Ribbon Print Preview form
+                // with the specified look and feel setting.
+                // printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+            }
+            //   rpt.ShowPreview();
 
         }
 
@@ -580,8 +593,17 @@ namespace KETOANVONBANGTIEN.ChungTu
             rpt.ChiNhanhNhDen.Visible = false;
             rpt.SoTien.Visible = false;
             rpt.TienChu.Visible = false;
+            using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt))
+            {
+                // Invoke the Ribbon Print Preview form modally, 
+                // and load the report document into it.
+                printTool.ShowRibbonPreviewDialog();
 
-          //  rpt.ShowPreview();
+                // Invoke the Ribbon Print Preview form
+                // with the specified look and feel setting.
+                // printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+            }
+            //  rpt.ShowPreview();
         }
 
         private void btnInAgr_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -608,8 +630,10 @@ namespace KETOANVONBANGTIEN.ChungTu
                     sotien = decimal.Parse(dt.Rows[0]["SoTien"].ToString());
                     tienchu = Function.Funtion.DecimalToString(sotien) + " đồng chẵn";
                 }
-                catch
-                { }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -618,8 +642,10 @@ namespace KETOANVONBANGTIEN.ChungTu
                     sotien = decimal.Parse(dt.Rows[0]["SoTienNt"].ToString());
                     tienchu = Function.Funtion.DecimalToString(sotien) + " đô la Mỹ";
                 }
-                catch
-                { }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             rpt.Ngay.Value = dateEditNgayCt.DateTime;
@@ -627,7 +653,17 @@ namespace KETOANVONBANGTIEN.ChungTu
             rpt.SoTien.Value = sotien;
             rpt.lblTienChu.Text = tienchu;
             rpt.SoTien.Visible = false;
-         //   rpt.ShowPreview();
+            using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt))
+            {
+                // Invoke the Ribbon Print Preview form modally, 
+                // and load the report document into it.
+                printTool.ShowRibbonPreviewDialog();
+
+                // Invoke the Ribbon Print Preview form
+                // with the specified look and feel setting.
+                // printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+            }
+            //   rpt.ShowPreview();
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

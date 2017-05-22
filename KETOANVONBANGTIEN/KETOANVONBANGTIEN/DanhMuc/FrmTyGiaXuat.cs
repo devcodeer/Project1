@@ -15,6 +15,17 @@ namespace KETOANVONBANGTIEN.DanhMuc
         public FrmTyGiaXuat()
         {
             InitializeComponent();
+            LoadLookUpEditTienTe();
+
+        }
+
+        private void LoadLookUpEditTienTe()
+        {
+            lookUpEditLoaiTien.Properties.DataSource = BUS.TienTe_BUS.loadDanhMucTienTe();
+            lookUpEditLoaiTien.Properties.DisplayMember = "MaTien";
+            lookUpEditLoaiTien.Properties.ValueMember = "MaTien";
+
+            lookUpEditLoaiTien.EditValue = "VND";
         }
 
         private void FrmTyGiaXuat_Load(object sender, EventArgs e)

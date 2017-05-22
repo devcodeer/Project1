@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using DevExpress.LookAndFeel;
+
 namespace KETOANVONBANGTIEN.ChungTu
 {
     public partial class FrmGiayBaoCo : Form
@@ -487,7 +489,17 @@ namespace KETOANVONBANGTIEN.ChungTu
             rpt.ptTienChu.Visible = false;
             rpt.ptNgayCt.Visible = false;
             rpt.ptNguoiGd.Visible = false;
-          //  rpt.ShowPreview();
+            using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt))
+            {
+                // Invoke the Ribbon Print Preview form modally, 
+                // and load the report document into it.
+                printTool.ShowRibbonPreviewDialog();
+
+                // Invoke the Ribbon Print Preview form
+                // with the specified look and feel setting.
+                // printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+            }
+            //  rpt.ShowPreview();
         }
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -540,9 +552,5 @@ namespace KETOANVONBANGTIEN.ChungTu
             groupControl2.Enabled = true;
             lookUpEditLoaiDt.Enabled = true;
         }
-
-
-       
-
     }
 }
