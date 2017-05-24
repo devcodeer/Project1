@@ -68,9 +68,9 @@
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayGhiSo.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayGhiSo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayGhiSo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayCt.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayCt.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayCt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -86,7 +86,7 @@
             // 
             this.txtLyDo.Location = new System.Drawing.Point(78, 45);
             this.txtLyDo.Name = "txtLyDo";
-            this.txtLyDo.Size = new System.Drawing.Size(581, 20);
+            this.txtLyDo.Size = new System.Drawing.Size(581, 21);
             this.txtLyDo.TabIndex = 7;
             // 
             // labelControl4
@@ -100,8 +100,8 @@
             // btnDong
             // 
             this.btnDong.Caption = "Đóng";
-            this.btnDong.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDong.Glyph")));
             this.btnDong.Id = 2;
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
             this.btnDong.Name = "btnDong";
             this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
@@ -147,13 +147,13 @@
             this.dateEditNgayGhiSo.Name = "dateEditNgayGhiSo";
             this.dateEditNgayGhiSo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgayGhiSo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEditNgayGhiSo.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.dateEditNgayGhiSo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEditNgayGhiSo.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateEditNgayGhiSo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEditNgayGhiSo.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dateEditNgayGhiSo.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEditNgayGhiSo.Size = new System.Drawing.Size(117, 20);
             this.dateEditNgayGhiSo.TabIndex = 12;
             // 
@@ -164,13 +164,13 @@
             this.dateEditNgayCt.Name = "dateEditNgayCt";
             this.dateEditNgayCt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgayCt.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEditNgayCt.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.dateEditNgayCt.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEditNgayCt.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.dateEditNgayCt.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dateEditNgayCt.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dateEditNgayCt.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEditNgayCt.Size = new System.Drawing.Size(117, 20);
             this.dateEditNgayCt.TabIndex = 11;
             // 
@@ -178,7 +178,7 @@
             // 
             this.txtSoCt.Location = new System.Drawing.Point(82, 25);
             this.txtSoCt.Name = "txtSoCt";
-            this.txtSoCt.Size = new System.Drawing.Size(117, 20);
+            this.txtSoCt.Size = new System.Drawing.Size(117, 21);
             this.txtSoCt.TabIndex = 8;
             // 
             // labelControl11
@@ -236,16 +236,18 @@
             // btnLuuVaDong
             // 
             this.btnLuuVaDong.Caption = "Lưu ";
-            this.btnLuuVaDong.Glyph = ((System.Drawing.Image)(resources.GetObject("btnLuuVaDong.Glyph")));
             this.btnLuuVaDong.Id = 0;
+            this.btnLuuVaDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuVaDong.ImageOptions.Image")));
             this.btnLuuVaDong.Name = "btnLuuVaDong";
             this.btnLuuVaDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnLuuVaDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLuuVaDong_ItemClick);
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(984, 32);
             // 
             // barDockControlBottom
@@ -253,6 +255,7 @@
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 639);
+            this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(984, 0);
             // 
             // barDockControlLeft
@@ -260,6 +263,7 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 32);
+            this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 607);
             // 
             // barDockControlRight
@@ -267,6 +271,7 @@
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(984, 32);
+            this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 607);
             // 
             // gridView1
@@ -295,13 +300,13 @@
             // grvChiTiet
             // 
             this.grvChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grvChiTiet.Location = new System.Drawing.Point(2, 21);
+            this.grvChiTiet.Location = new System.Drawing.Point(2, 20);
             this.grvChiTiet.MainView = this.GridViewChiTiet;
             this.grvChiTiet.Name = "grvChiTiet";
             this.grvChiTiet.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditTkNo,
             this.repositoryItemLookUpEditTkCo});
-            this.grvChiTiet.Size = new System.Drawing.Size(980, 402);
+            this.grvChiTiet.Size = new System.Drawing.Size(980, 403);
             this.grvChiTiet.TabIndex = 3;
             this.grvChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewChiTiet});
@@ -424,9 +429,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayGhiSo.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayGhiSo.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayGhiSo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayCt.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayCt.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayCt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -437,6 +442,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditTkNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditTkCo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

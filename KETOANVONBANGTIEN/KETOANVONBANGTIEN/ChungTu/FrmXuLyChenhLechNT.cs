@@ -20,5 +20,10 @@ namespace KETOANVONBANGTIEN.ChungTu
         {
 
         }
+
+        private void btnLuuVaDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
