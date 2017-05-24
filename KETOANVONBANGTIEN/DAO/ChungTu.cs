@@ -10,6 +10,45 @@ namespace DAO
 {
     public class ChungTu_DAO
     {
+        public static void xuLyChenhLech(String soct, String tkno, String tkco, String noidung, int sotiennt, int sotien, string tigiaso, string tigiathuc)
+        {
+            /*
+             @soct	varchar(10),		
+		        @tkno	varchar(7),		
+		        @tkco	varchar(7),
+		        @noidung nvarchar(100),
+		        @sotiennt numeric(18,2),
+		        @sotien		numeric(18,0),
+		        @tiGiaGhiSo nvarchar(50),
+		        @tiGiaThucTe nvarchar(50)
+             */
+            SqlConnection cnn = Connector.getConnection();
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand("sp_XuLyChenhLech", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@soct", SqlDbType.VarChar, 10));
+            cmd.Parameters.Add(new SqlParameter("@tkno", SqlDbType.VarChar, 7));
+            cmd.Parameters.Add(new SqlParameter("@tkco", SqlDbType.VarChar, 7));
+            cmd.Parameters.Add(new SqlParameter("@noidung", SqlDbType.NVarChar, 100));
+            cmd.Parameters.Add(new SqlParameter("@sotiennt", SqlDbType.Int));
+            cmd.Parameters.Add(new SqlParameter("@sotien", SqlDbType.Int));
+            cmd.Parameters.Add(new SqlParameter("@tiGiaGhiSo", SqlDbType.NVarChar, 50));
+            cmd.Parameters.Add(new SqlParameter("@tiGiaThucTe", SqlDbType.NVarChar, 50));
+
+            cmd.Parameters["@soct"].Value = soct;
+            cmd.Parameters["@tkno"].Value = tkno;
+            cmd.Parameters["@tkco"].Value = tkco;
+            cmd.Parameters["@noidung"].Value = noidung;
+            cmd.Parameters["@sotiennt"].Value = sotiennt;
+            cmd.Parameters["@sotien"].Value = sotien;
+            cmd.Parameters["@tiGiaGhiSo"].Value = tigiaso;
+            cmd.Parameters["@tiGiaThucTe"].Value = tigiathuc;
+
+            cmd.ExecuteNonQuery();
+
+            cnn.Close();
+        }
+
         public static DataTable getDSXyLyChenhLech()
         {
             SqlConnection cnn = Connector.getConnection();

@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,9 @@ namespace KETOANVONBANGTIEN.ChungTu
 {
     public partial class FrmXuLyChenhLechNT : Form
     {
+
+        public LuaChon_DTO lc = new LuaChon_DTO();
+
         public FrmXuLyChenhLechNT()
         {
             InitializeComponent();
@@ -28,73 +32,112 @@ namespace KETOANVONBANGTIEN.ChungTu
 
         private void btnLuuVaDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (lc.LuaChon == "Add")
-            //{
-            //    try
-            //    {
-            //        ThemMoi();
-            //        MessageBox.Show("Thêm mới thành công !");
-            //        DisableControl();
-            //        btnIn.Enabled = true;
-            //        btnSua.Enabled = true;
+            if (lc.LuaChon == "Add")
+            {
+                try
+                {
+                    ThemMoi();
+                    MessageBox.Show("Thêm mới thành công !");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Không thêm được, kiểm tra lại dữ liệu! " + ex.Message);
 
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Không thêm được, kiểm tra lại dữ liệu! " + ex.Message);
+                }
+            }
+            else if (lc.LuaChon == "Edit")
+            {
+                try
+                {
+                   // Sua();
+                    MessageBox.Show("Sửa thành công !");
+                   // DisableControl();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Không sửa được, kiểm tra lại dữ liệu! " + ex.Message);
 
-            //    }
-            //}
-            //else if (lc.LuaChon == "Edit")
-            //{
-            //    try
-            //    {
-            //        Sua();
-            //        MessageBox.Show("Sửa thành công !");
-            //        DisableControl();
-            //        btnIn.Enabled = true;
-            //        btnSua.Enabled = true;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Không sửa được, kiểm tra lại dữ liệu! " + ex.Message);
-
-            //    }
-            //}
+                }
+            }
 
         }
         private void ThemMoi()
         {
-            //string soct = txtSoCt.Text;
-            //DateTime ngayct = dateEditNgayCt.DateTime;
-            //DateTime ngayghiso = dateEditNgayGs.DateTime;
-            //string madt = lookUpEditDT.GetColumnValue("Ma").ToString();
-            //string diachi = txtDiaChi.Text;
-            //string nguoigd = txtNguoiGd.Text;
-            //string lydo = txtLyDo.Text;
-            //string kemtheo = txtKemTheo.Text;
-            //string matien = lookUpEditLoaiTien.GetColumnValue("MaTien").ToString();
-            //float tygia = float.Parse(txtTyGia.Text);
+            string soct = txtSoCt.Text;
+            DateTime ngayct = dateEditNgayCt.DateTime;
+            DateTime ngayghiso = dateEditNgayGhiSo.DateTime;
+            string madt = "";
+            string diachi = "";
+            string nguoigd = "";
+            string lydo = "Xu ly chenh lech";
+            string kemtheo = "";
+            string matien = lookUpEditLoaiTien.GetColumnValue("MaTien").ToString();
+            float tygia = float.Parse(txtTiGiaGhiSo.Text);
 
-            //ChungTu_DTO chungtu = new ChungTu_DTO(soct, maphieu, ngayct, ngayghiso, madt, nguoigd, diachi, lydo, kemtheo, matien, tygia, "", "", false);
-            //ChungTu_BUS.insertChungTu(chungtu);
-
-            //Store sp_XuLyChenhLech
-            /*
-             * @soct	varchar(10),		
-		        @tkno	varchar(7),		
-		        @tkco	varchar(7),
-		        @noidung nvarchar(100),
-		        @sotiennt numeric(18,2),
-		        @sotien		numeric(18,0),
-		        @tiGiaGhiSo nvarchar(50),
-		        @tiGiaThucTe nvarchar(50)
-             */
+            ChungTu_DTO chungtu = new ChungTu_DTO(soct, 1, ngayct, ngayghiso, madt, nguoigd, diachi, lydo, kemtheo, matien, tygia, "", "", false);
+            ChungTu_BUS.insertChungTu(chungtu);
 
 
+            string tkno = GridViewChiTiet.GetRowCellDisplayText(0, colTkNo).ToString();
+            string tkco = GridViewChiTiet.GetRowCellDisplayText(0, colTkCo).ToString();
+            string noidung = GridViewChiTiet.GetRowCellDisplayText(0, colNoiDung).ToString();
 
+            int tonQuy = int.Parse(txtTonQuy.Text.ToString().Trim());
+            int soTien = int.Parse(txtSoTien.Text.ToString().Trim());
+            string tyGiaGhiSo = txtTiGiaGhiSo.Text.ToString().Trim();
+            string tyGiaThucTe = txtTiGiaThucTe.Text.ToString().Trim();
 
+            ChungTu_BUS.xuLyChenhLech(soct, tkno, tkco, noidung, tonQuy, soTien, tyGiaGhiSo, tyGiaThucTe);
         }
+
+        //private void Sua()
+        //{
+        //    string soct = txtSoCt.Text;
+        //    DateTime ngayct = dateEditNgayCt.DateTime;
+        //    DateTime ngayghiso = dateEditNgayGs.DateTime;
+        //    string madt = lookUpEditDT.GetColumnValue("Ma").ToString();
+        //    string diachi = txtDiaChi.Text;
+        //    string nguoigd = txtNguoiGd.Text;
+        //    string lydo = txtLyDo.Text;
+        //    string kemtheo = txtKemTheo.Text;
+        //    string matien = lookUpEditLoaiTien.GetColumnValue("MaTien").ToString();
+        //    float tygia = float.Parse(txtTyGia.Text);
+        //    bool trangthai = obj.TrangThai;
+        //    ChungTu_DTO chungtu = new ChungTu_DTO(soct, maphieu, ngayct, ngayghiso, madt, nguoigd, diachi, lydo, kemtheo, matien, tygia, "", "", trangthai);
+        //    ChungTu_BUS.updateChungTu(obj.SoCt, chungtu);
+
+        //    int id;
+        //    string tkno;
+        //    string tkco;
+        //    string noidung;
+        //    decimal sotien = 0;
+        //    decimal sotiennt = 0;
+        //    int rowcount = GridViewChiTiet.RowCount;
+
+        //    if (sodonggoc <= rowcount)
+        //    {
+        //        for (int i = 0; i < sodonggoc - 1; i++)
+        //        {
+        //            id = int.Parse(GridViewChiTiet.GetRowCellDisplayText(i, colId).ToString());
+        //            tkno = GridViewChiTiet.GetRowCellDisplayText(i, colTkNo).ToString();
+        //            tkco = GridViewChiTiet.GetRowCellDisplayText(i, colTkCo).ToString();
+        //            noidung = GridViewChiTiet.GetRowCellDisplayText(i, colNoiDung).ToString();
+        //            if (matien == "VND")
+        //            {
+        //                sotiennt = 0;
+        //                sotien = Decimal.Parse(GridViewChiTiet.GetRowCellDisplayText(i, colSoTien).ToString());
+        //            }
+        //            else if (matien != "VND")
+        //            {
+        //                sotiennt = Decimal.Parse(GridViewChiTiet.GetRowCellDisplayText(i, colSoTienNt).ToString());
+        //                sotien = sotiennt * decimal.Parse(tygia.ToString());
+        //            }
+        //            ChiTietChungTu_DTO ct = new ChiTietChungTu_DTO(soct, tkno, tkco, noidung, sotiennt, sotien);
+        //            ChiTietCT_BUS.updateChiTietChungTu(id, ct);
+        //        }
+
+        //    }
+        //}
 
 
         private void LoadLookUpEditTkNo_Co()
@@ -155,51 +198,42 @@ namespace KETOANVONBANGTIEN.ChungTu
                     txtTiGiaThucTe.Text = "";
                     txtTiGiaGhiSo.Enabled = false;
                     txtTiGiaThucTe.Enabled = true;
-                   // txtTyGia.Text = ChungTu_BUS.getTyGiaHienTai().ToString();
-                   // GridViewChiTiet.Columns[4].Visible = true;
                 }
-            //else
-            //{
-            //    txtTiGiaGhiSo.Text = "1";
-            //    txtTiGiaThucTe.Text = "1";
-            //    txtTiGiaGhiSo.Enabled = true;
-            //    txtTiGiaThucTe.Enabled = true;
-            //}
-            //if (chonloaiphieu.LuaChon == "PhieuThu")
-            //{
-            //    if (lookUpEditLoaiTien.EditValue.ToString() == "VND")
-            //    {
-            //        txtTyGia.Text = "1";
-            //        GridViewChiTiet.Columns[4].Visible = false;
-            //        txtTyGia.Enabled = false;
-            //    }
-            //    else
-            //    {
-            //        GridViewChiTiet.Columns[4].Visible = true;
-            //        txtTyGia.Enabled = true;
-            //        txtTyGia.Text = "";
-            //    }
-            //}
-            //else
-            //{
-            //    txtTyGia.Enabled = false;
-            //    if (lookUpEditLoaiTien.EditValue.ToString() == "VND")
-            //    {
-            //        txtTyGia.Text = "1";
-            //        GridViewChiTiet.Columns[4].Visible = false;
-            //    }
-            //    else
-            //    {
-            //        txtTyGia.Text = ChungTu_BUS.getTyGiaHienTai().ToString();
-            //        GridViewChiTiet.Columns[4].Visible = true;
-            //    }
-            //}
+        }
+
+        private void TinhToanSoTien()
+        {
+            try
+            {
+                int tonQuy = int.Parse(txtTonQuy.Text);
+                int thucTon = int.Parse(txtThucTon.Text);
+
+                int tyGiaGhiSo = int.Parse(txtTiGiaGhiSo.Text);
+                int tyGiaThuc = int.Parse(txtTiGiaThucTe.Text);
+
+                int soTien = Math.Abs((tonQuy + thucTon) * tyGiaGhiSo - (tonQuy + thucTon) * tyGiaThuc);
+                txtSoTien.Text = soTien.ToString();
+                gridView1.SetRowCellValue(0, colSoTien, soTien.ToString());
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void txtThucTon_TextChanged(object sender, EventArgs e)
+        {
+            TinhToanSoTien();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void txtTonQuy_TextChanged(object sender, EventArgs e)
+        private void txtTiGiaThucTe_TextChanged(object sender, EventArgs e)
         {
-
+            TinhToanSoTien();
         }
     }
 }

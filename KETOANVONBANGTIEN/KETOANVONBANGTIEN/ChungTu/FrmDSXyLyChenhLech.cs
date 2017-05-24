@@ -22,7 +22,7 @@ namespace KETOANVONBANGTIEN.ChungTu
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ChungTu.FrmXuLyChenhLechNT frm = new ChungTu.FrmXuLyChenhLechNT();
-           // frm.lc.LuaChon = "Add";
+            frm.lc.LuaChon = "Add";
             frm.ShowDialog();
         }
 
@@ -187,6 +187,12 @@ namespace KETOANVONBANGTIEN.ChungTu
             //    //rpt1.CreateLayoutViewDocument();
             //}
         }
-      
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChungTu.FrmXuLyChenhLechNT frm = new ChungTu.FrmXuLyChenhLechNT();
+            frm.lc.LuaChon = "Edit";
+            frm.ShowDialog();
+        }
     }
 }

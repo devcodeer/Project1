@@ -320,7 +320,7 @@ namespace KETOANVONBANGTIEN.ChungTu
                 for (int i = soDongGoc - 1; i < (rowcount - 1); i++)
                 {
                     tkno = GridViewChiTiet.GetRowCellDisplayText(i, colTkNo).ToString();
-                    tkco = GridViewChiTiet.GetRowCellDisplayText(i, colTkCo);
+                    tkco = GridViewChiTiet.GetRowCellDisplayText(i, colTkCo).ToString();
                     noidung = GridViewChiTiet.GetRowCellDisplayText(i, colNoiDung).ToString();
                     if (matien == "VND")
                     {

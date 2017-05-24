@@ -10,6 +10,10 @@ namespace BUS
 {
     public class ChungTu_BUS
     {
+        public static void xuLyChenhLech(String soct, String tkno, String tkco, String noidung, int sotiennt, int sotien, string tigiaso, string tigiathuc)
+        {
+            ChungTu_DAO.xuLyChenhLech(soct, tkno, tkco, noidung, sotiennt, sotien, tigiaso, tigiathuc);
+        }
         public static DataTable getDSXyLyChenhLech()
         {
             return ChungTu_DAO.getDSXyLyChenhLech();

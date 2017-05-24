@@ -69,6 +69,8 @@
             this.colNoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoaDong = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSoTien = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditLoaiTien.Properties)).BeginInit();
@@ -100,6 +102,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.label1);
+            this.groupControl1.Controls.Add(this.txtSoTien);
             this.groupControl1.Controls.Add(this.lookUpEditLoaiTien);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.groupControl4);
@@ -211,7 +215,7 @@
             this.groupControl4.Controls.Add(this.labelControl1);
             this.groupControl4.Location = new System.Drawing.Point(5, 72);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(749, 170);
+            this.groupControl4.Size = new System.Drawing.Size(749, 169);
             this.groupControl4.TabIndex = 2;
             this.groupControl4.Text = "Thông tin chung";
             // 
@@ -221,6 +225,7 @@
             this.txtThucTon.Name = "txtThucTon";
             this.txtThucTon.Size = new System.Drawing.Size(520, 21);
             this.txtThucTon.TabIndex = 7;
+            this.txtThucTon.TextChanged += new System.EventHandler(this.txtThucTon_TextChanged);
             // 
             // labelControl4
             // 
@@ -236,7 +241,6 @@
             this.txtTonQuy.Name = "txtTonQuy";
             this.txtTonQuy.Size = new System.Drawing.Size(520, 21);
             this.txtTonQuy.TabIndex = 3;
-            this.txtTonQuy.TextChanged += new System.EventHandler(this.txtTonQuy_TextChanged);
             // 
             // txtTiGiaThucTe
             // 
@@ -244,6 +248,7 @@
             this.txtTiGiaThucTe.Name = "txtTiGiaThucTe";
             this.txtTiGiaThucTe.Size = new System.Drawing.Size(520, 21);
             this.txtTiGiaThucTe.TabIndex = 5;
+            this.txtTiGiaThucTe.TextChanged += new System.EventHandler(this.txtTiGiaThucTe_TextChanged);
             // 
             // lblNguoiGiaoDich
             // 
@@ -479,6 +484,26 @@
             this.btnXoaDong.TabIndex = 4;
             this.btnXoaDong.Text = "Xóa dòng";
             // 
+            // txtSoTien
+            // 
+            this.txtSoTien.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtSoTien.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtSoTien.Location = new System.Drawing.Point(834, 229);
+            this.txtSoTien.Name = "txtSoTien";
+            this.txtSoTien.Size = new System.Drawing.Size(131, 22);
+            this.txtSoTien.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(765, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Số tiền";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // FrmXuLyChenhLechNT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,5 +585,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditTkCo;
         private DevExpress.XtraGrid.Columns.GridColumn colNoiDung;
         private DevExpress.XtraGrid.Columns.GridColumn colSoTien;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSoTien;
     }
 }
