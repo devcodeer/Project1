@@ -10,6 +10,17 @@ namespace DAO
 {
     public class ChungTu_DAO
     {
+        public static DataTable getDSXyLyChenhLech()
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("DSXuLyChenhLech", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
         public static DataTable loadTyGiaHienTai()
         {
             SqlConnection cnn = Connector.getConnection();
