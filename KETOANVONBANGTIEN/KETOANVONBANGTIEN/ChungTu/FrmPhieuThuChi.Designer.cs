@@ -1,6 +1,6 @@
 ﻿namespace KETOANVONBANGTIEN.ChungTu
 {
-    partial class FrmPhieuThuChi
+    partial class FrmDanhSachXyLyChenhLech
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPhieuThuChi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDanhSachXyLyChenhLech));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lookUpEditLoaiDt = new DevExpress.XtraEditors.LookUpEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -160,6 +160,7 @@
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.FloatLocation = new System.Drawing.Point(89, 130);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLuu),
             new DevExpress.XtraBars.LinkPersistInfo(this.Moi),
@@ -641,7 +642,7 @@
             this.colSoTien.VisibleIndex = 4;
             this.colSoTien.Width = 203;
             // 
-            // FrmPhieuThuChi
+            // FrmDanhSachXyLyChenhLech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -652,7 +653,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "FrmPhieuThuChi";
+            this.Name = "FrmDanhSachXyLyChenhLech";
             this.Load += new System.EventHandler(this.FrmPhieuThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
