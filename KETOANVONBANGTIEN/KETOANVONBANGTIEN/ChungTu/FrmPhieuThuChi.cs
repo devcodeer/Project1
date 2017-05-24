@@ -12,9 +12,9 @@ using DevExpress.LookAndFeel;
 
 namespace KETOANVONBANGTIEN.ChungTu
 {
-    public partial class FrmPhieuThuChi : Form
+    public partial class FrmDanhSachXyLyChenhLech : Form
     {
-        public FrmPhieuThuChi()
+        public FrmDanhSachXyLyChenhLech()
         {
             InitializeComponent();
 

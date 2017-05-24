@@ -194,6 +194,12 @@
     <Compile Include="ChungTu\FrmDanhSachChungTu.Designer.cs">
       <DependentUpon>FrmDanhSachChungTu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChungTu\FrmDSXyLyChenhLech.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChungTu\FrmDSXyLyChenhLech.Designer.cs">
+      <DependentUpon>FrmDSXyLyChenhLech.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChungTu\FrmGiayBaoCo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,7 +352,6 @@
     </Compile>
     <Compile Include="BaoCao\BaoCaoDanhSachChungTu\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BaoCao\BaoCaoDanhSachChungTu\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -424,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChungTu\FrmDanhSachChungTu.resx">
       <DependentUpon>FrmDanhSachChungTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChungTu\FrmDSXyLyChenhLech.resx">
+      <DependentUpon>FrmDSXyLyChenhLech.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChungTu\FrmGiayBaoCo.resx">
       <DependentUpon>FrmGiayBaoCo.cs</DependentUpon>
@@ -613,7 +621,21 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\1332999327_pencil_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1332999366_Pencil3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1332999407_button_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1332999513_printer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

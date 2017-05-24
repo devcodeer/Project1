@@ -55,7 +55,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             
             if (luachonds.LuaChon == "DanhSachPhieuThu")
             {
-                ChungTu.FrmPhieuThuChi frm = new ChungTu.FrmPhieuThuChi();
+                ChungTu.FrmDanhSachXyLyChenhLech frm = new ChungTu.FrmDanhSachXyLyChenhLech();
                 frm.lc.LuaChon = "Add";
                 frm.chonloaiphieu.LuaChon = "PhieuThu";
                 frm.ShowDialog();
@@ -64,7 +64,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
              if (luachonds.LuaChon == "DanhSachPhieuChi")
             {
-                ChungTu.FrmPhieuThuChi frm = new ChungTu.FrmPhieuThuChi();
+                ChungTu.FrmDanhSachXyLyChenhLech frm = new ChungTu.FrmDanhSachXyLyChenhLech();
                 frm.lc.LuaChon = "Add";
                 frm.chonloaiphieu.LuaChon = "PhieuChi";
                 frm.ShowDialog();
@@ -95,7 +95,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             
             if (luachonds.LuaChon == "DanhSachPhieuThu")
             {
-                ChungTu.FrmPhieuThuChi frm = new ChungTu.FrmPhieuThuChi();
+                ChungTu.FrmDanhSachXyLyChenhLech frm = new ChungTu.FrmDanhSachXyLyChenhLech();
                 frm.lc.LuaChon = "Edit";
                 LayDuLieu(frm.obj);
                 frm.chonloaiphieu.LuaChon = "PhieuThu";
@@ -105,7 +105,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
              if (luachonds.LuaChon == "DanhSachPhieuChi")
             {
-                ChungTu.FrmPhieuThuChi frm = new ChungTu.FrmPhieuThuChi();
+                ChungTu.FrmDanhSachXyLyChenhLech frm = new ChungTu.FrmDanhSachXyLyChenhLech();
                 frm.lc.LuaChon = "Edit";
                 frm.chonloaiphieu.LuaChon = "PhieuChi";
                 LayDuLieu(frm.obj);
@@ -239,7 +239,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
             if (luachonds.LuaChon == "DanhSachPhieuThu")
             {
-                ChungTu.FrmPhieuThuChi frm = new ChungTu.FrmPhieuThuChi();
+                ChungTu.FrmDanhSachXyLyChenhLech frm = new ChungTu.FrmDanhSachXyLyChenhLech();
                 frm.lc.LuaChon = "Edit";
                 LayDuLieu(frm.obj);
                 frm.chonloaiphieu.LuaChon = "PhieuThu";
@@ -249,7 +249,7 @@ namespace KETOANVONBANGTIEN.ChungTu
 
             if (luachonds.LuaChon == "DanhSachPhieuChi")
             {
-                ChungTu.FrmPhieuThuChi frm = new ChungTu.FrmPhieuThuChi();
+                ChungTu.FrmDanhSachXyLyChenhLech frm = new ChungTu.FrmDanhSachXyLyChenhLech();
                 frm.lc.LuaChon = "Edit";
                 frm.chonloaiphieu.LuaChon = "PhieuChi";
                 LayDuLieu(frm.obj);

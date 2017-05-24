@@ -10,6 +10,10 @@ namespace BUS
 {
     public class ChungTu_BUS
     {
+        public static DataTable getDSXyLyChenhLech()
+        {
+            return ChungTu_DAO.getDSXyLyChenhLech();
+        }
         public static int getTyGiaHienTai()
         {
             DataTable dtb = ChungTu_DAO.loadTyGiaHienTai();
