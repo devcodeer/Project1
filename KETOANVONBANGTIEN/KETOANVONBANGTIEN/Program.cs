@@ -13,6 +13,7 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Helpers;
 using KETOANVONBANGTIEN.ChungTu;
 
+
 namespace KETOANVONBANGTIEN
 {
     static class Program

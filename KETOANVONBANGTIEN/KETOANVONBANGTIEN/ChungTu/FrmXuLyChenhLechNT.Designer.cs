@@ -30,11 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmXuLyChenhLechNT));
-            this.txtLyDo = new System.Windows.Forms.TextBox();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dateEditNgayGhiSo = new DevExpress.XtraEditors.DateEdit();
             this.dateEditNgayCt = new DevExpress.XtraEditors.DateEdit();
@@ -50,8 +47,19 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.txtThucTon = new System.Windows.Forms.TextBox();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTonQuy = new System.Windows.Forms.TextBox();
+            this.txtTiGiaThucTe = new System.Windows.Forms.TextBox();
+            this.lblNguoiGiaoDich = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTiGiaGhiSo = new System.Windows.Forms.TextBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.btnXoaDong = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lookUpEditLoaiTien = new DevExpress.XtraEditors.LookUpEdit();
             this.grvChiTiet = new DevExpress.XtraGrid.GridControl();
             this.GridViewChiTiet = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,12 +68,9 @@
             this.colTkCo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditTkCo = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colNoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSoTienNt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoTien = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayGhiSo.Properties.CalendarTimeProperties)).BeginInit();
@@ -74,20 +79,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayCt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditLoaiTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvChiTiet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewChiTiet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditTkNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditTkCo)).BeginInit();
             this.SuspendLayout();
             // 
+
             // txtLyDo
-            // 
-            this.txtLyDo.Location = new System.Drawing.Point(78, 45);
-            this.txtLyDo.Name = "txtLyDo";
-            this.txtLyDo.Size = new System.Drawing.Size(581, 21);
-            this.txtLyDo.TabIndex = 7;
+            //// 
+            //this.txtLyDo.Location = new System.Drawing.Point(78, 45);
+            //this.txtLyDo.Name = "txtLyDo";
+            //this.txtLyDo.Size = new System.Drawing.Size(581, 21);
+            //this.txtLyDo.TabIndex = 7;
             // 
             // labelControl4
             // 
@@ -97,6 +106,7 @@
             this.labelControl4.TabIndex = 4;
             this.labelControl4.Text = "Lý do";
             // 
+
             // btnDong
             // 
             this.btnDong.Caption = "Đóng";
@@ -107,24 +117,16 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lookUpEditLoaiTien);
+            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.groupControl4);
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 32);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(984, 182);
+            this.groupControl1.Size = new System.Drawing.Size(984, 261);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
-            // 
-            // groupControl4
-            // 
-            this.groupControl4.Controls.Add(this.txtLyDo);
-            this.groupControl4.Controls.Add(this.labelControl4);
-            this.groupControl4.Location = new System.Drawing.Point(12, 35);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(726, 127);
-            this.groupControl4.TabIndex = 1;
-            this.groupControl4.Text = "Thông tin chung";
             // 
             // groupControl2
             // 
@@ -134,7 +136,7 @@
             this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.labelControl9);
-            this.groupControl2.Location = new System.Drawing.Point(759, 35);
+            this.groupControl2.Location = new System.Drawing.Point(760, 72);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(213, 127);
             this.groupControl2.TabIndex = 1;
@@ -278,15 +280,91 @@
             // 
             this.gridView1.Name = "gridView1";
             // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.txtThucTon);
+            this.groupControl4.Controls.Add(this.labelControl4);
+            this.groupControl4.Controls.Add(this.txtTonQuy);
+            this.groupControl4.Controls.Add(this.txtTiGiaThucTe);
+            this.groupControl4.Controls.Add(this.lblNguoiGiaoDich);
+            this.groupControl4.Controls.Add(this.labelControl2);
+            this.groupControl4.Controls.Add(this.txtTiGiaGhiSo);
+            this.groupControl4.Controls.Add(this.labelControl1);
+            this.groupControl4.Location = new System.Drawing.Point(5, 72);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(749, 170);
+            this.groupControl4.TabIndex = 2;
+            this.groupControl4.Text = "Thông tin chung";
+            // 
+            // txtThucTon
+            // 
+            this.txtThucTon.Location = new System.Drawing.Point(170, 64);
+            this.txtThucTon.Name = "txtThucTon";
+            this.txtThucTon.Size = new System.Drawing.Size(520, 21);
+            this.txtThucTon.TabIndex = 7;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(9, 72);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(129, 13);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Số Tiền/Ngoại Tệ Thực Tồn";
+            // 
+            // txtTonQuy
+            // 
+            this.txtTonQuy.Location = new System.Drawing.Point(170, 33);
+            this.txtTonQuy.Name = "txtTonQuy";
+            this.txtTonQuy.Size = new System.Drawing.Size(520, 21);
+            this.txtTonQuy.TabIndex = 3;
+            // 
+            // txtTiGiaThucTe
+            // 
+            this.txtTiGiaThucTe.Location = new System.Drawing.Point(170, 130);
+            this.txtTiGiaThucTe.Name = "txtTiGiaThucTe";
+            this.txtTiGiaThucTe.Size = new System.Drawing.Size(520, 21);
+            this.txtTiGiaThucTe.TabIndex = 5;
+            // 
+            // lblNguoiGiaoDich
+            // 
+            this.lblNguoiGiaoDich.Location = new System.Drawing.Point(9, 138);
+            this.lblNguoiGiaoDich.Name = "lblNguoiGiaoDich";
+            this.lblNguoiGiaoDich.Size = new System.Drawing.Size(63, 13);
+            this.lblNguoiGiaoDich.TabIndex = 3;
+            this.lblNguoiGiaoDich.Text = "Tỉ giá thực tế";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(9, 103);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(59, 13);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Tỉ Giá Ghi Sổ";
+            // 
+            // txtTiGiaGhiSo
+            // 
+            this.txtTiGiaGhiSo.Location = new System.Drawing.Point(170, 95);
+            this.txtTiGiaGhiSo.Name = "txtTiGiaGhiSo";
+            this.txtTiGiaGhiSo.Size = new System.Drawing.Size(520, 21);
+            this.txtTiGiaGhiSo.TabIndex = 4;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(9, 36);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(125, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Số Tiền/Ngoại Tệ Tồn Quỹ";
+            // 
             // groupControl5
             // 
-            this.groupControl5.Controls.Add(this.btnXoaDong);
             this.groupControl5.Controls.Add(this.grvChiTiet);
+            this.groupControl5.Controls.Add(this.btnXoaDong);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(0, 214);
+            this.groupControl5.Location = new System.Drawing.Point(0, 293);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(984, 425);
-            this.groupControl5.TabIndex = 6;
+            this.groupControl5.Size = new System.Drawing.Size(984, 346);
+            this.groupControl5.TabIndex = 11;
             this.groupControl5.Text = "Chi tiết";
             // 
             // btnXoaDong
@@ -297,6 +375,25 @@
             this.btnXoaDong.TabIndex = 4;
             this.btnXoaDong.Text = "Xóa dòng";
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(14, 38);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(53, 13);
+            this.labelControl3.TabIndex = 3;
+            this.labelControl3.Text = "Loại tiền tệ";
+            // 
+            // lookUpEditLoaiTien
+            // 
+            this.lookUpEditLoaiTien.Location = new System.Drawing.Point(73, 35);
+            this.lookUpEditLoaiTien.MenuManager = this.barManager1;
+            this.lookUpEditLoaiTien.Name = "lookUpEditLoaiTien";
+            this.lookUpEditLoaiTien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditLoaiTien.Size = new System.Drawing.Size(100, 20);
+            this.lookUpEditLoaiTien.TabIndex = 4;
+            this.lookUpEditLoaiTien.EditValueChanged += new System.EventHandler(this.lookUpEditLoaiTien_EditValueChanged);
+            // 
             // grvChiTiet
             // 
             this.grvChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -306,8 +403,13 @@
             this.grvChiTiet.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditTkNo,
             this.repositoryItemLookUpEditTkCo});
+
             this.grvChiTiet.Size = new System.Drawing.Size(980, 403);
             this.grvChiTiet.TabIndex = 3;
+
+            this.grvChiTiet.Size = new System.Drawing.Size(980, 324);
+            this.grvChiTiet.TabIndex = 5;
+
             this.grvChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewChiTiet});
             // 
@@ -322,7 +424,6 @@
             this.colTkNo,
             this.colTkCo,
             this.colNoiDung,
-            this.colSoTienNt,
             this.colSoTien});
             this.GridViewChiTiet.GridControl = this.grvChiTiet;
             this.GridViewChiTiet.Name = "GridViewChiTiet";
@@ -350,8 +451,8 @@
             this.repositoryItemLookUpEditTkNo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEditTkNo.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaTk", "Mã TK"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTk", 70, "Tên TK")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaTk", 30, "Mã TK"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTk", 120, "Tên TK")});
             this.repositoryItemLookUpEditTkNo.Name = "repositoryItemLookUpEditTkNo";
             this.repositoryItemLookUpEditTkNo.NullText = "";
             this.repositoryItemLookUpEditTkNo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -372,8 +473,8 @@
             this.repositoryItemLookUpEditTkCo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEditTkCo.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaTk", "Mã TK"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTk", 70, "Tên TK")});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaTk", 30, "Mã TK"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TenTk", 120, "Tên TK")});
             this.repositoryItemLookUpEditTkCo.Name = "repositoryItemLookUpEditTkCo";
             this.repositoryItemLookUpEditTkCo.NullText = "";
             this.repositoryItemLookUpEditTkCo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -386,15 +487,6 @@
             this.colNoiDung.Visible = true;
             this.colNoiDung.VisibleIndex = 2;
             this.colNoiDung.Width = 595;
-            // 
-            // colSoTienNt
-            // 
-            this.colSoTienNt.Caption = "Số ngoại tệ";
-            this.colSoTienNt.DisplayFormat.FormatString = "n";
-            this.colSoTienNt.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colSoTienNt.FieldName = "SoTienNT";
-            this.colSoTienNt.Name = "colSoTienNt";
-            this.colSoTienNt.Width = 192;
             // 
             // colSoTien
             // 
@@ -421,11 +513,10 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "FrmXuLyChenhLechNT";
             this.Text = "Xử lý chênh lệch ngoại tệ";
+            this.Load += new System.EventHandler(this.FrmXuLyChenhLechNT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            this.groupControl4.ResumeLayout(false);
-            this.groupControl4.PerformLayout();
+            this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -435,8 +526,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayCt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditLoaiTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvChiTiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewChiTiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditTkNo)).EndInit();
@@ -447,12 +542,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtLyDo;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraBars.BarButtonItem btnDong;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.DateEdit dateEditNgayGhiSo;
         private DevExpress.XtraEditors.DateEdit dateEditNgayCt;
@@ -468,8 +559,19 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private System.Windows.Forms.TextBox txtThucTon;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private System.Windows.Forms.TextBox txtTonQuy;
+        private System.Windows.Forms.TextBox txtTiGiaThucTe;
+        private DevExpress.XtraEditors.LabelControl lblNguoiGiaoDich;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private System.Windows.Forms.TextBox txtTiGiaGhiSo;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.SimpleButton btnXoaDong;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditLoaiTien;
         private DevExpress.XtraGrid.GridControl grvChiTiet;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewChiTiet;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
@@ -478,8 +580,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTkCo;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditTkCo;
         private DevExpress.XtraGrid.Columns.GridColumn colNoiDung;
-        private DevExpress.XtraGrid.Columns.GridColumn colSoTienNt;
         private DevExpress.XtraGrid.Columns.GridColumn colSoTien;
-
     }
 }

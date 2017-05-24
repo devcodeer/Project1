@@ -308,7 +308,7 @@ namespace KETOANVONBANGTIEN
             {
                 f.Close();
             }
-            DanhMuc.FrmTyGiaXuat frm = new DanhMuc.FrmTyGiaXuat();
+            ChungTu.FrmXuLyChenhLechNT frm = new ChungTu.FrmXuLyChenhLechNT();
 
             frm.MdiParent = this;
             frm.Show();

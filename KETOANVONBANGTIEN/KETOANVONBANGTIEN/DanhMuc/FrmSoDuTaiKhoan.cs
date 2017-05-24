@@ -83,9 +83,5 @@ namespace KETOANVONBANGTIEN.DanhMuc
         {
             gridViewDMTK.ShowPrintPreview();
         }
-
-     
-      
-    
     }
 }

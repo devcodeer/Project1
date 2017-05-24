@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BUS;
+using DevExpress.LookAndFeel;
 
 namespace KETOANVONBANGTIEN.BaoCao.BaoCaoDanhSachNhanVien
 {
@@ -51,8 +52,18 @@ namespace KETOANVONBANGTIEN.BaoCao.BaoCaoDanhSachNhanVien
                     rpt.luachon.LuaChon = "nhân viên phòng " + tenpb;
                 }
                 rpt.BindData();
-              //  rpt.ShowPreview();
-                
+                using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt))
+                {
+                    // Invoke the Ribbon Print Preview form modally, 
+                    // and load the report document into it.
+                    printTool.ShowRibbonPreviewDialog();
+
+                    // Invoke the Ribbon Print Preview form
+                    // with the specified look and feel setting.
+                    // printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+                }
+                //  rpt.ShowPreview();
+
             }
             catch
             {

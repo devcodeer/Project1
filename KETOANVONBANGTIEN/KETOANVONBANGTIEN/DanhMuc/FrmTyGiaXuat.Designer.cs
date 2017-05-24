@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTyGiaXuat));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
-            this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
-            this.Moi = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
-            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.colSoTienNt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
+            this.Moi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.txtSoCt = new DevExpress.XtraEditors.TextEdit();
             this.dateEditNgayCt = new DevExpress.XtraEditors.DateEdit();
@@ -60,16 +60,16 @@
             this.colSoTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtSoNgoaiTe = new System.Windows.Forms.TextBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lookUpEditLoaiTien = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtTiGiaThucTe = new System.Windows.Forms.TextBox();
             this.lblNguoiGiaoDich = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTiGiaGhiSo = new System.Windows.Forms.TextBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -86,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditTkCo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditLoaiTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             this.SuspendLayout();
@@ -104,47 +105,6 @@
             this.btnIn,
             this.btnSua});
             this.barManager1.MaxItemId = 6;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Caption = "Lưu";
-            this.btnLuu.Id = 0;
-            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // Moi
-            // 
-            this.Moi.Caption = "Mới";
-            this.Moi.Id = 1;
-            this.Moi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Moi.ImageOptions.Image")));
-            this.Moi.Name = "Moi";
-            this.Moi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Caption = "Sửa";
-            this.btnSua.Id = 5;
-            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
-            this.btnSua.Name = "btnSua";
-            this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btnIn
-            // 
-            this.btnIn.Caption = "In";
-            this.btnIn.Id = 3;
-            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.Image")));
-            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.LargeImage")));
-            this.btnIn.Name = "btnIn";
-            this.btnIn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // btnDong
-            // 
-            this.btnDong.Caption = "Đóng";
-            this.btnDong.Id = 2;
-            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
-            this.btnDong.Name = "btnDong";
-            this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // barDockControlTop
             // 
@@ -178,16 +138,46 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 505);
             // 
-            // colSoTienNt
+            // btnLuu
             // 
-            this.colSoTienNt.Caption = "Số ngoại tệ";
-            this.colSoTienNt.DisplayFormat.FormatString = "n";
-            this.colSoTienNt.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colSoTienNt.FieldName = "SoTienNT";
-            this.colSoTienNt.Name = "colSoTienNt";
-            this.colSoTienNt.Visible = true;
-            this.colSoTienNt.VisibleIndex = 3;
-            this.colSoTienNt.Width = 192;
+            this.btnLuu.Caption = "Lưu";
+            this.btnLuu.Id = 0;
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // Moi
+            // 
+            this.Moi.Caption = "Mới";
+            this.Moi.Id = 1;
+            this.Moi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Moi.ImageOptions.Image")));
+            this.Moi.Name = "Moi";
+            this.Moi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btnDong
+            // 
+            this.btnDong.Caption = "Đóng";
+            this.btnDong.Id = 2;
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.Name = "btnDong";
+            this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btnIn
+            // 
+            this.btnIn.Caption = "In";
+            this.btnIn.Id = 3;
+            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.Image")));
+            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.LargeImage")));
+            this.btnIn.Name = "btnIn";
+            this.btnIn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 5;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // groupControl2
             // 
@@ -197,9 +187,9 @@
             this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.labelControl9);
-            this.groupControl2.Location = new System.Drawing.Point(773, 46);
+            this.groupControl2.Location = new System.Drawing.Point(767, 114);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(209, 157);
+            this.groupControl2.Size = new System.Drawing.Size(209, 160);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Chứng từ";
             // 
@@ -275,9 +265,9 @@
             this.groupControl5.Controls.Add(this.btnXoaDong);
             this.groupControl5.Controls.Add(this.grvChiTiet);
             this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl5.Location = new System.Drawing.Point(0, 226);
+            this.groupControl5.Location = new System.Drawing.Point(0, 286);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(988, 279);
+            this.groupControl5.Size = new System.Drawing.Size(988, 219);
             this.groupControl5.TabIndex = 5;
             this.groupControl5.Text = "Chi tiết";
             // 
@@ -298,7 +288,7 @@
             this.grvChiTiet.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditTkNo,
             this.repositoryItemLookUpEditTkCo});
-            this.grvChiTiet.Size = new System.Drawing.Size(984, 257);
+            this.grvChiTiet.Size = new System.Drawing.Size(984, 197);
             this.grvChiTiet.TabIndex = 0;
             this.grvChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GridViewChiTiet});
@@ -314,7 +304,6 @@
             this.colTkNo,
             this.colTkCo,
             this.colNoiDung,
-            this.colSoTienNt,
             this.colSoTien});
             this.GridViewChiTiet.GridControl = this.grvChiTiet;
             this.GridViewChiTiet.Name = "GridViewChiTiet";
@@ -388,7 +377,7 @@
             this.colSoTien.ImageAlignment = System.Drawing.StringAlignment.Far;
             this.colSoTien.Name = "colSoTien";
             this.colSoTien.Visible = true;
-            this.colSoTien.VisibleIndex = 4;
+            this.colSoTien.VisibleIndex = 3;
             this.colSoTien.Width = 203;
             // 
             // txtSoNgoaiTe
@@ -400,15 +389,33 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.comboBox1);
+            this.groupControl1.Controls.Add(this.lookUpEditLoaiTien);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.groupControl4);
             this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(988, 226);
+            this.groupControl1.Size = new System.Drawing.Size(988, 286);
             this.groupControl1.TabIndex = 4;
+            // 
+            // lookUpEditLoaiTien
+            // 
+            this.lookUpEditLoaiTien.Location = new System.Drawing.Point(90, 75);
+            this.lookUpEditLoaiTien.MenuManager = this.barManager1;
+            this.lookUpEditLoaiTien.Name = "lookUpEditLoaiTien";
+            this.lookUpEditLoaiTien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditLoaiTien.Size = new System.Drawing.Size(100, 20);
+            this.lookUpEditLoaiTien.TabIndex = 3;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(17, 78);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(53, 13);
+            this.labelControl3.TabIndex = 2;
+            this.labelControl3.Text = "Loại tiền tệ";
             // 
             // groupControl4
             // 
@@ -420,11 +427,26 @@
             this.groupControl4.Controls.Add(this.labelControl2);
             this.groupControl4.Controls.Add(this.txtTiGiaGhiSo);
             this.groupControl4.Controls.Add(this.labelControl1);
-            this.groupControl4.Location = new System.Drawing.Point(5, 46);
+            this.groupControl4.Location = new System.Drawing.Point(14, 114);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(749, 156);
+            this.groupControl4.Size = new System.Drawing.Size(749, 160);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "Thông tin chung";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(170, 64);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(520, 21);
+            this.textBox1.TabIndex = 7;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(9, 72);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(129, 13);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Số Tiền/Ngoại Tệ Thực Tồn";
             // 
             // txtTiGiaThucTe
             // 
@@ -464,40 +486,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Số Tiền/Ngoại Tệ Tồn Quỹ";
             // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(16, 23);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(78, 13);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Xử lý chênh lệch";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "USD",
-            "VNĐ"});
-            this.comboBox1.Location = new System.Drawing.Point(118, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(9, 72);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(129, 13);
-            this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "Số Tiền/Ngoại Tệ Thực Tồn";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(170, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(520, 21);
-            this.textBox1.TabIndex = 7;
-            // 
             // FrmTyGiaXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditLoaiTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
@@ -552,6 +541,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraEditors.SimpleButton btnXoaDong;
+        private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraGrid.GridControl grvChiTiet;
         private DevExpress.XtraGrid.Views.Grid.GridView GridViewChiTiet;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
@@ -560,7 +550,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTkCo;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditTkCo;
         private DevExpress.XtraGrid.Columns.GridColumn colNoiDung;
-        private DevExpress.XtraGrid.Columns.GridColumn colSoTienNt;
         private DevExpress.XtraGrid.Columns.GridColumn colSoTien;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl4;
@@ -577,9 +566,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private System.Windows.Forms.ComboBox comboBox1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditLoaiTien;
     }
 }
