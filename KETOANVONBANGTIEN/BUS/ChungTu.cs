@@ -20,6 +20,18 @@ namespace BUS
             int tyGiaHienTai = (int)dtb.Rows[0][0];
             return tyGiaHienTai;
         }
+        public static int getTonQuyVND()
+        {
+            DataTable dtb = ChungTu_DAO.TinhTonQuy();
+            int getTonQuyVND = (int)dtb.Rows[0][0];
+            return getTonQuyVND;
+        }
+        public static int getTonQuyUSD()
+        {
+            DataTable dtb = ChungTu_DAO.TinhTonQuyUSD();
+            int getTonQuyUSD = (int)dtb.Rows[0][0];
+            return getTonQuyUSD;
+        }
 
         // Load
         public static DataTable LoadDanhSachCtTheoLoai( int maloai)

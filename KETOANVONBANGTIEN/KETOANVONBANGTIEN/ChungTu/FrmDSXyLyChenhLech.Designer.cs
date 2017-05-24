@@ -49,10 +49,10 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.colSoCt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayCt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTkCo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEditTkCo = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colTkNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEditTkNo = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colSoTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditTkCo = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemLookUpEditTkNo = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvDanhSachXuLyChenhLech)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDsPhieuThu)).BeginInit();
@@ -90,10 +90,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnIn),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnNap),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnGhiSo),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnBoGhi)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnIn)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -130,6 +127,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.btnIn.ImageOptions.Image = global::KETOANVONBANGTIEN.Properties.Resources._1332999513_printer;
             this.btnIn.Name = "btnIn";
             this.btnIn.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIn_ItemClick);
             // 
             // btnNap
             // 
@@ -235,6 +233,26 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.colTkCo.VisibleIndex = 2;
             this.colTkCo.Width = 173;
             // 
+            // colTkNo
+            // 
+            this.colTkNo.Caption = "TK Nợ";
+            this.colTkNo.FieldName = "taiKhoanNo";
+            this.colTkNo.Name = "colTkNo";
+            this.colTkNo.Visible = true;
+            this.colTkNo.VisibleIndex = 3;
+            this.colTkNo.Width = 173;
+            // 
+            // colSoTien
+            // 
+            this.colSoTien.Caption = "Số Tiền";
+            this.colSoTien.DisplayFormat.FormatString = "n0";
+            this.colSoTien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colSoTien.FieldName = "soTien";
+            this.colSoTien.ImageAlignment = System.Drawing.StringAlignment.Far;
+            this.colSoTien.Name = "colSoTien";
+            this.colSoTien.Visible = true;
+            this.colSoTien.VisibleIndex = 4;
+            // 
             // repositoryItemLookUpEditTkCo
             // 
             this.repositoryItemLookUpEditTkCo.AutoHeight = false;
@@ -248,15 +266,6 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.repositoryItemLookUpEditTkCo.NullText = "";
             this.repositoryItemLookUpEditTkCo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             // 
-            // colTkNo
-            // 
-            this.colTkNo.Caption = "TK Nợ";
-            this.colTkNo.FieldName = "taiKhoanNo";
-            this.colTkNo.Name = "colTkNo";
-            this.colTkNo.Visible = true;
-            this.colTkNo.VisibleIndex = 3;
-            this.colTkNo.Width = 173;
-            // 
             // repositoryItemLookUpEditTkNo
             // 
             this.repositoryItemLookUpEditTkNo.AutoHeight = false;
@@ -269,17 +278,6 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.repositoryItemLookUpEditTkNo.Name = "repositoryItemLookUpEditTkNo";
             this.repositoryItemLookUpEditTkNo.NullText = "";
             this.repositoryItemLookUpEditTkNo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            // 
-            // colSoTien
-            // 
-            this.colSoTien.Caption = "Số Tiền";
-            this.colSoTien.DisplayFormat.FormatString = "n0";
-            this.colSoTien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colSoTien.FieldName = "soTien";
-            this.colSoTien.ImageAlignment = System.Drawing.StringAlignment.Far;
-            this.colSoTien.Name = "colSoTien";
-            this.colSoTien.Visible = true;
-            this.colSoTien.VisibleIndex = 4;
             // 
             // FrmDSXyLyChenhLech
             // 

@@ -118,6 +118,10 @@ namespace KETOANVONBANGTIEN.Function
             {
                 return "BC" + TienTo + Temp; ;
             }
+            else if (loaict == 5)
+            {
+                return "XLCL" + TienTo + Temp; ;
+            }
             else 
             {
                 return "";

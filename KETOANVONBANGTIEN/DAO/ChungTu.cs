@@ -21,6 +21,28 @@ namespace DAO
             da.Fill(dt);
             return dt;
         }
+        public static DataTable TinhTonQuy()
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("TinhTonQuy", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable TinhTonQuyUSD()
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("TinhTonQuyUSD", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
         public static DataTable loadTyGiaHienTai()
         {
             SqlConnection cnn = Connector.getConnection();

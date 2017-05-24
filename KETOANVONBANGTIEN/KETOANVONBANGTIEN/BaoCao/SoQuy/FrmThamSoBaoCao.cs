@@ -45,6 +45,17 @@ namespace KETOANVONBANGTIEN.BaoCao.SoQuy
                 rpt.parameterNgayKt.Visible = false;
                 rpt.DataSource = BaoCao_BUS.SoQuy(matk,ngaybd, ngaykt);
                 rpt.DataMember = "Table";
+                using (DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(rpt))
+                {
+                    // Invoke the Ribbon Print Preview form modally, 
+                    // and load the report document into it.
+                    printTool.ShowRibbonPreviewDialog();
+
+                    // Invoke the Ribbon Print Preview form
+                    // with the specified look and feel setting.
+                    // printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+                }
+
             //    rpt.ShowPreview();
 
             }
