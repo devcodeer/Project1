@@ -46,6 +46,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.btnBoGhi = new DevExpress.XtraBars.BarButtonItem();
             this.grvDanhSachXuLyChenhLech = new DevExpress.XtraGrid.GridControl();
             this.gridViewDsPhieuThu = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmaXuLy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoCt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayCt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTkCo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -198,6 +199,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             // gridViewDsPhieuThu
             // 
             this.gridViewDsPhieuThu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colmaXuLy,
             this.colSoCt,
             this.colNgayCt,
             this.colTkCo,
@@ -206,6 +208,16 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.gridViewDsPhieuThu.GridControl = this.grvDanhSachXuLyChenhLech;
             this.gridViewDsPhieuThu.Name = "gridViewDsPhieuThu";
             this.gridViewDsPhieuThu.OptionsBehavior.Editable = false;
+
+            //
+            // maXuLy
+            //
+            this.colmaXuLy.Caption = "Mã xử lý";
+            this.colmaXuLy.FieldName = "maXuLy";
+            this.colmaXuLy.Name = "colmaXuLy";
+            this.colmaXuLy.Visible = true;
+            this.colmaXuLy.VisibleIndex = 0;
+
             // 
             // colSoCt
             // 
@@ -213,7 +225,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.colSoCt.FieldName = "SoCt";
             this.colSoCt.Name = "colSoCt";
             this.colSoCt.Visible = true;
-            this.colSoCt.VisibleIndex = 0;
+            this.colSoCt.VisibleIndex = 1;
             // 
             // colNgayCt
             // 
@@ -223,7 +235,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.colNgayCt.FieldName = "Nam";
             this.colNgayCt.Name = "colNgayCt";
             this.colNgayCt.Visible = true;
-            this.colNgayCt.VisibleIndex = 1;
+            this.colNgayCt.VisibleIndex = 2;
             // 
             // colTkCo
             // 
@@ -231,7 +243,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.colTkCo.FieldName = "taiKhoanCo";
             this.colTkCo.Name = "colTkCo";
             this.colTkCo.Visible = true;
-            this.colTkCo.VisibleIndex = 2;
+            this.colTkCo.VisibleIndex = 3;
             this.colTkCo.Width = 173;
             // 
             // colTkNo
@@ -240,7 +252,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.colTkNo.FieldName = "taiKhoanNo";
             this.colTkNo.Name = "colTkNo";
             this.colTkNo.Visible = true;
-            this.colTkNo.VisibleIndex = 3;
+            this.colTkNo.VisibleIndex = 4;
             this.colTkNo.Width = 173;
             // 
             // colSoTien
@@ -252,7 +264,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.colSoTien.ImageAlignment = System.Drawing.StringAlignment.Far;
             this.colSoTien.Name = "colSoTien";
             this.colSoTien.Visible = true;
-            this.colSoTien.VisibleIndex = 4;
+            this.colSoTien.VisibleIndex = 5;
             // 
             // repositoryItemLookUpEditTkCo
             // 
@@ -318,6 +330,7 @@ namespace KETOANVONBANGTIEN.ChungTu
         private DevExpress.XtraBars.BarButtonItem btnNap;
         private DevExpress.XtraGrid.GridControl grvDanhSachXuLyChenhLech;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDsPhieuThu;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaXuLy;
         private DevExpress.XtraGrid.Columns.GridColumn colSoCt;
         private DevExpress.XtraGrid.Columns.GridColumn colNgayCt;
         private DevExpress.XtraGrid.Columns.GridColumn colTkNo;

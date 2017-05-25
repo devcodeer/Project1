@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmXuLyChenhLechNT));
             this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSoTien = new System.Windows.Forms.TextBox();
             this.lookUpEditLoaiTien = new DevExpress.XtraEditors.LookUpEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -69,8 +71,6 @@
             this.colNoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoaDong = new DevExpress.XtraEditors.SimpleButton();
-            this.txtSoTien = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditLoaiTien.Properties)).BeginInit();
@@ -99,6 +99,7 @@
             this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
             this.btnDong.Name = "btnDong";
             this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDong_ItemClick);
             // 
             // groupControl1
             // 
@@ -114,6 +115,26 @@
             this.groupControl1.Size = new System.Drawing.Size(984, 261);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(765, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Số tiền";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtSoTien
+            // 
+            this.txtSoTien.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtSoTien.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtSoTien.Location = new System.Drawing.Point(834, 229);
+            this.txtSoTien.Name = "txtSoTien";
+            this.txtSoTien.Size = new System.Drawing.Size(131, 22);
+            this.txtSoTien.TabIndex = 5;
             // 
             // lookUpEditLoaiTien
             // 
@@ -483,26 +504,6 @@
             this.btnXoaDong.Size = new System.Drawing.Size(75, 23);
             this.btnXoaDong.TabIndex = 4;
             this.btnXoaDong.Text = "Xóa dòng";
-            // 
-            // txtSoTien
-            // 
-            this.txtSoTien.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.txtSoTien.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtSoTien.Location = new System.Drawing.Point(834, 229);
-            this.txtSoTien.Name = "txtSoTien";
-            this.txtSoTien.Size = new System.Drawing.Size(131, 22);
-            this.txtSoTien.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(765, 231);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Số tiền";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FrmXuLyChenhLechNT
             // 

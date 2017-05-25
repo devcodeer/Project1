@@ -5,6 +5,117 @@ using System.Text;
 
 namespace DTO
 {
+    public class XuLyChenhLech_DTO
+    {
+        private int maXyLy;
+        private string tkno, tkco, noidung, tyGiaGhiSo, tyGiaThucTe;
+        private int tonQuy, soTien;
+
+        public int MaXyLy
+        {
+            get
+            {
+                return maXyLy;
+            }
+
+            set
+            {
+                maXyLy = value;
+            }
+        }
+
+        public string Noidung
+        {
+            get
+            {
+                return noidung;
+            }
+
+            set
+            {
+                noidung = value;
+            }
+        }
+
+        public int SoTien
+        {
+            get
+            {
+                return soTien;
+            }
+
+            set
+            {
+                soTien = value;
+            }
+        }
+
+        public string Tkco
+        {
+            get
+            {
+                return tkco;
+            }
+
+            set
+            {
+                tkco = value;
+            }
+        }
+
+        public string Tkno
+        {
+            get
+            {
+                return tkno;
+            }
+
+            set
+            {
+                tkno = value;
+            }
+        }
+
+        public int TonQuy
+        {
+            get
+            {
+                return tonQuy;
+            }
+
+            set
+            {
+                tonQuy = value;
+            }
+        }
+
+        public string TyGiaGhiSo
+        {
+            get
+            {
+                return tyGiaGhiSo;
+            }
+
+            set
+            {
+                tyGiaGhiSo = value;
+            }
+        }
+
+        public string TyGiaThucTe
+        {
+            get
+            {
+                return tyGiaThucTe;
+            }
+
+            set
+            {
+                tyGiaThucTe = value;
+            }
+        }
+    }
+
     public class ChungTu_DTO
     {
        

@@ -8,16 +8,24 @@ using DAO;
 
 namespace BUS
 {
-    public class ChungTu_BUS
+    public class XuLyChenhLech_BUS
     {
+        public static void updateXyLyChenhLech(XuLyChenhLech_DTO xyLy, string soct, int sotiennt)
+        {
+            XuLyChenhLech_DAO.updateXyLyChenhLech(xyLy, soct, sotiennt);
+        }
+
         public static void xuLyChenhLech(String soct, String tkno, String tkco, String noidung, int sotiennt, int sotien, string tigiaso, string tigiathuc)
         {
-            ChungTu_DAO.xuLyChenhLech(soct, tkno, tkco, noidung, sotiennt, sotien, tigiaso, tigiathuc);
+            XuLyChenhLech_DAO.xuLyChenhLech(soct, tkno, tkco, noidung, sotiennt, sotien, tigiaso, tigiathuc);
         }
         public static DataTable getDSXyLyChenhLech()
         {
-            return ChungTu_DAO.getDSXyLyChenhLech();
+            return XuLyChenhLech_DAO.getDSXyLyChenhLech();
         }
+    }
+    public class ChungTu_BUS
+    {
         public static int getTyGiaHienTai()
         {
             DataTable dtb = ChungTu_DAO.loadTyGiaHienTai();
