@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,21 +16,30 @@ namespace KETOANVONBANGTIEN.ChungTu
     {
         public FrmDSXyLyChenhLech()
         {
-            InitializeComponent();
-           
+            InitializeComponent();       
+        }
+
+        private void LayDuLieu(XuLyChenhLech_DTO xuLyChenhLech, ref string soct)
+        {
+            soct = gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colSoCt).ToString();
+        
+            xuLyChenhLech.MaXyLy = int.Parse(gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colmaXuLy).ToString());
+            xuLyChenhLech.Tkco = gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colTkCo).ToString();
+            xuLyChenhLech.Tkno = gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colTkNo).ToString();
+            xuLyChenhLech.SoTien = int.Parse(gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colSoTien).ToString());
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ChungTu.FrmXuLyChenhLechNT frm = new ChungTu.FrmXuLyChenhLechNT();
-           // frm.lc.LuaChon = "Add";
+            frm.lc.LuaChon = "Add";
             frm.ShowDialog();
         }
 
 
         private void LoadDanhSach()
         {
-            grvDanhSachXuLyChenhLech.DataSource = ChungTu_BUS.getDSXyLyChenhLech();
+            grvDanhSachXuLyChenhLech.DataSource = XuLyChenhLech_BUS.getDSXyLyChenhLech();
         }
 
         private void LoadLookUpEditTkNo_Co()
@@ -187,6 +197,14 @@ namespace KETOANVONBANGTIEN.ChungTu
             //    //rpt1.CreateLayoutViewDocument();
             //}
         }
-      
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ChungTu.FrmXuLyChenhLechNT frm = new ChungTu.FrmXuLyChenhLechNT();
+            frm.lc.LuaChon = "Edit";
+            LayDuLieu(frm.objXuLyChenhLech, ref FrmXuLyChenhLechNT.soct);
+            frm.ShowDialog();
+            LoadDanhSach();
+        }
     }
 }

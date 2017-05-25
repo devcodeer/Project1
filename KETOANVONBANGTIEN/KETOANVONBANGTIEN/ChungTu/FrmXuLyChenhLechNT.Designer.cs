@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmXuLyChenhLechNT));
             this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSoTien = new System.Windows.Forms.TextBox();
             this.lookUpEditLoaiTien = new DevExpress.XtraEditors.LookUpEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -97,9 +99,12 @@
             this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
             this.btnDong.Name = "btnDong";
             this.btnDong.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDong_ItemClick);
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.label1);
+            this.groupControl1.Controls.Add(this.txtSoTien);
             this.groupControl1.Controls.Add(this.lookUpEditLoaiTien);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.groupControl4);
@@ -110,6 +115,26 @@
             this.groupControl1.Size = new System.Drawing.Size(984, 261);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(765, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Số tiền";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtSoTien
+            // 
+            this.txtSoTien.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtSoTien.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtSoTien.Location = new System.Drawing.Point(834, 229);
+            this.txtSoTien.Name = "txtSoTien";
+            this.txtSoTien.Size = new System.Drawing.Size(131, 22);
+            this.txtSoTien.TabIndex = 5;
             // 
             // lookUpEditLoaiTien
             // 
@@ -211,7 +236,7 @@
             this.groupControl4.Controls.Add(this.labelControl1);
             this.groupControl4.Location = new System.Drawing.Point(5, 72);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(749, 170);
+            this.groupControl4.Size = new System.Drawing.Size(749, 169);
             this.groupControl4.TabIndex = 2;
             this.groupControl4.Text = "Thông tin chung";
             // 
@@ -221,6 +246,7 @@
             this.txtThucTon.Name = "txtThucTon";
             this.txtThucTon.Size = new System.Drawing.Size(520, 21);
             this.txtThucTon.TabIndex = 7;
+            this.txtThucTon.TextChanged += new System.EventHandler(this.txtThucTon_TextChanged);
             // 
             // labelControl4
             // 
@@ -236,7 +262,6 @@
             this.txtTonQuy.Name = "txtTonQuy";
             this.txtTonQuy.Size = new System.Drawing.Size(520, 21);
             this.txtTonQuy.TabIndex = 3;
-            this.txtTonQuy.TextChanged += new System.EventHandler(this.txtTonQuy_TextChanged);
             // 
             // txtTiGiaThucTe
             // 
@@ -244,6 +269,7 @@
             this.txtTiGiaThucTe.Name = "txtTiGiaThucTe";
             this.txtTiGiaThucTe.Size = new System.Drawing.Size(520, 21);
             this.txtTiGiaThucTe.TabIndex = 5;
+            this.txtTiGiaThucTe.TextChanged += new System.EventHandler(this.txtTiGiaThucTe_TextChanged);
             // 
             // lblNguoiGiaoDich
             // 
@@ -560,5 +586,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditTkCo;
         private DevExpress.XtraGrid.Columns.GridColumn colNoiDung;
         private DevExpress.XtraGrid.Columns.GridColumn colSoTien;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSoTien;
     }
 }
