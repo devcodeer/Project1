@@ -223,8 +223,8 @@ namespace KETOANVONBANGTIEN.ChungTu
         private void ThemMoi()
         {
             string soct = txtSoCt.Text;
-            DateTime ngayct = dateEditNgayCt.DateTime;
-            DateTime ngayghiso = dateEditNgayGhiSo.DateTime;
+            string ngayct = dateEditNgayCt.Text;
+            string ngayghiso = dateEditNgayGhiSo.Text;
             
             string tknhdi = lookUpEditTaiKhoanNH.GetColumnValue("SoTknh").ToString();
             string tknhden = txtTkDen.Text;
@@ -270,8 +270,8 @@ namespace KETOANVONBANGTIEN.ChungTu
         private void Sua()
         {
             string soct = txtSoCt.Text;
-            DateTime ngayct = dateEditNgayCt.DateTime;
-            DateTime ngayghiso = dateEditNgayGhiSo.DateTime;
+            string ngayct = dateEditNgayCt.Text;
+            string ngayghiso = dateEditNgayGhiSo.Text;
 
             string tknhdi = lookUpEditTaiKhoanNH.GetColumnValue("SoTknh").ToString();
             string tknhden = txtTkDen.Text;
@@ -367,8 +367,8 @@ namespace KETOANVONBANGTIEN.ChungTu
             txtLyDo.Text = obj.LyDo;
             txtTkDen.Text = obj.TknhDen;            
             txtSoCt.Text = obj.SoCt;
-            dateEditNgayCt.DateTime = obj.NgayCt;
-            dateEditNgayGhiSo.DateTime = obj.NgayGhiSo;
+            dateEditNgayCt.Text = obj.NgayCt;
+            dateEditNgayGhiSo.Text = obj.NgayGhiSo;
             LoadLookUpEditTienTe();
             lookUpEditLoaiTien.Text = obj.MaTien;
             txtTyGia.Text = obj.TyGia.ToString();

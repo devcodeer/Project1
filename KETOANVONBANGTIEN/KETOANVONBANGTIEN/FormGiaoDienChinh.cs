@@ -67,6 +67,7 @@ namespace KETOANVONBANGTIEN
         private void barBtnSoTienMat_ItemClick(object sender, ItemClickEventArgs e)
         {
             BaoCao.SoQuy.FrmThamSoBaoCao frm = new BaoCao.SoQuy.FrmThamSoBaoCao();
+            frm.check = 4;
             frm.ShowDialog();
             
             
@@ -449,6 +450,27 @@ namespace KETOANVONBANGTIEN
             DanhMuc.FrmDanhSachNguoiDung frm = new DanhMuc.FrmDanhSachNguoiDung();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void barButtonItem10_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BaoCao.SoQuy.FrmThamSoBaoCao frm = new BaoCao.SoQuy.FrmThamSoBaoCao();
+            frm.check = 1;
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem11_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BaoCao.SoQuy.FrmThamSoBaoCao frm = new BaoCao.SoQuy.FrmThamSoBaoCao();
+            frm.check = 2;
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            BaoCao.SoQuy.FrmThamSoBaoCao frm = new BaoCao.SoQuy.FrmThamSoBaoCao();
+            frm.check = 3;
+            frm.ShowDialog();
         }
     }
 }

@@ -28,6 +28,44 @@ namespace DAO
 
            
         }
+        public static DataTable SoCai(string matk, DateTime ngaybd, DateTime ngaykt)
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("SoCai", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@matk", SqlDbType.VarChar, 7));
+            cmd.Parameters.Add(new SqlParameter("@ngaybd", SqlDbType.DateTime));
+            cmd.Parameters.Add(new SqlParameter("@ngaykt", SqlDbType.DateTime));
+            cmd.Parameters["@matk"].Value = matk;
+            cmd.Parameters["@ngaybd"].Value = ngaybd;
+            cmd.Parameters["@ngaykt"].Value = ngaykt;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+
+        }
+        public static DataTable sp_SoCaiTk111(string matk, DateTime ngaybd, DateTime ngaykt)
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("sp_SoCaiTk111", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@matk", SqlDbType.VarChar, 7));
+            cmd.Parameters.Add(new SqlParameter("@ngaybd", SqlDbType.DateTime));
+            cmd.Parameters.Add(new SqlParameter("@ngaykt", SqlDbType.DateTime));
+            cmd.Parameters["@matk"].Value = matk;
+            cmd.Parameters["@ngaybd"].Value = ngaybd;
+            cmd.Parameters["@ngaykt"].Value = ngaykt;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+
+        }
         // Bao cao so tien gui
         public static DataTable SoTienGui( string matk, DateTime ngaybd, DateTime ngaykt)
         {

@@ -14,6 +14,16 @@ namespace BUS
             return BaoCao_DAO.SoQuy(matk,ngaybd, ngaykt);
 
         }
+        public static DataTable SoCai(string matk, DateTime ngaybd, DateTime ngaykt)
+        {
+            return BaoCao_DAO.SoCai(matk, ngaybd, ngaykt);
+
+        }
+        public static DataTable sp_SoCaiTk111(string matk, DateTime ngaybd, DateTime ngaykt)
+        {
+            return BaoCao_DAO.sp_SoCaiTk111(matk, ngaybd, ngaykt);
+
+        }
         // SO TIEN GUI
         public static DataTable SoTienGui(string matk, DateTime ngaybd, DateTime ngaykt)
         {

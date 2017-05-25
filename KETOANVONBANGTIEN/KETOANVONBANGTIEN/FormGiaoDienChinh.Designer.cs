@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.SkinsGallery = new DevExpress.XtraBars.RibbonGalleryBarItem();
@@ -44,6 +45,9 @@
             this.barSubItemBaoCao = new DevExpress.XtraBars.BarSubItem();
             this.barBtnSoTienMat = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnSoTienGui = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.barBtnTaoTaiKhoan = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
@@ -104,7 +108,7 @@
             this.nbgCongCu = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemPhanTich = new DevExpress.XtraNavBar.NavBarItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -166,9 +170,12 @@
             this.barButtonItem9,
             this.btnThoat,
             this.btnBackUp,
-            this.btnRestore});
+            this.btnRestore,
+            this.barButtonItem10,
+            this.barButtonItem11,
+            this.barButtonItem12});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 87;
+            this.ribbonControl1.MaxItemId = 90;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonHeThong,
@@ -268,7 +275,10 @@
             this.barSubItemBaoCao.LargeWidth = 117;
             this.barSubItemBaoCao.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barBtnSoTienMat),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barBtnSoTienGui)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barBtnSoTienGui),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem10),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem11),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem12)});
             this.barSubItemBaoCao.Name = "barSubItemBaoCao";
             // 
             // barBtnSoTienMat
@@ -284,6 +294,27 @@
             this.barBtnSoTienGui.Id = 43;
             this.barBtnSoTienGui.Name = "barBtnSoTienGui";
             this.barBtnSoTienGui.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSoTienGui_ItemClick);
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Sổ Cái";
+            this.barButtonItem10.Id = 87;
+            this.barButtonItem10.Name = "barButtonItem10";
+            this.barButtonItem10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem10_ItemClick);
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Phiếu Chi";
+            this.barButtonItem11.Id = 88;
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Phiếu Thu";
+            this.barButtonItem12.Id = 89;
+            this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // barSubItem5
             // 
@@ -955,6 +986,9 @@
         private DevExpress.XtraBars.BarButtonItem btnRestore;
         private DevExpress.XtraNavBar.NavBarItem navBarItemNguoiDung;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
     }
 }
 

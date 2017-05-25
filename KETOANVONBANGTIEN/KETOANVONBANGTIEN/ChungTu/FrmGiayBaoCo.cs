@@ -229,8 +229,8 @@ namespace KETOANVONBANGTIEN.ChungTu
         private void doInsertChungTu()
         {
             string soct = txtSoCt.Text;
-            DateTime ngayct = dateEditNgayCt.DateTime;
-            DateTime ngayghiso = dateEditNgayGhiSo.DateTime;
+            string ngayct = dateEditNgayCt.Text;
+            string ngayghiso = dateEditNgayGhiSo.Text;
 
             string tknhden = lookUpEditTaiKhoanNH.GetColumnValue("SoTknh").ToString();
             
@@ -276,8 +276,8 @@ namespace KETOANVONBANGTIEN.ChungTu
         private void doUpdateChungTu()
         {
             string soct = txtSoCt.Text;
-            DateTime ngayct = dateEditNgayCt.DateTime;
-            DateTime ngayghiso = dateEditNgayGhiSo.DateTime;
+            string ngayct = dateEditNgayCt.Text;
+            string ngayghiso = dateEditNgayGhiSo.Text;
             string tknhden = lookUpEditTaiKhoanNH.GetColumnValue("SoTknh").ToString();                       
             string madt = lookUpEditDT.GetColumnValue("Ma").ToString();
             string diachi = txtDiaChi.Text;
@@ -371,8 +371,8 @@ namespace KETOANVONBANGTIEN.ChungTu
             txtDiaChi.Text = chungTu.DiaChi;
             txtLyDo.Text = chungTu.LyDo;            
             txtSoCt.Text = chungTu.SoCt;
-            dateEditNgayCt.DateTime = chungTu.NgayCt;
-            dateEditNgayGhiSo.DateTime = chungTu.NgayGhiSo;
+            dateEditNgayCt.Text = chungTu.NgayCt;
+            dateEditNgayGhiSo.Text = chungTu.NgayGhiSo;
             loadLookUpEditTienTe();
             lookUpEditLoaiTien.Text = chungTu.MaTien;
             txtTyGia.Text = chungTu.TyGia.ToString();

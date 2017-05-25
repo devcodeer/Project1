@@ -24,16 +24,16 @@ namespace DTO
         }
 
      
-        private DateTime _ngayCt;
+        private String _ngayCt;
 
-        public DateTime NgayCt
+        public String NgayCt
         {
             get { return _ngayCt; }
             set { _ngayCt = value; }
         }
-        private DateTime _ngayGhiSo;
+        private String _ngayGhiSo;
 
-        public DateTime NgayGhiSo
+        public String NgayGhiSo
         {
             get { return _ngayGhiSo; }
             set { _ngayGhiSo = value; }
@@ -114,7 +114,7 @@ namespace DTO
         public ChungTu_DTO()
         { }
 
-        public ChungTu_DTO(string soct, int loaict, DateTime ngayct, DateTime ngayghiso, string madt, string nguoigd, string diachi, string lydo, string kemtheo, string matien, float tygia, string tknhdi, string tknhden, bool trangthai)
+        public ChungTu_DTO(string soct, int loaict, string ngayct, string ngayghiso, string madt, string nguoigd, string diachi, string lydo, string kemtheo, string matien, float tygia, string tknhdi, string tknhden, bool trangthai)
         {
             SoCt = soct;
             MaLoaiCt = loaict;

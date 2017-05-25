@@ -139,8 +139,8 @@ namespace KETOANVONBANGTIEN.ChungTu
         private void LayDuLieu(ChungTu_DTO ct)
         {
             ct.SoCt = gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colSoCt).ToString();
-            ct.NgayCt = DateTime.Parse(gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colNgayCt).ToString());
-            ct.NgayGhiSo = DateTime.Parse(gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colNgayghiso).ToString());
+            ct.NgayCt = Convert.ToString(gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colNgayCt).ToString());
+            ct.NgayGhiSo = Convert.ToString(gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colNgayghiso).ToString());
             ct.MaDt = gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colMaDt).ToString();
             ct.NguoiGd = gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colNguoiGd).ToString();
             ct.DiaChi = gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colDiaChi).ToString();

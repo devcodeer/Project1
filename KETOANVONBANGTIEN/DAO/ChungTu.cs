@@ -87,6 +87,40 @@ namespace DAO
 
         }
 
+        public static DataTable SELECT_PC(string ngayBatDau,string ngayKetThuc)
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("[SELECT_PC]", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter("@NgayBatDau", SqlDbType.VarChar, 50));
+            cmd.Parameters.Add(new SqlParameter("@NgayKetThuc", SqlDbType.VarChar, 50));
+            cmd.Parameters["@NgayBatDau"].Value = ngayBatDau;
+            cmd.Parameters["@NgayKetThuc"].Value = ngayKetThuc;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
+
+        public static DataTable SELECT_PT(string ngayBatDau, string ngayKetThuc)
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("[SELECT_PT]", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter("@NgayBatDau", SqlDbType.VarChar, 50));
+            cmd.Parameters.Add(new SqlParameter("@NgayKetThuc", SqlDbType.VarChar, 50));
+            cmd.Parameters["@NgayBatDau"].Value = ngayBatDau;
+            cmd.Parameters["@NgayKetThuc"].Value = ngayKetThuc;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
+
 
         // Thêm mới 1 chứng từ
         public static void Them1ChungTu(ChungTu_DTO ct)
@@ -98,8 +132,8 @@ namespace DAO
             // khai bao bien
             cmd.Parameters.Add(new SqlParameter("@soct", SqlDbType.VarChar, 10));
             cmd.Parameters.Add(new SqlParameter("@maloaict", SqlDbType.Int));
-            cmd.Parameters.Add(new SqlParameter("@ngayct", SqlDbType.DateTime));
-            cmd.Parameters.Add(new SqlParameter("@ngayghiso", SqlDbType.DateTime));
+            cmd.Parameters.Add(new SqlParameter("@ngayct", SqlDbType.NVarChar, 50));
+            cmd.Parameters.Add(new SqlParameter("@ngayghiso", SqlDbType.NVarChar, 50));
             cmd.Parameters.Add(new SqlParameter("@madt", SqlDbType.NVarChar, 10));
             cmd.Parameters.Add(new SqlParameter("@nguoigd", SqlDbType.NVarChar, 50));
             cmd.Parameters.Add(new SqlParameter("@diachi", SqlDbType.NVarChar, 200));
@@ -141,8 +175,8 @@ namespace DAO
             cmd.Parameters.Add(new SqlParameter("@magoc", SqlDbType.VarChar, 10));
             cmd.Parameters.Add(new SqlParameter("@soct", SqlDbType.VarChar, 10));
             cmd.Parameters.Add(new SqlParameter("@maloaict", SqlDbType.Int));
-            cmd.Parameters.Add(new SqlParameter("@ngayct", SqlDbType.DateTime));
-            cmd.Parameters.Add(new SqlParameter("@ngayghiso", SqlDbType.DateTime));
+            cmd.Parameters.Add(new SqlParameter("@ngayct", SqlDbType.NVarChar, 50));
+            cmd.Parameters.Add(new SqlParameter("@ngayghiso", SqlDbType.NVarChar, 50));
             cmd.Parameters.Add(new SqlParameter("@madt", SqlDbType.NVarChar, 10));
             cmd.Parameters.Add(new SqlParameter("@nguoigd", SqlDbType.NVarChar, 50));
             cmd.Parameters.Add(new SqlParameter("@diachi", SqlDbType.NVarChar, 200));

@@ -46,6 +46,14 @@ namespace BUS
             return ChungTu_DAO.loadChungTuBySoChungTu(soct);
         }
 
+        public static DataTable SELECT_PC(string ngayBatDau,string ngayketThuc)
+        {
+            return ChungTu_DAO.SELECT_PC(ngayBatDau,ngayketThuc);
+        }
+        public static DataTable SELECT_PT(string ngayBatDau, string ngayketThuc)
+        {
+            return ChungTu_DAO.SELECT_PT(ngayBatDau, ngayketThuc);
+        }
 
         // Thêm
         public static void insertChungTu(ChungTu_DTO ct)
