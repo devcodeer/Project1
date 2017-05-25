@@ -66,8 +66,8 @@ namespace KETOANVONBANGTIEN.ChungTu
         private void ThemMoi()
         {
             string soct = txtSoCt.Text;
-            DateTime ngayct = dateEditNgayCt.DateTime;
-            DateTime ngayghiso = dateEditNgayGhiSo.DateTime;
+            string ngayct = dateEditNgayCt.DateTime.ToString();
+            string ngayghiso = dateEditNgayGhiSo.DateTime.ToString();
             string madt = "";
             string diachi = "";
             string nguoigd = "";

@@ -206,5 +206,21 @@ namespace KETOANVONBANGTIEN.ChungTu
             frm.ShowDialog();
             LoadDanhSach();
         }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chắn muốn xóa ?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    XuLyChenhLech_BUS.xoaXuLyChenhLech(int.Parse(gridViewDsPhieuThu.GetRowCellValue(gridViewDsPhieuThu.FocusedRowHandle, colmaXuLy).ToString()));
+                    LoadDanhSach();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Xóa không thành công! " + ex.Message);
+                }
+            }
+        }
     }
 }

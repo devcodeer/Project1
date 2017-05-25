@@ -121,6 +121,7 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.btnXoa.ImageOptions.Image = global::KETOANVONBANGTIEN.Properties.Resources._1332999407_button_cancel;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnIn
             // 
@@ -208,16 +209,14 @@ namespace KETOANVONBANGTIEN.ChungTu
             this.gridViewDsPhieuThu.GridControl = this.grvDanhSachXuLyChenhLech;
             this.gridViewDsPhieuThu.Name = "gridViewDsPhieuThu";
             this.gridViewDsPhieuThu.OptionsBehavior.Editable = false;
-
-            //
-            // maXuLy
-            //
+            // 
+            // colmaXuLy
+            // 
             this.colmaXuLy.Caption = "Mã xử lý";
             this.colmaXuLy.FieldName = "maXuLy";
             this.colmaXuLy.Name = "colmaXuLy";
             this.colmaXuLy.Visible = true;
             this.colmaXuLy.VisibleIndex = 0;
-
             // 
             // colSoCt
             // 
