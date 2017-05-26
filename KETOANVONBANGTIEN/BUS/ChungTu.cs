@@ -10,6 +10,10 @@ namespace BUS
 {
     public class XuLyChenhLech_BUS
     {
+        public static void xoaXuLyChenhLech(int maXL)
+        {
+            XuLyChenhLech_DAO.xoaXuLyChenhLech(maXL);
+        }
         public static void updateXyLyChenhLech(XuLyChenhLech_DTO xyLy, string soct, int sotiennt)
         {
             XuLyChenhLech_DAO.updateXyLyChenhLech(xyLy, soct, sotiennt);

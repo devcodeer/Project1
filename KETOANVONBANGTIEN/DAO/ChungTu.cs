@@ -10,6 +10,20 @@ namespace DAO
 {
     public class XuLyChenhLech_DAO
     {
+        public static void xoaXuLyChenhLech(int maXL)
+        {
+            SqlConnection cnn = Connector.getConnection();
+            SqlCommand cmd = new SqlCommand("xoaXuLyChenhLech", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // khai bao bien
+            cmd.Parameters.Add(new SqlParameter("@maxuly", SqlDbType.Int));
+
+            cmd.Parameters["@maxuly"].Value = maXL;
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
         public static void xuLyChenhLech(String soct, String tkno, String tkco, String noidung, int sotiennt, int sotien, string tigiaso, string tigiathuc)
         {
             /*
